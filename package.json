@@ -65,5 +65,6 @@
     "type": "git",
     "url": "git://https://github.com/mcansahin/vue-crud.git"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "license": "GNU General Public License (GPL)"
 }
