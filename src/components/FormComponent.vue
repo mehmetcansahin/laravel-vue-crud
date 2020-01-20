@@ -114,6 +114,8 @@ export default {
               type: "success",
               text: "İşlem başarılı bir şekilde tamamlanmıştır."
             }).show();
+            this.$emit('close');
+            console.log("burdaq");
           }
           if (!this.create) {
             this.saveDisable = false;
