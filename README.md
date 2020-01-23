@@ -11,24 +11,34 @@ $ php artisan make:controller API/Admin/PostController
 $ php artisan migrate:fresh --seed
 ```
 
-| Element  | Listing | Disabled | Readonly | Multiple | Options | Editor | Render |
-| -------- | ------- | -------- | -------- | -------- | ------- | ------ | ------ |
-| text     | ✓       | ✓        | ✓        | x        | x       | x      | x      |
-| textarea | ✓       | ✓        | x        | x        | x       | ✓      | ✓      |
-| select   | ✓       | ✓        | x        | ✓        | ✓       | x      | x      |
-| image    | ✓       | x        | x        | ✓        | x       | x      | x      |
-| checkbox | ✓       | ✓        | x        | ✓        | x       | x      | x      |
-| date     | ✓       | ✓        | x        | x        | x       | x      | x      |
+| Element  | Listing | Disabled | Readonly | Multiple | Options | Editor | Render | dateFormat | enableTime |
+| -------- | ------- | -------- | -------- | -------- | ------- | ------ | ------ | ---------- | ---------- |
+| text     | ✓       | ✓        | ✓        | x        | x       | x      | x      | x          | x          | 
+| textarea | ✓       | ✓        | x        | x        | x       | ✓      | ✓      | x          | x          | 
+| select   | ✓       | ✓        | x        | ✓        | ✓       | x      | x      | x          | x          |
+| image    | ✓       | x        | x        | ✓        | x       | x      | x      | x          | x          |
+| checkbox | ✓       | ✓        | x        | ✓        | x       | x      | x      | x          | x          |
+| date     | ✓       | ✓        | x        | x        | x       | x      | x      | ✓          | ✓          |
+| toggle
 
-| Attr     | Value   | Extra               |
-| -------- | ------- | ------------------- |
-| Listing  | boolean |                     |
-| Disabled | boolean |                     |
-| Readonly | boolean |                     |
-| Multiple | boolean |                     |
-| Options  | array   | [['value', 'text']] |
-| Editor   | boolean |                     |
-| Render   | boolean |                     |
+
+
+| Attr         | Value   | Extra                                                      |
+| ------------ | ------- | ---------------------------------------------------------- |
+| Listing      | boolean |                                                            |
+| Disabled     | boolean |                                                            |
+| Readonly     | boolean |                                                            |
+| Multiple     | boolean |                                                            |
+| Options      | array   | [['value' => 'valueResult', 'label' => 'labelText']]       |
+| Editor       | boolean |                                                            |
+| Render       | boolean |                                                            |
+| dateFormat   | string  | default value is "Y-m-d H:i" but change like this "d-m-Y"  |
+| enableTime   | boolean | default value is true but change this false                |
+
+Toggle Attr
+*titleOn->string
+*titleOff->string
+
 
 `app/Http/Resources/Post.php` in;
 

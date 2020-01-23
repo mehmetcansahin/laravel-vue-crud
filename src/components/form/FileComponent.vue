@@ -79,7 +79,7 @@ export default {
         input.files.length + " Dosya Seçildi";
     },
     imgError(event){
-      event.target.src = "assets/file.png";
+      event.target.src = "./assets/file.png";
       event.target.style = "width: 50px;height:50px;"
     }
    

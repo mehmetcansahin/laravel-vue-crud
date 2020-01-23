@@ -24,6 +24,11 @@
               :field="field"
               :data="data.data"
             />
+            <toggle-component
+              v-else-if="field.type == 'toggle'"
+              :field="field"
+              :data="data.data"
+            />
           </div>
         </form>
       </section>
@@ -44,6 +49,7 @@ import FileComponent from "./form/FileComponent";
 import TextareaComponent from "./form/TextareaComponent";
 import SelectComponent from "./form/SelectComponent";
 import CheckboxComponent from "./form/CheckboxComponent";
+import ToggleComponent from "./form/ToggleComponent";
 export default {
   props: ["api-url", "meta", "create"],
   data: function() {
@@ -59,7 +65,8 @@ export default {
     FileComponent,
     TextareaComponent,
     SelectComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    ToggleComponent
   },
   mounted: function() {
     if (this.create) {
@@ -115,7 +122,6 @@ export default {
               text: "İşlem başarılı bir şekilde tamamlanmıştır."
             }).show();
             this.$emit('close');
-            console.log("burdaq");
           }
           if (!this.create) {
             this.saveDisable = false;

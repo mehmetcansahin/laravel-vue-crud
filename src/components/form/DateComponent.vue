@@ -27,10 +27,11 @@ export default {
     flatPickr
   },
   data: function() {
+    var that = this;
     return {
       config: {
-        dateFormat: "Y-m-d H:i",
-        enableTime: true,
+        dateFormat: (that.field.dateFormat) ? that.field.dateFormat : "Y-m-d H:i" ,
+        enableTime: (that.field.enableTime) ? that.field.enableTime : true,
         locale: Turkish
       }
     };
