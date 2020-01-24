@@ -29,6 +29,22 @@
               :field="field"
               :data="data.data"
             />
+            <color-picker-component
+              v-else-if="field.type == 'colorpicker'"
+              :field="field"
+              :data="data.data"
+            />
+            <range-component
+              v-else-if="field.type == 'range'"
+              :field="field"
+              :data="data.data"
+            />
+            <radio-component
+              v-else-if="field.type == 'radio'"
+              :field="field"
+              :data="data.data"
+            />
+            
           </div>
         </form>
       </section>
@@ -50,6 +66,9 @@ import TextareaComponent from "./form/TextareaComponent";
 import SelectComponent from "./form/SelectComponent";
 import CheckboxComponent from "./form/CheckboxComponent";
 import ToggleComponent from "./form/ToggleComponent";
+import ColorPickerComponent from "./form/ColorPickerComponent";
+import RangeComponent from "./form/RangeComponent";
+import RadioComponent from "./form/RadioComponent";
 export default {
   props: ["api-url", "meta", "create"],
   data: function() {
@@ -66,7 +85,10 @@ export default {
     TextareaComponent,
     SelectComponent,
     CheckboxComponent,
-    ToggleComponent
+    ToggleComponent,
+    ColorPickerComponent,
+    RangeComponent,
+    RadioComponent
   },
   mounted: function() {
     if (this.create) {

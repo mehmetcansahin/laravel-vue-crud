@@ -20,6 +20,10 @@ $ php artisan migrate:fresh --seed
 | checkbox | ✓       | ✓        | x        | ✓        | x       | x      | x      | x          | x          |
 | date     | ✓       | ✓        | x        | x        | x       | x      | x      | ✓          | ✓          |
 | toggle
+| radio
+| range
+| colorpicker
+
 
 
 
@@ -35,11 +39,22 @@ $ php artisan migrate:fresh --seed
 | dateFormat   | string  | default value is "Y-m-d H:i" but change like this "d-m-Y"  |
 | enableTime   | boolean | default value is true but change this false                |
 
-Toggle Attr
+toggle Attr
 *titleOn->string
 *titleOff->string
 
-
+radio Attr Example
+[
+    'name' => 'title', 
+    'type' => 'radio', 
+    'title' => 'Başlık', 
+    'listing' => true,
+    'values' => [
+        'aDeneme',
+        'b Hayat Güzel',
+        'c Ondokuzon'
+    ]
+],
 `app/Http/Resources/Post.php` in;
 
 ```php
