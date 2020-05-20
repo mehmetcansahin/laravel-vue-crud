@@ -1,6 +1,5 @@
 import Vue from "vue";
-import VueCrudTable from "./components/TableComponent.vue";
 
-Vue.component(VueCrudTable, require(VueCrudTable).default);
+Vue.component("VueCrudTable", require("./components/TableComponent.vue"));
 
 export default Components;
