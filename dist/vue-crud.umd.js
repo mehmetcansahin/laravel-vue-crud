@@ -4812,22 +4812,6 @@ module.exports = function defineProperty(it, key, desc) {
 
 /***/ }),
 
-/***/ "456d":
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__("4bf8");
-var $keys = __webpack_require__("0d58");
-
-__webpack_require__("5eda")('keys', function () {
-  return function keys(it) {
-    return $keys(toObject(it));
-  };
-});
-
-
-/***/ }),
-
 /***/ "4588":
 /***/ (function(module, exports) {
 
@@ -5041,21 +5025,6 @@ module.exports = function (it) {
   return Object(defined(it));
 };
 
-
-/***/ }),
-
-/***/ "4fe4":
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "4fe4";
 
 /***/ }),
 
@@ -5337,23 +5306,6 @@ module.exports = $export;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("d8d6");
-
-/***/ }),
-
-/***/ "5eda":
-/***/ (function(module, exports, __webpack_require__) {
-
-// most Object methods by ES6 should accept primitives
-var $export = __webpack_require__("5ca1");
-var core = __webpack_require__("8378");
-var fails = __webpack_require__("79e5");
-module.exports = function (KEY, exec) {
-  var fn = (core.Object || {})[KEY] || Object[KEY];
-  var exp = {};
-  exp[KEY] = exec(fn);
-  $export($export.S + $export.F * fails(function () { fn(1); }), 'Object', exp);
-};
-
 
 /***/ }),
 
@@ -18400,22 +18352,6 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.iterator.js
-var es6_array_iterator = __webpack_require__("cadf");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.keys.js
-var es6_object_keys = __webpack_require__("456d");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
-var web_dom_iterable = __webpack_require__("ac6a");
-
-// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
-var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
-var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
-
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableComponent.vue?vue&type=template&id=4734a262&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app-crud"},[_c('div',{staticClass:"box is-paddingless"},[_c('div',{staticClass:"columns is-marginless"},[_c('div',{staticClass:"column"},[_c('div',{staticClass:"select",attrs:{"id":"page-limit"}},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.paginate),expression:"paginate"}],on:{"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.paginate=$event.target.multiple ? $$selectedVal : $$selectedVal[0]},function($event){return _vm.fetchData()}]}},_vm._l(([5, 10, 15, 30, 60, 100]),function(i){return _c('option',{key:i,domProps:{"value":i}},[_vm._v(_vm._s(i))])}),0)])]),_c('div',{staticClass:"column"},[_c('div',{staticClass:"field"},[_c('p',{staticClass:"control has-icons-left has-icons-right"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.term),expression:"term"}],staticClass:"input",attrs:{"type":"text","placeholder":"Arama"},domProps:{"value":(_vm.term)},on:{"keyup":_vm.search,"input":function($event){if($event.target.composing){ return; }_vm.term=$event.target.value}}}),_vm._m(0)])])]),_c('div',{staticClass:"column"},[_c('button',{staticClass:"button is-small is-white is-pulled-right",on:{"click":function($event){return _vm.action('form', null, 'create')}}},[_c('i',{staticClass:"material-icons"},[_vm._v("add_box")])])])]),_c('div',{staticClass:"table-container"},[(_vm.data.data)?_c('table',{staticClass:"table"},[_c('thead',[_c('tr',[_vm._l((_vm.fields),function(field){return _c('th',{key:field.name},[_vm._v(_vm._s(field.title))])}),_c('th')],2)]),_c('tbody',[(_vm.data.data.length == 0)?_c('tr',[_c('td',[_vm._v("İçerik bulunamadı!")])]):_vm._e(),_vm._l((_vm.data.data),function(item){return _c('tr',{key:item.id},[_vm._l((_vm.fields),function(field){return _c('td',{key:field.name},[(field.type == 'select')?_c('div',_vm._l((_vm.options(item, field)),function(option){return _c('div',{key:option.value},[_vm._v(_vm._s(option.label))])}),0):_c('div',[_vm._v(_vm._s(item[field.name]))])])}),_c('td',[_c('div',{staticClass:"field has-addons is-pulled-right"},[_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.action('show', item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("open_in_new")])])]),_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.action('form', item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("edit")])])]),_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.deleteItem(item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("delete")])])])])])],2)})],2)]):_vm._e()]),(_vm.data)?_c('pagination-component',{attrs:{"data":_vm.data},on:{"page":_vm.setPage}}):_vm._e(),(_vm.form.modal)?_c('form-component',{attrs:{"api-url":_vm.form.apiUrl,"create":_vm.form.create,"meta":_vm.data.meta},on:{"close":function($event){return _vm.action('form', null, 'close')}}}):_vm._e(),(_vm.show.modal)?_c('show-component',{attrs:{"api-url":_vm.show.apiUrl},on:{"close":function($event){return _vm.action('show', null, 'close')}}}):_vm._e()],1)])}
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"icon is-small is-left"},[_c('i',{staticClass:"material-icons"},[_vm._v("search")])])}]
@@ -18455,6 +18391,9 @@ function typeof_typeof(obj) {
 
   return typeof_typeof(obj);
 }
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
 // EXTERNAL MODULE: ./node_modules/axios/index.js
 var axios = __webpack_require__("bc3a");
 var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
@@ -18680,6 +18619,9 @@ function _defineProperty(obj, key, value) {
 
   return obj;
 }
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
+var web_dom_iterable = __webpack_require__("ac6a");
+
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextComponent.vue?vue&type=template&id=35ba64c9&
 var TextComponentvue_type_template_id_35ba64c9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"input",attrs:{"type":"text","name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled,"readonly":_vm.field.readonly},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
 var TextComponentvue_type_template_id_35ba64c9_staticRenderFns = []
@@ -18938,6 +18880,10 @@ var TextareaComponentvue_type_template_id_0e7015a0_staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=template&id=0e7015a0&
+
+// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
+var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
+var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
 // EXTERNAL MODULE: ./node_modules/trix/dist/trix.js
 var trix = __webpack_require__("ad7e");
@@ -21886,18 +21832,7 @@ var TableComponent_component = normalizeComponent(
 /* harmony default export */ var TableComponent = (TableComponent_component.exports);
 // CONCATENATED MODULE: ./src/build.js
 
-
-
-
-
-
-var Components = {
-  VueCrudTable: TableComponent
-};
-Object.keys(Components).forEach(function (name) {
-  external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component(name, __webpack_require__("4fe4")(Components[name]).default);
-});
-/* harmony default export */ var build = (Components);
+/* harmony default export */ var build = (TableComponent);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 
