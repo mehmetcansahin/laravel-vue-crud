@@ -934,6 +934,3494 @@ module.exports = function (exec) {
 
 /***/ }),
 
+/***/ "2953":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableComponent.vue?vue&type=template&id=4734a262&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app-crud"},[_c('div',{staticClass:"box is-paddingless"},[_c('div',{staticClass:"columns is-marginless"},[_c('div',{staticClass:"column"},[_c('div',{staticClass:"select",attrs:{"id":"page-limit"}},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.paginate),expression:"paginate"}],on:{"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.paginate=$event.target.multiple ? $$selectedVal : $$selectedVal[0]},function($event){return _vm.fetchData()}]}},_vm._l(([5, 10, 15, 30, 60, 100]),function(i){return _c('option',{key:i,domProps:{"value":i}},[_vm._v(_vm._s(i))])}),0)])]),_c('div',{staticClass:"column"},[_c('div',{staticClass:"field"},[_c('p',{staticClass:"control has-icons-left has-icons-right"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.term),expression:"term"}],staticClass:"input",attrs:{"type":"text","placeholder":"Arama"},domProps:{"value":(_vm.term)},on:{"keyup":_vm.search,"input":function($event){if($event.target.composing){ return; }_vm.term=$event.target.value}}}),_vm._m(0)])])]),_c('div',{staticClass:"column"},[_c('button',{staticClass:"button is-small is-white is-pulled-right",on:{"click":function($event){return _vm.action('form', null, 'create')}}},[_c('i',{staticClass:"material-icons"},[_vm._v("add_box")])])])]),_c('div',{staticClass:"table-container"},[(_vm.data.data)?_c('table',{staticClass:"table"},[_c('thead',[_c('tr',[_vm._l((_vm.fields),function(field){return _c('th',{key:field.name},[_vm._v(_vm._s(field.title))])}),_c('th')],2)]),_c('tbody',[(_vm.data.data.length == 0)?_c('tr',[_c('td',[_vm._v("İçerik bulunamadı!")])]):_vm._e(),_vm._l((_vm.data.data),function(item){return _c('tr',{key:item.id},[_vm._l((_vm.fields),function(field){return _c('td',{key:field.name},[(field.type == 'select')?_c('div',_vm._l((_vm.options(item, field)),function(option){return _c('div',{key:option.value},[_vm._v(_vm._s(option.label))])}),0):_c('div',[_vm._v(_vm._s(item[field.name]))])])}),_c('td',[_c('div',{staticClass:"field has-addons is-pulled-right"},[_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.action('show', item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("open_in_new")])])]),_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.action('form', item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("edit")])])]),_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.deleteItem(item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("delete")])])])])])],2)})],2)]):_vm._e()]),(_vm.data)?_c('pagination-component',{attrs:{"data":_vm.data},on:{"page":_vm.setPage}}):_vm._e(),(_vm.form.modal)?_c('form-component',{attrs:{"api-url":_vm.form.apiUrl,"create":_vm.form.create,"meta":_vm.data.meta},on:{"close":function($event){return _vm.action('form', null, 'close')}}}):_vm._e(),(_vm.show.modal)?_c('show-component',{attrs:{"api-url":_vm.show.apiUrl},on:{"close":function($event){return _vm.action('show', null, 'close')}}}):_vm._e()],1)])}
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"icon is-small is-left"},[_c('i',{staticClass:"material-icons"},[_vm._v("search")])])}]
+
+
+// CONCATENATED MODULE: ./src/components/TableComponent.vue?vue&type=template&id=4734a262&
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
+var es7_array_includes = __webpack_require__("6762");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
+var es6_string_includes = __webpack_require__("2fdb");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js
+var iterator = __webpack_require__("5d58");
+var iterator_default = /*#__PURE__*/__webpack_require__.n(iterator);
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol.js
+var symbol = __webpack_require__("67bb");
+var symbol_default = /*#__PURE__*/__webpack_require__.n(symbol);
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/typeof.js
+
+
+function typeof_typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof symbol_default.a === "function" && typeof iterator_default.a === "symbol") {
+    typeof_typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    typeof_typeof = function _typeof(obj) {
+      return obj && typeof symbol_default.a === "function" && obj.constructor === symbol_default.a && obj !== symbol_default.a.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return typeof_typeof(obj);
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
+var es6_function_name = __webpack_require__("7f7f");
+
+// EXTERNAL MODULE: ./node_modules/axios/index.js
+var axios = __webpack_require__("bc3a");
+var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
+
+// EXTERNAL MODULE: ./node_modules/noty/lib/noty.js
+var noty = __webpack_require__("7329");
+var noty_default = /*#__PURE__*/__webpack_require__.n(noty);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PaginationComponent.vue?vue&type=template&id=4febc598&scoped=true&
+var PaginationComponentvue_type_template_id_4febc598_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('nav',{staticClass:"pagination is-small is-centered is-rounded pl-10 pr-10 pb-10",attrs:{"role":"navigation","aria-label":"pagination"}},[_c('a',{staticClass:"pagination-previous",on:{"click":function($event){return _vm.$emit('page', 1)}}},[_vm._v("←")]),_c('a',{staticClass:"pagination-next",on:{"click":function($event){return _vm.$emit('page', _vm.data.last_page)}}},[_vm._v("→")]),_c('ul',{staticClass:"pagination-list"},_vm._l((_vm.pagesNumber),function(page){return _c('li',{key:page},[_c('a',{staticClass:"pagination-link",class:{'is-current': page == _vm.data.current_page},on:{"click":function($event){return _vm.$emit('page', page)}}},[_vm._v(_vm._s(page))])])}),0)])}
+var PaginationComponentvue_type_template_id_4febc598_scoped_true_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/PaginationComponent.vue?vue&type=template&id=4febc598&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PaginationComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var PaginationComponentvue_type_script_lang_js_ = ({
+  props: ["data"],
+  data: function data() {
+    return {};
+  },
+  computed: {
+    pagesNumber: function pagesNumber() {
+      var offset = 2;
+
+      if (!this.data.to) {
+        return [];
+      }
+
+      var from = this.data.current_page - offset;
+
+      if (from < 1) {
+        from = 1;
+      }
+
+      var to = from + offset * 2;
+
+      if (to >= this.data.last_page) {
+        to = this.data.last_page;
+      }
+
+      var pagesArray = [];
+
+      for (var page = from; page <= to; page++) {
+        pagesArray.push(page);
+      }
+
+      return pagesArray;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/PaginationComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_PaginationComponentvue_type_script_lang_js_ = (PaginationComponentvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/PaginationComponent.vue?vue&type=style&index=0&id=4febc598&scoped=true&lang=css&
+var PaginationComponentvue_type_style_index_0_id_4febc598_scoped_true_lang_css_ = __webpack_require__("1448");
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        )
+      }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functional component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+// CONCATENATED MODULE: ./src/components/PaginationComponent.vue
+
+
+
+
+
+
+/* normalize component */
+
+var component = normalizeComponent(
+  components_PaginationComponentvue_type_script_lang_js_,
+  PaginationComponentvue_type_template_id_4febc598_scoped_true_render,
+  PaginationComponentvue_type_template_id_4febc598_scoped_true_staticRenderFns,
+  false,
+  null,
+  "4febc598",
+  null
+  
+)
+
+/* harmony default export */ var PaginationComponent = (component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=template&id=19ec2d70&
+var FormComponentvue_type_template_id_19ec2d70_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{'is-active': _vm.active},attrs:{"id":"form-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Form")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),(_vm.data.data && _vm.meta)?_c('section',{staticClass:"modal-card-body"},[_c('form',{attrs:{"id":"form-save"}},_vm._l((_vm.meta.fields),function(field){return _c('div',{key:field.name,staticClass:"field"},[(field.type == 'text')?_c('text-component',{attrs:{"field":field,"data":_vm.data.data}}):_vm._e(),(field.type == 'date')?_c('date-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'image')?_c('file-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'textarea')?_c('textarea-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'select')?_c('select-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'checkbox')?_c('checkbox-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'toggle')?_c('toggle-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'colorpicker')?_c('color-picker-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'range')?_c('range-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'radio')?_c('radio-component',{attrs:{"field":field,"data":_vm.data.data}}):_vm._e()],1)}),0)]):_vm._e(),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button is-success",attrs:{"disabled":_vm.saveDisable},on:{"click":function($event){return _vm.save()}}},[_vm._v("Kaydet")]),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
+var FormComponentvue_type_template_id_19ec2d70_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=template&id=19ec2d70&
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
+var define_property = __webpack_require__("85f2");
+var define_property_default = /*#__PURE__*/__webpack_require__.n(define_property);
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    define_property_default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
+var web_dom_iterable = __webpack_require__("ac6a");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextComponent.vue?vue&type=template&id=35ba64c9&
+var TextComponentvue_type_template_id_35ba64c9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"input",attrs:{"type":"text","name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled,"readonly":_vm.field.readonly},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var TextComponentvue_type_template_id_35ba64c9_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/TextComponent.vue?vue&type=template&id=35ba64c9&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var TextComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"]
+});
+// CONCATENATED MODULE: ./src/components/form/TextComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_TextComponentvue_type_script_lang_js_ = (TextComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/TextComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var TextComponent_component = normalizeComponent(
+  form_TextComponentvue_type_script_lang_js_,
+  TextComponentvue_type_template_id_35ba64c9_render,
+  TextComponentvue_type_template_id_35ba64c9_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var TextComponent = (TextComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/DateComponent.vue?vue&type=template&id=3261187e&
+var DateComponentvue_type_template_id_3261187e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('flat-pickr',{staticClass:"input",attrs:{"name":_vm.field.name,"config":_vm.config,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}})],1),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var DateComponentvue_type_template_id_3261187e_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/DateComponent.vue?vue&type=template&id=3261187e&
+
+// EXTERNAL MODULE: ./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js
+var vue_flatpickr_min = __webpack_require__("c38f");
+var vue_flatpickr_min_default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_min);
+
+// EXTERNAL MODULE: ./node_modules/flatpickr/dist/flatpickr.css
+var flatpickr = __webpack_require__("0952");
+
+// EXTERNAL MODULE: ./node_modules/flatpickr/dist/themes/material_blue.css
+var material_blue = __webpack_require__("8e1f");
+
+// EXTERNAL MODULE: ./node_modules/flatpickr/dist/l10n/tr.js
+var tr = __webpack_require__("f80c");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/DateComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ var DateComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"],
+  components: {
+    flatPickr: vue_flatpickr_min_default.a
+  },
+  data: function data() {
+    var that = this;
+    return {
+      config: {
+        dateFormat: that.field.dateFormat ? that.field.dateFormat : "Y-m-d H:i",
+        enableTime: that.field.enableTime ? that.field.enableTime : true,
+        locale: tr["Turkish"]
+      }
+    };
+  }
+});
+// CONCATENATED MODULE: ./src/components/form/DateComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_DateComponentvue_type_script_lang_js_ = (DateComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/DateComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var DateComponent_component = normalizeComponent(
+  form_DateComponentvue_type_script_lang_js_,
+  DateComponentvue_type_template_id_3261187e_render,
+  DateComponentvue_type_template_id_3261187e_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var DateComponent = (DateComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/FileComponent.vue?vue&type=template&id=71b0da51&scoped=true&
+var FileComponentvue_type_template_id_71b0da51_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.data[_vm.field.name] != null)?_c('div',{},[(Array.isArray(_vm.data[_vm.field.name]))?_c('draggable',{staticClass:"columns",model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}},_vm._l((_vm.data[_vm.field.name]),function(image,index){return _c('div',{key:index + '-' + image,staticClass:"gallery",on:{"start":function($event){_vm.drag=true},"end":function($event){_vm.drag=false}}},[_c('input',{attrs:{"type":"hidden","name":'images[' + _vm.field.name + '][]'},domProps:{"value":image}}),_c('img',{staticClass:"column",attrs:{"src":image}}),_c('div',{staticClass:"remove",on:{"click":function($event){return _vm.removeItem(index)}}},[_vm._v("x")])])}),0):_c('div',{staticClass:"gallery"},[_c('input',{attrs:{"type":"hidden","name":'images[' + _vm.field.name + '][]'},domProps:{"value":_vm.data[_vm.field.name]}}),_c('a',{attrs:{"href":_vm.data[_vm.field.name],"target":"_blank"}},[_c('img',{attrs:{"src":_vm.data[_vm.field.name]},on:{"error":_vm.imgError}})]),_c('div',{staticClass:"remove",on:{"click":function($event){return _vm.removeItem()}}},[_vm._v("x")])]),_c('div',{staticClass:"clearfix"})],1):_vm._e(),_c('div',{staticClass:"file has-name"},[_c('label',{staticClass:"file-label"},[_c('input',{staticClass:"file-input",attrs:{"type":"file","name":_vm.field.multiple ? _vm.field.name + '[]' : _vm.field.name,"accept":"*","multiple":_vm.field.multiple == true},on:{"change":_vm.fileChange}}),_vm._m(0),_c('span',{staticClass:"file-name"},[_vm._v("Dosya Seçilmedi")])])])]),_c('p',{directives:[{name:"show",rawName:"v-show",value:(_vm.field.multiple),expression:"field.multiple"}],staticClass:"help"},[_vm._v("Birden fazla görsel ekleyebilirsiniz.")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var FileComponentvue_type_template_id_71b0da51_scoped_true_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"file-cta"},[_c('span',{staticClass:"file-icon"},[_c('i',{staticClass:"material-icons"},[_vm._v("cloud_upload")])]),_c('span',{staticClass:"file-label"},[_vm._v("Dosya Seç")])])}]
+
+
+// CONCATENATED MODULE: ./src/components/form/FileComponent.vue?vue&type=template&id=71b0da51&scoped=true&
+
+// EXTERNAL MODULE: ./node_modules/vuedraggable/dist/vuedraggable.common.js
+var vuedraggable_common = __webpack_require__("310e");
+var vuedraggable_common_default = /*#__PURE__*/__webpack_require__.n(vuedraggable_common);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/FileComponent.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var FileComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"],
+  components: {
+    draggable: vuedraggable_common_default.a
+  },
+  methods: {
+    removeItem: function removeItem() {
+      var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (Array.isArray(this.data[this.field.name])) {
+        this.data[this.field.name].splice(index, 1);
+      } else {
+        this.data[this.field.name] = null;
+      }
+    },
+    fileChange: function fileChange() {
+      var input = document.querySelector('input[name="' + (this.field.multiple ? this.field.name + "[]" : this.field.name) + '"]');
+      input.parentNode.querySelector(".file-name").textContent = input.files.length + " Dosya Seçildi";
+    },
+    imgError: function imgError(event) {
+      event.target.src = "./assets/file.png";
+      event.target.style = "width: 50px;height:50px;";
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/form/FileComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_FileComponentvue_type_script_lang_js_ = (FileComponentvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/form/FileComponent.vue?vue&type=style&index=0&id=71b0da51&lang=scss&scoped=true&
+var FileComponentvue_type_style_index_0_id_71b0da51_lang_scss_scoped_true_ = __webpack_require__("a8a1");
+
+// CONCATENATED MODULE: ./src/components/form/FileComponent.vue
+
+
+
+
+
+
+/* normalize component */
+
+var FileComponent_component = normalizeComponent(
+  form_FileComponentvue_type_script_lang_js_,
+  FileComponentvue_type_template_id_71b0da51_scoped_true_render,
+  FileComponentvue_type_template_id_71b0da51_scoped_true_staticRenderFns,
+  false,
+  null,
+  "71b0da51",
+  null
+  
+)
+
+/* harmony default export */ var FileComponent = (FileComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=template&id=0e7015a0&
+var TextareaComponentvue_type_template_id_0e7015a0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.field.editor)?_c('div',[_c('VueTrix',{attrs:{"inputId":'editor-' + _vm.field.name,"inputName":_vm.field.name,"placeholder":_vm.field.title + ' giriniz'},on:{"trix-attachment-add":_vm.handleAttachmentAdd},model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}})],1):_c('div',[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"textarea",attrs:{"name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})])]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var TextareaComponentvue_type_template_id_0e7015a0_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=template&id=0e7015a0&
+
+// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
+var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
+var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
+
+// EXTERNAL MODULE: ./node_modules/trix/dist/trix.js
+var trix = __webpack_require__("ad7e");
+
+// EXTERNAL MODULE: ./node_modules/trix/dist/trix.css
+var dist_trix = __webpack_require__("1208");
+
+// CONCATENATED MODULE: ./node_modules/vue-trix/dist/vue-trix.esm.js
+
+
+
+
+/**
+ *
+ * @param {*} component
+ */
+function EmitFileAccept (component) {
+  return {
+    methods: {
+      emitFileAccept: function emitFileAccept (file) {
+        this.$emit('trix-file-accept', file);
+      }
+    }
+  }
+}
+
+/**
+ *
+ * @param {*} component
+ */
+function EmitInitialize (component) {
+  return {
+    methods: {
+      emitInitialize: function emitInitialize (editor) {
+        this.$emit('trix-initialize', this.$refs.trix.editor, event);
+      }
+    }
+  }
+}
+
+/**
+ *
+ * @param {*} component
+ */
+function EmitAttachmentAdd (component) {
+  return {
+    methods: {
+      emitAttachmentAdd: function emitAttachmentAdd (file) {
+        this.$emit('trix-attachment-add', file);
+      }
+    }
+  }
+}
+
+/**
+ *
+ * @param {*} component
+ */
+function EmitSelectionChange (component) {
+  return {
+    methods: {
+      emitSelectionChange: function emitSelectionChange (event) {
+        this.$emit('trix-selection-change', this.$refs.trix.editor, event);
+      }
+    }
+  }
+}
+
+/**
+ *
+ * @param {*} component
+ */
+function EmitAttachmentRemove (component) {
+  return {
+    methods: {
+      emitAttachmentRemove: function emitAttachmentRemove (file) {
+        this.$emit('trix-attachment-remove', file);
+      }
+    }
+  }
+}
+
+/**
+ *
+ * @param {*} component
+ */
+function EmitBeforeInitialize (component) {
+  return {
+    methods: {
+      emitBeforeInitialize: function emitBeforeInitialize (event) {
+        this.$emit('trix-before-initialize', this.$refs.trix.editor, event);
+      }
+    }
+  }
+}
+
+//
+
+var script = {
+  name: 'VueTrix',
+  mixins: [
+    EmitFileAccept(),
+    EmitInitialize(),
+    EmitAttachmentAdd(),
+    EmitSelectionChange(),
+    EmitAttachmentRemove(),
+    EmitBeforeInitialize()
+  ],
+  model: {
+    prop: 'srcContent',
+    event: 'update'
+  },
+  props: {
+    /**
+     * This is referenced `id` of the hidden input field defined.
+     * It is optional and will be a random string by default.
+     */
+    inputId: {
+      type: String,
+      required: false,
+      default: function default$1 () {
+        return ''
+      }
+    },
+    /**
+     * This is referenced `name` of the hidden input field defined,
+     * default value is `content`.
+     */
+    inputName: {
+      type: String,
+      required: false,
+      default: function default$2 () {
+        return 'content'
+      }
+    },
+    /**
+     * The placeholder attribute specifies a short hint
+     * that describes the expected value of a editor.
+     */
+    placeholder: {
+      type: String,
+      required: false,
+      default: function default$3 () {
+        return ''
+      }
+    },
+    /**
+     * The source content is associcated to v-model directive.
+     */
+    srcContent: {
+      type: String,
+      required: false,
+      default: function default$4 () {
+        return ''
+      }
+    },
+    /**
+     * The boolean attribute allows saving editor state into browser's localStorage
+     * (optional, default is `false`).
+     */
+    localStorage: {
+      type: Boolean,
+      required: false,
+      default: function default$5 () {
+        return false
+      }
+    },
+    /**
+     * The function to call when editor is focused (optional).
+     */
+    trixFocus: {
+      type: Function,
+      required: false,
+      default: function () {
+      }
+    },
+    /**
+     * The function to call when editor goes out of focus (optional).
+     */
+    trixBlur: {
+      type: Function,
+      required: false,
+      default: function () {
+      }
+    }
+  },
+  created: function created () {
+    /**
+     *  If localStorage is enabled,
+     *  then load editor's content from the beginning.
+     */
+    if (this.localStorage) {
+      var savedValue = localStorage.getItem(this.storageId('VueTrix'));
+      if (savedValue && !this.srcContent) {
+        this.$refs.trix.editor.loadJSON(JSON.parse(savedValue));
+      }
+    }
+  },
+  data: function data () {
+    return {
+      editorContent: this.srcContent
+    }
+  },
+  methods: {
+    handleContentChange: function handleContentChange (event) {
+      this.editorContent = event.srcElement ? event.srcElement.innerHTML : event.target.innerHTML;
+      this.$emit('input', this.editorContent);
+    },
+    handleInitialContentChange: function handleInitialContentChange (newContent, oldContent) {
+      newContent = newContent === undefined ? '' : newContent;
+
+      if (this.$refs.trix.editor.innerHTML !== newContent) {
+        // Update editor's content when initial content changed
+        this.editorContent = newContent;
+      }
+    },
+    emitEditorState: function emitEditorState (value) {
+      /**
+       * If localStorage is enabled,
+       * then save editor's content into storage
+       */
+      if (this.localStorage) {
+        localStorage.setItem(
+          this.storageId('VueTrix'),
+          JSON.stringify(this.$refs.trix.editor)
+        );
+      }
+      this.$emit('update', this.editorContent);
+    },
+    storageId: function storageId (component) {
+      if (this.inputId) {
+        return (component + "." + (this.inputId) + ".content")
+      } else {
+        return (component + ".content")
+      }
+    },
+    reloadEditorContent: function reloadEditorContent (newContent) {
+      // Reload HTML content
+      this.$refs.trix.editor.loadHTML(newContent);
+
+      // Move cursor to end of new content updated
+      this.$refs.trix.editor.setSelectedRange(this.getContentEndPosition());
+    },
+    getContentEndPosition: function getContentEndPosition () {
+      return this.$refs.trix.editor.getDocument().toString().length - 1
+    }
+  },
+  computed: {
+    /**
+     * Compute a random id of hidden input
+     * when it haven't been specified.
+     */
+    generateId: function generateId () {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0;
+        var v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16)
+      })
+    },
+    initialContent: function initialContent () {
+      return this.srcContent
+    }
+  },
+  watch: {
+    editorContent: {
+      handler: 'emitEditorState'
+    },
+    initialContent: {
+      handler: 'handleInitialContentChange'
+    }
+  }
+};
+
+function vue_trix_esm_normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
+/* server only */
+, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+  if (typeof shadowMode !== 'boolean') {
+    createInjectorSSR = createInjector;
+    createInjector = shadowMode;
+    shadowMode = false;
+  } // Vue.extend constructor export interop.
+
+
+  var options = typeof script === 'function' ? script.options : script; // render functions
+
+  if (template && template.render) {
+    options.render = template.render;
+    options.staticRenderFns = template.staticRenderFns;
+    options._compiled = true; // functional template
+
+    if (isFunctionalTemplate) {
+      options.functional = true;
+    }
+  } // scopedId
+
+
+  if (scopeId) {
+    options._scopeId = scopeId;
+  }
+
+  var hook;
+
+  if (moduleIdentifier) {
+    // server build
+    hook = function hook(context) {
+      // 2.3 injection
+      context = context || // cached call
+      this.$vnode && this.$vnode.ssrContext || // stateful
+      this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext; // functional
+      // 2.2 with runInNewContext: true
+
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__;
+      } // inject component styles
+
+
+      if (style) {
+        style.call(this, createInjectorSSR(context));
+      } // register component module identifier for async chunk inference
+
+
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier);
+      }
+    }; // used by ssr in case component is cached and beforeCreate
+    // never gets called
+
+
+    options._ssrRegister = hook;
+  } else if (style) {
+    hook = shadowMode ? function () {
+      style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
+    } : function (context) {
+      style.call(this, createInjector(context));
+    };
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // register for functional component in vue file
+      var originalRender = options.render;
+
+      options.render = function renderWithStyleInjection(h, context) {
+        hook.call(context);
+        return originalRender(h, context);
+      };
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate;
+      options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+    }
+  }
+
+  return script;
+}
+
+var normalizeComponent_1 = vue_trix_esm_normalizeComponent;
+
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
+function createInjector(context) {
+  return function (id, style) {
+    return addStyle(id, style);
+  };
+}
+var HEAD;
+var styles = {};
+
+function addStyle(id, css) {
+  var group = isOldIE ? css.media || 'default' : id;
+  var style = styles[group] || (styles[group] = {
+    ids: new Set(),
+    styles: []
+  });
+
+  if (!style.ids.has(id)) {
+    style.ids.add(id);
+    var code = css.source;
+
+    if (css.map) {
+      // https://developer.chrome.com/devtools/docs/javascript-debugging
+      // this makes source maps inside style tags work properly in Chrome
+      code += '\n/*# sourceURL=' + css.map.sources[0] + ' */'; // http://stackoverflow.com/a/26603875
+
+      code += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) + ' */';
+    }
+
+    if (!style.element) {
+      style.element = document.createElement('style');
+      style.element.type = 'text/css';
+      if (css.media) { style.element.setAttribute('media', css.media); }
+
+      if (HEAD === undefined) {
+        HEAD = document.head || document.getElementsByTagName('head')[0];
+      }
+
+      HEAD.appendChild(style.element);
+    }
+
+    if ('styleSheet' in style.element) {
+      style.styles.push(code);
+      style.element.styleSheet.cssText = style.styles.filter(Boolean).join('\n');
+    } else {
+      var index = style.ids.size - 1;
+      var textNode = document.createTextNode(code);
+      var nodes = style.element.childNodes;
+      if (nodes[index]) { style.element.removeChild(nodes[index]); }
+      if (nodes.length) { style.element.insertBefore(textNode, nodes[index]); }else { style.element.appendChild(textNode); }
+    }
+  }
+}
+
+var browser = createInjector;
+
+/* script */
+var __vue_script__ = script;
+
+/* template */
+var __vue_render__ = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    { class: _vm.$style.trix_container },
+    [
+      _c("trix-editor", {
+        ref: "trix",
+        staticClass: "trix-content",
+        attrs: {
+          contenteditable: "true",
+          input: _vm.inputId || _vm.generateId,
+          placeholder: _vm.placeholder
+        },
+        on: {
+          "trix-change": _vm.handleContentChange,
+          "trix-file-accept": _vm.emitFileAccept,
+          "trix-attachment-add": _vm.emitAttachmentAdd,
+          "trix-attachment-remove": _vm.emitAttachmentRemove,
+          "trix-selection-change": _vm.emitSelectionChange,
+          "trix-initialize": _vm.emitInitialize,
+          "trix-before-initialize": _vm.emitBeforeInitialize,
+          "trix-focus": _vm.trixFocus,
+          "trix-blur": _vm.trixBlur
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        attrs: {
+          type: "hidden",
+          name: _vm.inputName,
+          id: _vm.inputId || _vm.generateId
+        },
+        domProps: { value: _vm.editorContent }
+      })
+    ],
+    1
+  )
+};
+var __vue_staticRenderFns__ = [];
+__vue_render__._withStripped = true;
+
+  /* style */
+  var __vue_inject_styles__ = function (inject) {
+    if (!inject) { return }
+    inject("data-v-66fdea98_0", { source: "\n.src-components-trix_container-5Bcy {\n  max-width: 100%;\n  height: auto;\n}\n.src-components-trix_container-5Bcy .src-components-trix-button-group-2D-J {\n  background-color: white;\n}\n.src-components-trix_container-5Bcy .src-components-trix-content-1TD_ {\n  background-color: white;\n}\n", map: {"version":3,"sources":["/home/hanh/side-projects/vue-trix/src/components/VueTrix.vue"],"names":[],"mappings":";AAwNA;EACA,eAAA;EACA,YAAA;AACA;AACA;EACA,uBAAA;AACA;AACA;EACA,uBAAA;AACA","file":"VueTrix.vue","sourcesContent":["<template>\n  <div\n    :class=\"$style.trix_container\"\n  >\n    <trix-editor\n      contenteditable=\"true\"\n      class=\"trix-content\"\n      ref=\"trix\"\n      :input=\"inputId || generateId\"\n      :placeholder=\"placeholder\"\n      @trix-change=\"handleContentChange\"\n      @trix-file-accept=\"emitFileAccept\"\n      @trix-attachment-add=\"emitAttachmentAdd\"\n      @trix-attachment-remove=\"emitAttachmentRemove\"\n      @trix-selection-change=\"emitSelectionChange\"\n      @trix-initialize=\"emitInitialize\"\n      @trix-before-initialize=\"emitBeforeInitialize\"\n      @trix-focus=\"trixFocus\"\n      @trix-blur=\"trixBlur\"\n    ></trix-editor>\n    <input\n      type=\"hidden\"\n      :name=\"inputName\"\n      :id=\"inputId || generateId\"\n      :value=\"editorContent\"\n    >\n  </div>\n</template>\n\n<script>\nimport 'trix'\nimport 'trix/dist/trix.css'\nimport EmitFileAccept from '../mixins/EmitFileAccept.js'\nimport EmitInitialize from '../mixins/EmitInitialize.js'\nimport EmitAttachmentAdd from '../mixins/EmitAttachmentAdd.js'\nimport EmitSelectionChange from '../mixins/EmitSelectionChange.js'\nimport EmitAttachmentRemove from '../mixins/EmitAttachmentRemove.js'\nimport EmitBeforeInitialize from '../mixins/EmitBeforeInitialize.js'\n\nexport default {\n  name: 'VueTrix',\n  mixins: [\n    EmitFileAccept('VueTrix'),\n    EmitInitialize('VueTrix'),\n    EmitAttachmentAdd('VueTrix'),\n    EmitSelectionChange('VueTrix'),\n    EmitAttachmentRemove('VueTrix'),\n    EmitBeforeInitialize('VueTrix')\n  ],\n  model: {\n    prop: 'srcContent',\n    event: 'update'\n  },\n  props: {\n    /**\n     * This is referenced `id` of the hidden input field defined.\n     * It is optional and will be a random string by default.\n     */\n    inputId: {\n      type: String,\n      required: false,\n      default () {\n        return ''\n      }\n    },\n    /**\n     * This is referenced `name` of the hidden input field defined,\n     * default value is `content`.\n     */\n    inputName: {\n      type: String,\n      required: false,\n      default () {\n        return 'content'\n      }\n    },\n    /**\n     * The placeholder attribute specifies a short hint\n     * that describes the expected value of a editor.\n     */\n    placeholder: {\n      type: String,\n      required: false,\n      default () {\n        return ''\n      }\n    },\n    /**\n     * The source content is associcated to v-model directive.\n     */\n    srcContent: {\n      type: String,\n      required: false,\n      default () {\n        return ''\n      }\n    },\n    /**\n     * The boolean attribute allows saving editor state into browser's localStorage\n     * (optional, default is `false`).\n     */\n    localStorage: {\n      type: Boolean,\n      required: false,\n      default () {\n        return false\n      }\n    },\n    /**\n     * The function to call when editor is focused (optional).\n     */\n    trixFocus: {\n      type: Function,\n      required: false,\n      default: () => {\n      }\n    },\n    /**\n     * The function to call when editor goes out of focus (optional).\n     */\n    trixBlur: {\n      type: Function,\n      required: false,\n      default: () => {\n      }\n    }\n  },\n  created () {\n    /**\n     *  If localStorage is enabled,\n     *  then load editor's content from the beginning.\n     */\n    if (this.localStorage) {\n      const savedValue = localStorage.getItem(this.storageId('VueTrix'))\n      if (savedValue && !this.srcContent) {\n        this.$refs.trix.editor.loadJSON(JSON.parse(savedValue))\n      }\n    }\n  },\n  data () {\n    return {\n      editorContent: this.srcContent\n    }\n  },\n  methods: {\n    handleContentChange (event) {\n      this.editorContent = event.srcElement ? event.srcElement.innerHTML : event.target.innerHTML\n      this.$emit('input', this.editorContent)\n    },\n    handleInitialContentChange (newContent, oldContent) {\n      newContent = newContent === undefined ? '' : newContent\n\n      if (this.$refs.trix.editor.innerHTML !== newContent) {\n        // Update editor's content when initial content changed\n        this.editorContent = newContent\n      }\n    },\n    emitEditorState (value) {\n      /**\n       * If localStorage is enabled,\n       * then save editor's content into storage\n       */\n      if (this.localStorage) {\n        localStorage.setItem(\n          this.storageId('VueTrix'),\n          JSON.stringify(this.$refs.trix.editor)\n        )\n      }\n      this.$emit('update', this.editorContent)\n    },\n    storageId (component) {\n      if (this.inputId) {\n        return `${component}.${this.inputId}.content`\n      } else {\n        return `${component}.content`\n      }\n    },\n    reloadEditorContent (newContent) {\n      // Reload HTML content\n      this.$refs.trix.editor.loadHTML(newContent)\n\n      // Move cursor to end of new content updated\n      this.$refs.trix.editor.setSelectedRange(this.getContentEndPosition())\n    },\n    getContentEndPosition () {\n      return this.$refs.trix.editor.getDocument().toString().length - 1\n    }\n  },\n  computed: {\n    /**\n     * Compute a random id of hidden input\n     * when it haven't been specified.\n     */\n    generateId () {\n      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {\n        var r = Math.random() * 16 | 0\n        var v = c === 'x' ? r : (r & 0x3 | 0x8)\n        return v.toString(16)\n      })\n    },\n    initialContent () {\n      return this.srcContent\n    }\n  },\n  watch: {\n    editorContent: {\n      handler: 'emitEditorState'\n    },\n    initialContent: {\n      handler: 'handleInitialContentChange'\n    }\n  }\n}\n</script>\n\n<style lang=\"css\" module>\n.trix_container {\n  max-width: 100%;\n  height: auto;\n}\n.trix_container .trix-button-group {\n  background-color: white;\n}\n.trix_container .trix-content {\n  background-color: white;\n}\n</style>\n"]}, media: undefined });
+Object.defineProperty(this, "$style", { value: {"trix_container":"src-components-trix_container-5Bcy","trix-button-group":"src-components-trix-button-group-2D-J","trix-content":"src-components-trix-content-1TD_"} });
+
+  };
+  /* scoped */
+  var __vue_scope_id__ = undefined;
+  /* module identifier */
+  var __vue_module_identifier__ = undefined;
+  /* functional template */
+  var __vue_is_functional_template__ = false;
+  /* style inject SSR */
+  
+
+  
+  var VueTrix = normalizeComponent_1(
+    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+    __vue_inject_styles__,
+    __vue_script__,
+    __vue_scope_id__,
+    __vue_is_functional_template__,
+    __vue_module_identifier__,
+    browser,
+    undefined
+  );
+
+/*
+ * Vue-Trix index.js
+ * Author: tranduchanh.ms@gmail.com
+ * Github: https://github.com/hanhdt/vue-trix
+ */
+external_commonjs_vue_commonjs2_vue_root_Vue_default.a.config.ignoredElements = ['trix-editor'];
+
+external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component(VueTrix.name, VueTrix);
+
+/* harmony default export */ var vue_trix_esm = (VueTrix);
+//# sourceMappingURL=vue-trix.esm.js.map
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ var TextareaComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"],
+  components: {
+    VueTrix: vue_trix_esm
+  },
+  methods: {
+    handleAttachmentAdd: function handleAttachmentAdd(event) {
+      var file = event.attachment.file;
+      var formData = new FormData();
+      formData.append("file", file);
+      axios_default.a.post(window.location.origin + "/api/uploadFile", formData).then(function (response) {
+        var attributes = {
+          url: response.data,
+          href: response.data
+        };
+        event.attachment.setAttributes(attributes);
+      });
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_TextareaComponentvue_type_script_lang_js_ = (TextareaComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var TextareaComponent_component = normalizeComponent(
+  form_TextareaComponentvue_type_script_lang_js_,
+  TextareaComponentvue_type_template_id_0e7015a0_render,
+  TextareaComponentvue_type_template_id_0e7015a0_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var TextareaComponent = (TextareaComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/SelectComponent.vue?vue&type=template&id=27e960be&
+var SelectComponentvue_type_template_id_27e960be_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('v-select',{attrs:{"options":_vm.field.options,"multiple":_vm.field.multiple == true,"disabled":_vm.field.disabled,"getOptionLabel":_vm.getOptionLabel},model:{value:(_vm.selected),callback:function ($$v) {_vm.selected=$$v},expression:"selected"}}),(Array.isArray(_vm.selected))?_c('div',_vm._l((_vm.selected),function(select){return _c('input',{key:select.value,attrs:{"type":"hidden","name":_vm.field.multiple ? _vm.field.name + '[]' : _vm.field.name},domProps:{"value":select.value}})}),0):_c('div',[_c('input',{attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":_vm.selected.value}})])],1),_c('p',{directives:[{name:"show",rawName:"v-show",value:(_vm.field.multiple),expression:"field.multiple"}],staticClass:"help"},[_vm._v("Birden fazla seçenek seçebilirsiniz.")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var SelectComponentvue_type_template_id_27e960be_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/SelectComponent.vue?vue&type=template&id=27e960be&
+
+// EXTERNAL MODULE: ./node_modules/vue-select/dist/vue-select.js
+var vue_select = __webpack_require__("4a7a");
+var vue_select_default = /*#__PURE__*/__webpack_require__.n(vue_select);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/SelectComponent.vue?vue&type=script&lang=js&
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var SelectComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"],
+  components: {
+    vSelect: vue_select_default.a
+  },
+  data: function data() {
+    return {
+      selected: []
+    };
+  },
+  mounted: function mounted() {
+    // TODO: burası biraz daha optimize edilmesi lazım
+    var selected = this.data[this.field.name];
+
+    if (Array.isArray(selected) && typeof_typeof(selected[0]) != "object") {
+      selected = this.field.options.filter(function (option) {
+        return selected.includes(option.value);
+      });
+    } else if (!Array.isArray(selected)) {
+      selected = this.field.options.filter(function (option) {
+        return option.value == selected;
+      });
+    }
+
+    this.selected = selected;
+  },
+  methods: {
+    getOptionLabel: function getOptionLabel(option) {
+      var label = option.label;
+
+      if (option.parent != null) {
+        label = "+\t" + label;
+      }
+
+      return label;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/form/SelectComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_SelectComponentvue_type_script_lang_js_ = (SelectComponentvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/form/SelectComponent.vue?vue&type=style&index=0&lang=scss&
+var SelectComponentvue_type_style_index_0_lang_scss_ = __webpack_require__("c83e");
+
+// CONCATENATED MODULE: ./src/components/form/SelectComponent.vue
+
+
+
+
+
+
+/* normalize component */
+
+var SelectComponent_component = normalizeComponent(
+  form_SelectComponentvue_type_script_lang_js_,
+  SelectComponentvue_type_template_id_27e960be_render,
+  SelectComponentvue_type_template_id_27e960be_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var SelectComponent = (SelectComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/CheckboxComponent.vue?vue&type=template&id=712ffa67&
+var CheckboxComponentvue_type_template_id_712ffa67_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"checkbox"},[_c('input',{attrs:{"type":"checkbox","name":_vm.field.multiple ? _vm.field.name + '[]' : _vm.field.name,"multiple":_vm.field.multiple == true,"disabled":_vm.field.disabled},domProps:{"checked":_vm.data[_vm.field.name]}}),_vm._v("\n    "+_vm._s(_vm.field.title)+"\n  ")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var CheckboxComponentvue_type_template_id_712ffa67_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/CheckboxComponent.vue?vue&type=template&id=712ffa67&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/CheckboxComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var CheckboxComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"]
+});
+// CONCATENATED MODULE: ./src/components/form/CheckboxComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_CheckboxComponentvue_type_script_lang_js_ = (CheckboxComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/CheckboxComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var CheckboxComponent_component = normalizeComponent(
+  form_CheckboxComponentvue_type_script_lang_js_,
+  CheckboxComponentvue_type_template_id_712ffa67_render,
+  CheckboxComponentvue_type_template_id_712ffa67_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var CheckboxComponent = (CheckboxComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ToggleComponent.vue?vue&type=template&id=32ae0928&
+var ToggleComponentvue_type_template_id_32ae0928_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"}],staticClass:"input",attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":(_vm.value)},on:{"input":function($event){if($event.target.composing){ return; }_vm.value=$event.target.value}}}),_c('toggle-button',{attrs:{"labels":{checked: this.field.titleOn, unchecked: this.field.titleOff},"width":"100","height":"30"},model:{value:(_vm.value),callback:function ($$v) {_vm.value=$$v},expression:"value"}})],1),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var ToggleComponentvue_type_template_id_32ae0928_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/ToggleComponent.vue?vue&type=template&id=32ae0928&
+
+// EXTERNAL MODULE: ./node_modules/vue-js-toggle-button/dist/index.js
+var dist = __webpack_require__("f206");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ToggleComponent.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var ToggleComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"],
+  data: function data() {
+    var that = this;
+    return {
+      value: that.data[that.field.name] == "true" || that.data[that.field.name] == "1" ? true : false
+    };
+  },
+  components: {
+    ToggleButton: dist["ToggleButton"]
+  }
+});
+// CONCATENATED MODULE: ./src/components/form/ToggleComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_ToggleComponentvue_type_script_lang_js_ = (ToggleComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/ToggleComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var ToggleComponent_component = normalizeComponent(
+  form_ToggleComponentvue_type_script_lang_js_,
+  ToggleComponentvue_type_template_id_32ae0928_render,
+  ToggleComponentvue_type_template_id_32ae0928_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var ToggleComponent = (ToggleComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ColorPickerComponent.vue?vue&type=template&id=79bce888&
+var ColorPickerComponentvue_type_template_id_79bce888_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"input",staticStyle:{"width":"100%"},attrs:{"type":"color","name":_vm.field.name},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}}),_vm._v("\n      "+_vm._s(_vm.data[_vm.field.name])+"\n    ")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var ColorPickerComponentvue_type_template_id_79bce888_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/ColorPickerComponent.vue?vue&type=template&id=79bce888&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ColorPickerComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var ColorPickerComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"]
+});
+// CONCATENATED MODULE: ./src/components/form/ColorPickerComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_ColorPickerComponentvue_type_script_lang_js_ = (ColorPickerComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/ColorPickerComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var ColorPickerComponent_component = normalizeComponent(
+  form_ColorPickerComponentvue_type_script_lang_js_,
+  ColorPickerComponentvue_type_template_id_79bce888_render,
+  ColorPickerComponentvue_type_template_id_79bce888_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var ColorPickerComponent = (ColorPickerComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RangeComponent.vue?vue&type=template&id=f330b46e&
+var RangeComponentvue_type_template_id_f330b46e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"input",staticStyle:{"width":"100%"},attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}}),_c('vue-range-slider',{ref:"slider",staticClass:"sliderVue",model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}})],1),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var RangeComponentvue_type_template_id_f330b46e_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/RangeComponent.vue?vue&type=template&id=f330b46e&
+
+// EXTERNAL MODULE: ./node_modules/vue-range-component/dist/vue-range-slider.css
+var vue_range_slider = __webpack_require__("e1b1");
+
+// CONCATENATED MODULE: ./node_modules/vue-range-component/dist/vue-range-slider.esm.js
+/*!
+ * vue-range-slider v1.0.3
+ * (c) 2016-2018 xwpongithub
+ * Released under the MIT License.
+ */
+// Unsharp text [#166](https://github.com/NightCatSama/vue-slider-component/issues/166)
+var roundToDPR = function () {
+  var r = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+  return function (value) {
+    return Math.round(value * r) / r;
+  };
+}();
+var isMobile = function () {
+  var userAgentInfo = navigator.userAgent.toLowerCase();
+  var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+  var flag = false;
+
+  for (var v = 0; v < agents.length; v++) {
+    if (userAgentInfo.indexOf(agents[v].toLowerCase()) > 0) {
+      flag = true;
+      break;
+    }
+  }
+
+  return flag;
+}();
+function isArray(input) {
+  if (Array.prototype.isArray) {
+    return Array.isArray(input);
+  }
+
+  return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
+}
+function isDiff(a, b) {
+  if (Object.prototype.toString.call(a) !== Object.prototype.toString.call(b)) {
+    return true;
+  } else if (isArray(a) && a.length === b.length) {
+    return a.some(function (v, i) {
+      return v !== b[i];
+    });
+  }
+
+  return a !== b;
+}
+var elementStyle = document.createElement('div').style;
+
+var vendor = function () {
+  var transformNames = {
+    webkit: 'webkitTransform',
+    Moz: 'MozTransform',
+    O: 'OTransform',
+    ms: 'msTransform',
+    standard: 'transform'
+  };
+
+  for (var key in transformNames) {
+    if (elementStyle[transformNames[key]] !== undefined) {
+      return key;
+    }
+  }
+
+  return false;
+}();
+
+function prefixStyle(style) {
+  if (vendor === false) {
+    return false;
+  }
+
+  if (vendor === 'standard') {
+    if (style === 'transitionEnd') {
+      return 'transitionend';
+    }
+
+    return style;
+  }
+
+  return vendor + style.charAt(0).toUpperCase() + style.substr(1);
+}
+function addEvent(el, type, fn, capture) {
+  el.addEventListener(type, fn, {
+    passive: false,
+    capture: !!capture
+  });
+}
+function removeEvent(el, type, fn, capture) {
+  el.removeEventListener(type, fn, {
+    passive: false,
+    capture: !!capture
+  });
+}
+
+var transform = prefixStyle('transform');
+var transitionDuration = prefixStyle('transitionDuration');
+var transitionEnd = prefixStyle('transitionEnd');
+var EVENT_TOUCH_START = 'touchstart';
+var EVENT_TOUCH_MOVE = 'touchmove';
+var EVENT_TOUCH_END = 'touchend';
+var EVENT_TOUCH_CANCEL = 'touchcancel';
+var EVENT_MOUSE_DOWN = 'mousedown';
+var EVENT_MOUSE_MOVE = 'mousemove';
+var EVENT_MOUSE_UP = 'mouseup';
+var EVENT_MOUSE_LEAVE = 'mouseleave';
+var EVENT_KEY_DOWN = 'keydown';
+var EVENT_KEY_UP = 'keyup';
+var EVENT_RESIZE = 'resize';
+var Slider = {
+  name: 'vue-range-slider',
+  props: {
+    // 是否显示组件
+    show: {
+      type: Boolean,
+      default: true
+    },
+    // 值
+    value: {
+      type: [String, Number, Array, Object],
+      default: 0
+    },
+    // 最小值
+    min: {
+      type: Number,
+      default: 0
+    },
+    // 最大值
+    max: {
+      type: Number,
+      default: 100
+    },
+    // 分段间隔
+    step: {
+      type: Number,
+      default: 1
+    },
+    // 组件宽度
+    width: {
+      type: [Number, String],
+      default: 'auto'
+    },
+    // 组件高度
+    height: {
+      type: [Number, String],
+      default: 6
+    },
+    // 滑块大小
+    dotSize: {
+      type: Number,
+      default: 16
+    },
+    dotWidth: {
+      type: Number,
+      required: false
+    },
+    dotHeight: {
+      type: Number,
+      required: false
+    },
+    stopPropagation: {
+      type: Boolean,
+      default: false
+    },
+    // 事件类型
+    eventType: {
+      type: String,
+      default: 'auto'
+    },
+    // 是否实时计算组件布局
+    realTime: {
+      type: Boolean,
+      default: false
+    },
+    // 是否显示工具提示
+    tooltip: {
+      type: [String, Boolean],
+      default: 'always',
+      validator: function validator(val) {
+        return ['hover', 'always'].indexOf(val) > -1;
+      }
+    },
+    // 组件方向
+    direction: {
+      type: String,
+      default: 'horizontal',
+      validator: function validator(val) {
+        return ['horizontal', 'vertical'].indexOf(val) > -1;
+      }
+    },
+    // 是否反向组件
+    reverse: {
+      type: Boolean,
+      default: false
+    },
+    // 是否不可用
+    disabled: {
+      type: [Boolean, Array],
+      default: false
+    },
+    piecewiseLabel: {
+      type: Boolean,
+      default: false
+    },
+    piecewise: {
+      type: Boolean,
+      default: false
+    },
+    // 进度条是否可拖拽（只限范围模式）
+    processDraggable: {
+      type: Boolean,
+      default: false
+    },
+    // 是否可点击的
+    clickable: {
+      type: Boolean,
+      default: true
+    },
+    // 是否固定距离
+    fixed: {
+      type: Boolean,
+      default: false
+    },
+    // 是否为开发环境（打印错误）
+    debug: {
+      type: Boolean,
+      default: true
+    },
+    // 最小范围
+    minRange: {
+      type: Number
+    },
+    // 最大范围
+    maxRange: {
+      type: Number
+    },
+    tooltipMerge: {
+      type: Boolean,
+      default: true
+    },
+    // 是否开启初始动画
+    startAnimation: {
+      type: Boolean,
+      default: false
+    },
+    // 是否在拖拽结束后同步值
+    lazy: {
+      type: Boolean,
+      default: false
+    },
+    // 在范围模式中，是否允许交叉
+    enableCross: {
+      type: Boolean,
+      default: true
+    },
+    // 动画速度比
+    speed: {
+      type: Number,
+      default: 0.5
+    },
+    useKeyboard: {
+      type: Boolean,
+      default: false
+    },
+    actionsKeyboard: {
+      type: Array,
+      default: function _default() {
+        return [function (i) {
+          return i - 1;
+        }, function (i) {
+          return i + 1;
+        }];
+      }
+    },
+    data: Array,
+    formatter: [String, Function],
+    mergeFormatter: [String, Function],
+    // 工具提示方向
+    tooltipDir: [Array, String],
+    // 工具提示样式
+    tooltipStyle: [Array, Object, Function],
+    // 滑块样式
+    sliderStyle: [Array, Object, Function],
+    // 键盘控制时，算滑块获得焦点时样式
+    focusStyle: [Array, Object, Function],
+    // 组件禁用状态下样式
+    disabledStyle: Object,
+    // 进度条样式
+    processStyle: Object,
+    // 组件背景样式
+    bgStyle: Object,
+    piecewiseStyle: Object,
+    piecewiseActiveStyle: Object,
+    disabledDotStyle: [Array, Object, Function],
+    labelStyle: Object,
+    labelActiveStyle: Object
+  },
+  data: function data() {
+    return {
+      currentValue: 0,
+      size: 0,
+      fixedValue: 0,
+      focusSlider: 0,
+      currentSlider: 0,
+      flag: false,
+      processFlag: false,
+      processSign: false,
+      keydownFlag: false,
+      focusFlag: false,
+      dragFlag: false,
+      crossFlag: false,
+      isComponentExists: true,
+      isMounted: false
+    };
+  },
+  render: function render(h) {
+    var _this = this;
+
+    var sliderConBlocks = []; // dot
+
+    if (this.isRange) {
+      var dot0 = h('div', {
+        ref: 'dot0',
+        staticClass: 'slider-dot',
+        class: [this.tooltipStatus, {
+          'slider-dot-focus': this.focusFlag && this.focusSlider === 0,
+          'slider-dot-dragging': this.flag && this.currentSlider === 0,
+          'slider-dot-disabled': !this.boolDisabled && this.disabledArray[0]
+        }],
+        style: [this.dotStyles, !this.boolDisabled && this.disabledArray[0] ? this.disabledDotStyles[0] : null, this.sliderStyles[0], this.focusFlag && this.focusSlider === 0 ? this.focusStyles[0] : null]
+      }, [h('div', {
+        ref: 'tooltip0',
+        staticClass: 'slider-tooltip-wrap',
+        class: "slider-tooltip-".concat(this.tooltipDirection[0])
+      }, [this._t('tooltip', [h('span', {
+        staticClass: 'slider-tooltip',
+        style: this.tooltipStyles[0]
+      }, this.formatter ? this.formatting(this.val[0]) : this.val[0])], {
+        value: this.val[0],
+        index: 0,
+        disabled: !this.boolDisabled && this.disabledArray[0]
+      })])]);
+      sliderConBlocks.push(dot0);
+      var dot1 = h('div', {
+        ref: 'dot1',
+        staticClass: 'slider-dot',
+        class: [this.tooltipStatus, {
+          'slider-dot-focus': this.focusFlag && this.focusSlider === 1,
+          'slider-dot-dragging': this.flag && this.currentSlider === 1,
+          'slider-dot-disabled': !this.boolDisabled && this.disabledArray[1]
+        }],
+        style: [this.dotStyles, !this.boolDisabled && this.disabledArray[1] ? this.disabledDotStyles[1] : null, this.sliderStyles[1], this.focusFlag && this.focusSlider === 1 ? this.focusStyles[1] : null]
+      }, [h('div', {
+        ref: 'tooltip1',
+        staticClass: 'slider-tooltip-wrap',
+        class: "slider-tooltip-".concat(this.tooltipDirection[1])
+      }, [this._t('tooltip', [h('span', {
+        staticClass: 'slider-tooltip',
+        style: this.tooltipStyles[1]
+      }, this.formatter ? this.formatting(this.val[1]) : this.val[1])], {
+        value: this.val[1],
+        index: 1,
+        disabled: !this.boolDisabled && this.disabledArray[1]
+      })])]);
+      sliderConBlocks.push(dot1);
+    } else {
+      var dot = h('div', {
+        ref: 'dot',
+        staticClass: 'slider-dot',
+        class: [this.tooltipStatus, {
+          'slider-dot-focus': this.focusFlag && this.focusSlider === 0,
+          'slider-dot-dragging': this.flag && this.currentSlider === 0
+        }],
+        style: [this.dotStyles, this.sliderStyles, this.focusFlag && this.focusSlider === 0 ? this.focusStyles : null]
+      }, [h('div', {
+        staticClass: 'slider-tooltip-wrap',
+        class: "slider-tooltip-".concat(this.tooltipDirection)
+      }, [this._t('tooltip', [h('span', {
+        staticClass: 'slider-tooltip',
+        style: this.tooltipStyles
+      }, this.formatter ? this.formatting(this.val) : this.val)], {
+        value: this.val
+      })])]);
+      sliderConBlocks.push(dot);
+    } // piecewise
+
+
+    var dotWrapLen = this.piecewiseDotWrap.length;
+    var ulBlock = h('ul', {
+      staticClass: 'slider-piecewise'
+    }, this._l(this.piecewiseDotWrap, function (item, i) {
+      var piecewiseDot = [];
+
+      if (_this.piecewise) {
+        piecewiseDot.push(h('span', {
+          staticClass: 'piecewise-dot',
+          style: [_this.piecewiseStyle, item.inRange ? _this.piecewiseActiveStyle : null]
+        }));
+      }
+
+      var piecewiseLabel = [];
+
+      if (_this.piecewiseLabel) {
+        piecewiseLabel.push(h('span', {
+          staticClass: 'piecewise-label',
+          style: [_this.labelStyle, item.inRange ? _this.labelActiveStyle : null]
+        }, item.label));
+      }
+
+      return h('li', {
+        key: i,
+        staticClass: 'piecewise-item',
+        style: [_this.piecewiseDotStyle, item.style]
+      }, [_this._t('piecewise', piecewiseDot, {
+        label: item.label,
+        index: i,
+        first: i === 0,
+        last: i === dotWrapLen - 1,
+        active: item.inRange
+      }), _this._t('label', piecewiseLabel, {
+        label: item.label,
+        index: i,
+        first: i === 0,
+        last: i === dotWrapLen - 1,
+        active: item.inRange
+      })]);
+    }));
+    sliderConBlocks.push(ulBlock); // process
+
+    var processBlock = h('div', {
+      ref: 'process',
+      staticClass: 'slider-process',
+      class: {
+        'slider-process-draggable': this.isRange && this.processDraggable
+      },
+      style: this.processStyle,
+      on: {
+        click: function click(e) {
+          return _this.processClick(e);
+        }
+      }
+    }, [h('div', {
+      ref: 'mergedTooltip',
+      staticClass: 'merged-tooltip slider-tooltip-wrap',
+      class: "slider-tooltip-".concat(this.isRange ? this.tooltipDirection[0] : this.tooltipDirection),
+      style: this.tooltipMergedPosition
+    }, [this._t('tooltip', [h('span', {
+      staticClass: 'slider-tooltip',
+      style: this.tooltipStyles
+    }, this.mergeFormatter ? this.mergeFormatting(this.val[0], this.val[1]) : this.formatter ? this.val[0] === this.val[1] ? this.formatting(this.val[0]) : "".concat(this.formatting(this.val[0]), " - ").concat(this.formatting(this.val[1])) : this.val[0] === this.val[1] ? this.val[0] : "".concat(this.val[0], " - ").concat(this.val[1]))], {
+      value: this.val,
+      merge: true
+    })])]);
+    sliderConBlocks.push(processBlock); // <input type="range">
+
+    if (!this.isRange && !this.data) {
+      sliderConBlocks.push(h('input', {
+        staticClass: 'slider-input',
+        attrs: {
+          type: 'range',
+          min: this.min,
+          max: this.max
+        },
+        domProps: {
+          value: this.val
+        },
+        on: {
+          input: function input(e) {
+            return _this.val = e.target.value;
+          }
+        }
+      }));
+    }
+
+    return h('div', {
+      ref: 'wrap',
+      staticClass: 'vue-range-slider slider-component',
+      class: [this.flowDirection, this.disabledClass, this.stateClass, {
+        'slider-has-label': this.piecewiseLabel
+      }],
+      style: [this.wrapStyles, this.boolDisabled ? this.disabledStyle : null],
+      directives: [{
+        name: 'show',
+        value: this.show
+      }],
+      on: {
+        click: function click(e) {
+          return _this.wrapClick(e);
+        }
+      }
+    }, [h('div', {
+      ref: 'elem',
+      staticClass: 'slider',
+      style: [this.elemStyles, this.bgStyle],
+      attrs: {
+        'aria-hidden': true
+      }
+    }, sliderConBlocks)]);
+  },
+  computed: {
+    val: {
+      get: function get() {
+        return this.data ? this.isRange ? [this.data[this.currentValue[0]], this.data[this.currentValue[1]]] : this.data[this.currentValue] : this.currentValue;
+      },
+      set: function set(val) {
+        if (this.data) {
+          if (this.isRange) {
+            var index0 = this.data.indexOf(val[0]);
+            var index1 = this.data.indexOf(val[1]);
+
+            if (index0 > -1 && index1 > -1) {
+              this.currentValue = [index0, index1];
+            }
+          } else {
+            var index = this.data.indexOf(val);
+
+            if (index > -1) {
+              this.currentValue = index;
+            }
+          }
+        } else {
+          this.currentValue = val;
+        }
+      }
+    },
+    currentIndex: function currentIndex() {
+      if (this.isRange) {
+        return this.data ? this.currentValue : [this.getIndexByValue(this.currentValue[0]), this.getIndexByValue(this.currentValue[1])];
+      } else {
+        return this.getIndexByValue(this.currentValue);
+      }
+    },
+    tooltipMergedPosition: function tooltipMergedPosition() {
+      if (!this.isMounted) return {};
+      var tooltipDirection = this.tooltipDirection[0];
+      var dot0 = this.$refs.dot0;
+
+      if (dot0) {
+        var style = {};
+
+        if (this.direction === 'vertical') {
+          style[tooltipDirection] = "-".concat(this.dotHeightVal / 2 - this.width / 2 + 9, "px");
+        } else {
+          style[tooltipDirection] = "-".concat(this.dotWidthVal / 2 - this.height / 2 + 9, "px");
+          style['left'] = "50%";
+        }
+
+        return style;
+      }
+    },
+    tooltipDirection: function tooltipDirection() {
+      var dir = this.tooltipDir || (this.direction === 'vertical' ? 'left' : 'top');
+
+      if (isArray(dir)) {
+        return this.isRange ? dir : dir[1];
+      } else {
+        return this.isRange ? [dir, dir] : dir;
+      }
+    },
+    piecewiseDotWrap: function piecewiseDotWrap() {
+      if (!this.piecewise && !this.piecewiseLabel) {
+        return false;
+      }
+
+      var arr = [];
+
+      for (var i = 0; i <= this.total; i++) {
+        var style = this.direction === 'vertical' ? {
+          bottom: "".concat(this.gap * i - this.width / 2, "px"),
+          left: 0
+        } : {
+          left: "".concat(this.gap * i - this.height / 2, "px"),
+          top: 0
+        };
+        var index = this.reverse ? this.total - i : i;
+        var label = this.data ? this.data[index] : this.spacing * index + this.min;
+        arr.push({
+          style: style,
+          label: this.formatter ? this.formatting(label) : label,
+          inRange: index >= this.indexRange[0] && index <= this.indexRange[1]
+        });
+      }
+
+      return arr;
+    },
+    total: function total() {
+      if (this.data) {
+        return this.data.length - 1;
+      } else if (Math.floor((this.maximum - this.minimum) * this.multiple) % (this.step * this.multiple) !== 0) {
+        this.printError('Prop[step] is illegal, Please make sure that the step can be divisible');
+      }
+
+      return (this.maximum - this.minimum) / this.step;
+    },
+    piecewiseDotStyle: function piecewiseDotStyle() {
+      return this.direction === 'vertical' ? {
+        width: "".concat(this.width, "px"),
+        height: "".concat(this.width, "px")
+      } : {
+        width: "".concat(this.height, "px"),
+        height: "".concat(this.height, "px")
+      };
+    },
+    dotStyles: function dotStyles() {
+      return this.direction === 'vertical' ? {
+        width: "".concat(this.dotWidthVal, "px"),
+        height: "".concat(this.dotHeightVal, "px"),
+        left: "".concat(-(this.dotWidthVal - this.width) / 2, "px")
+      } : {
+        width: "".concat(this.dotWidthVal, "px"),
+        height: "".concat(this.dotHeightVal, "px"),
+        top: "".concat(-(this.dotHeightVal - this.height) / 2, "px")
+      };
+    },
+    sliderStyles: function sliderStyles() {
+      if (isArray(this.sliderStyle)) {
+        return this.isRange ? this.sliderStyle : this.sliderStyle[1];
+      } else if (typeof this.sliderStyle === 'function') {
+        return this.sliderStyle(this.val, this.currentIndex);
+      } else {
+        return this.isRange ? [this.sliderStyle, this.sliderStyle] : this.sliderStyle;
+      }
+    },
+    tooltipStyles: function tooltipStyles() {
+      if (isArray(this.tooltipStyle)) {
+        return this.isRange ? this.tooltipStyle : this.tooltipStyle[1];
+      } else if (typeof this.tooltipStyle === 'function') {
+        return this.tooltipStyle(this.val, this.currentIndex);
+      } else {
+        return this.isRange ? [this.tooltipStyle, this.tooltipStyle] : this.tooltipStyle;
+      }
+    },
+    focusStyles: function focusStyles() {
+      if (isArray(this.focusStyle)) {
+        return this.isRange ? this.focusStyle : this.focusStyle[1];
+      } else if (typeof this.focusStyle === 'function') {
+        return this.focusStyle(this.val, this.currentIndex);
+      } else {
+        return this.isRange ? [this.focusStyle, this.focusStyle] : this.focusStyle;
+      }
+    },
+    elemStyles: function elemStyles() {
+      return this.direction === 'vertical' ? {
+        width: "".concat(this.width, "px"),
+        height: '100%'
+      } : {
+        height: "".concat(this.height, "px")
+      };
+    },
+    wrapStyles: function wrapStyles() {
+      return this.direction === 'vertical' ? {
+        height: typeof this.height === 'number' ? "".concat(this.height, "px") : this.height,
+        padding: "".concat(this.dotHeightVal / 2, "px ").concat(this.dotWidthVal / 2, "px")
+      } : {
+        width: typeof this.width === 'number' ? "".concat(this.width, "px") : this.width,
+        padding: "".concat(this.dotHeightVal / 2, "px ").concat(this.dotWidthVal / 2, "px")
+      };
+    },
+    stateClass: function stateClass() {
+      return {
+        'slider-state-process-drag': this.processFlag,
+        'slider-state-drag': this.flag && !this.processFlag && !this.keydownFlag,
+        'slider-state-focus': this.focusFlag
+      };
+    },
+    tooltipStatus: function tooltipStatus() {
+      return this.tooltip === 'hover' && this.flag ? 'slider-always' : this.tooltip ? "slider-".concat(this.tooltip) : '';
+    },
+    tooltipClass: function tooltipClass() {
+      return ["slider-tooltip-".concat(this.tooltipDirection), 'slider-tooltip'];
+    },
+    minimum: function minimum() {
+      return this.data ? 0 : this.min;
+    },
+    maximum: function maximum() {
+      return this.data ? this.data.length - 1 : this.max;
+    },
+    multiple: function multiple() {
+      var decimals = "".concat(this.step).split('.')[1];
+      return decimals ? Math.pow(10, decimals.length) : 1;
+    },
+    indexRange: function indexRange() {
+      return this.isRange ? this.currentIndex : [0, this.currentIndex];
+    },
+    spacing: function spacing() {
+      return this.data ? 1 : this.step;
+    },
+    gap: function gap() {
+      return this.size / this.total;
+    },
+    dotWidthVal: function dotWidthVal() {
+      return typeof this.dotWidth === 'number' ? this.dotWidth : this.dotSize;
+    },
+    dotHeightVal: function dotHeightVal() {
+      return typeof this.dotHeight === 'number' ? this.dotHeight : this.dotSize;
+    },
+    disabledArray: function disabledArray() {
+      return isArray(this.disabled) ? this.disabled : [this.disabled, this.disabled];
+    },
+    boolDisabled: function boolDisabled() {
+      return this.disabledArray.every(function (b) {
+        return b === true;
+      });
+    },
+    disabledClass: function disabledClass() {
+      return this.boolDisabled ? 'slider-disabled' : '';
+    },
+    flowDirection: function flowDirection() {
+      return "slider-".concat(this.direction + (this.reverse ? '-reverse' : ''));
+    },
+    isRange: function isRange() {
+      return isArray(this.value);
+    },
+    isDisabled: function isDisabled() {
+      return this.eventType === 'none' ? true : this.boolDisabled;
+    },
+    isFixed: function isFixed() {
+      return this.fixed || this.minRange;
+    },
+    position: function position() {
+      return this.isRange ? [(this.currentValue[0] - this.minimum) / this.spacing * this.gap, (this.currentValue[1] - this.minimum) / this.spacing * this.gap] : (this.currentValue - this.minimum) / this.spacing * this.gap;
+    },
+    limit: function limit() {
+      return this.isRange ? this.isFixed ? [[0, (this.total - this.fixedValue) * this.gap], [this.fixedValue * this.gap, this.size]] : [[0, this.position[1]], [this.position[0], this.size]] : [0, this.size];
+    },
+    valueLimit: function valueLimit() {
+      return this.isRange ? this.isFixed ? [[this.minimum, this.maximum - this.fixedValue * (this.spacing * this.multiple) / this.multiple], [this.minimum + this.fixedValue * (this.spacing * this.multiple) / this.multiple, this.maximum]] : [[this.minimum, this.currentValue[1]], [this.currentValue[0], this.maximum]] : [this.minimum, this.maximum];
+    },
+    idleSlider: function idleSlider() {
+      return this.currentSlider === 0 ? 1 : 0;
+    },
+    slider: function slider() {
+      return this.isRange ? [this.$refs.dot0, this.$refs.dot1] : this.$refs.dot;
+    }
+  },
+  methods: {
+    setValue: function setValue(val, noCb, speed) {
+      var _this2 = this;
+
+      if (isDiff(this.val, val)) {
+        var resetVal = this.limitValue(val);
+        this.val = this.isRange ? resetVal.concat() : resetVal;
+        this.computedFixedValue();
+        this.syncValue(noCb);
+      }
+
+      this.$nextTick(function () {
+        return _this2.setPosition(speed);
+      });
+    },
+    setIndex: function setIndex(val) {
+      if (isArray(val) && this.isRange) {
+        var value;
+
+        if (this.data) {
+          value = [this.data[val[0]], this.data[val[1]]];
+        } else {
+          value = [this.getValueByIndex(val[0]), this.getValueByIndex(val[1])];
+        }
+
+        this.setValue(value);
+      } else {
+        val = this.getValueByIndex(val);
+
+        if (this.isRange) {
+          this.currentSlider = val > (this.currentValue[1] - this.currentValue[0]) / 2 + this.currentValue[0] ? 1 : 0;
+        }
+
+        this.setCurrentValue(val);
+      }
+    },
+    wrapClick: function wrapClick(e) {
+      if (this.isDisabled || !this.clickable || this.processFlag || this.dragFlag) return false;
+      var pos = this.getPos(e);
+
+      if (this.isRange) {
+        if (this.disabledArray.every(function (b) {
+          return b === false;
+        })) {
+          this.currentSlider = pos > (this.position[1] - this.position[0]) / 2 + this.position[0] ? 1 : 0;
+        } else if (this.disabledArray[0]) {
+          if (pos < this.position[0]) return false;
+          this.currentSlider = 1;
+        } else if (this.disabledArray[1]) {
+          if (pos > this.position[1]) return false;
+          this.currentSlider = 0;
+        }
+      }
+
+      if (this.disabledArray[this.currentSlider]) {
+        return false;
+      }
+
+      this.setValueOnPos(pos);
+
+      if (this.isRange && this.tooltipMerge) {
+        var timer = setInterval(this.handleOverlapTooltip, 16.7);
+        setTimeout(function () {
+          return window.clearInterval(timer);
+        }, this.speed * 1000);
+      }
+    },
+    processClick: function processClick(e) {
+      if (this.fixed) e.stopPropagation();
+    },
+    syncValue: function syncValue(noCb) {
+      var val = this.isRange ? this.val.concat() : this.val;
+      this.$emit('input', val);
+      this.keydownFlag && this.$emit('on-keypress', val);
+      noCb || this.$emit('slide-end', val);
+    },
+    getPos: function getPos(e) {
+      this.realTime && this.getStaticData();
+      return this.direction === 'vertical' ? this.reverse ? e.pageY - this.offset : this.size - (e.pageY - this.offset) : this.reverse ? this.size - (e.pageX - this.offset) : e.pageX - this.offset;
+    },
+    setValueOnPos: function setValueOnPos(pos, isDrag) {
+      var range = this.isRange ? this.limit[this.currentSlider] : this.limit;
+      var valueRange = this.isRange ? this.valueLimit[this.currentSlider] : this.valueLimit;
+      var index = Math.round(pos / this.gap);
+
+      if (pos >= range[0] && pos <= range[1]) {
+        var v = this.getValueByIndex(index);
+        this.setTransform(pos);
+        this.setCurrentValue(v, isDrag);
+
+        if (this.isRange && (this.fixed || this.isLessRange(pos, index))) {
+          this.setTransform(pos + this.fixedValue * this.gap * (this.currentSlider === 0 ? 1 : -1), true);
+          this.setCurrentValue((v * this.multiple + this.fixedValue * this.spacing * this.multiple * (this.currentSlider === 0 ? 1 : -1)) / this.multiple, isDrag, true);
+        }
+      } else {
+        var anotherSlider = pos < range[0] ? 0 : 1;
+        var currentSlider = anotherSlider === 0 ? 1 : 0;
+        this.setTransform(range[anotherSlider]);
+        this.setCurrentValue(valueRange[anotherSlider]);
+
+        if (this.isRange && (this.fixed || this.isLessRange(pos, index))) {
+          this.setTransform(this.limit[this.idleSlider][anotherSlider], true);
+          this.setCurrentValue(this.valueLimit[this.idleSlider][anotherSlider], isDrag, true);
+        } else if (this.isRange && (this.enableCross || this.crossFlag) && !this.isFixed && !this.disabledArray[anotherSlider] && this.currentSlider === currentSlider) {
+          this.focusSlider = anotherSlider;
+          this.currentSlider = anotherSlider;
+        }
+      }
+
+      this.crossFlag = false;
+    },
+    setCurrentValue: function setCurrentValue(val, isDrag, isIdleSlider) {
+      var slider = isIdleSlider ? this.idleSlider : this.currentSlider;
+      if (val < this.minimum || val > this.maximum) return false;
+
+      if (this.isRange) {
+        if (isDiff(this.currentValue[slider], val)) {
+          this.currentValue.splice(slider, 1, val);
+
+          if (!this.lazy || !this.flag) {
+            this.syncValue();
+          }
+        }
+      } else if (isDiff(this.currentValue, val)) {
+        this.currentValue = val;
+
+        if (!this.lazy || !this.flag) {
+          this.syncValue();
+        }
+      }
+
+      isDrag || this.setPosition();
+    },
+    setPosition: function setPosition(speed) {
+      this.flag || this.setTransitionTime(speed === undefined ? this.speed : speed);
+
+      if (this.isRange) {
+        this.setTransform(this.position[0], this.currentSlider === 1);
+        this.setTransform(this.position[1], this.currentSlider === 0);
+      } else {
+        this.setTransform(this.position);
+      }
+
+      this.flag || this.setTransitionTime(0);
+    },
+    setTransform: function setTransform(val, isIdleSlider) {
+      var slider = isIdleSlider ? this.idleSlider : this.currentSlider;
+      var value = roundToDPR((this.direction === 'vertical' ? this.dotHeightVal / 2 - val : val - this.dotWidthVal / 2) * (this.reverse ? -1 : 1));
+      var translateValue = this.direction === 'vertical' ? "translateY(".concat(value, "px)") : "translateX(".concat(value, "px)");
+      var processSize = this.fixed ? "".concat(this.fixedValue * this.gap, "px") : "".concat(slider === 0 ? this.position[1] - val : val - this.position[0], "px");
+      var processPos = this.fixed ? "".concat(slider === 0 ? val : val - this.fixedValue * this.gap, "px") : "".concat(slider === 0 ? val : this.position[0], "px");
+
+      if (this.isRange) {
+        this.slider[slider].style[transform] = translateValue;
+
+        if (this.direction === 'vertical') {
+          this.$refs.process.style.height = processSize;
+          this.$refs.process.style[this.reverse ? 'top' : 'bottom'] = processPos;
+        } else {
+          this.$refs.process.style.width = processSize;
+          this.$refs.process.style[this.reverse ? 'right' : 'left'] = processPos;
+        }
+      } else {
+        this.slider.style[transform] = translateValue;
+
+        if (this.direction === 'vertical') {
+          this.$refs.process.style.height = "".concat(val, "px");
+          this.$refs.process.style[this.reverse ? 'top' : 'bottom'] = 0;
+        } else {
+          this.$refs.process.style.width = "".concat(val, "px");
+          this.$refs.process.style[this.reverse ? 'right' : 'left'] = 0;
+        }
+      }
+    },
+    setTransitionTime: function setTransitionTime(time) {
+      // In order to avoid browser merge style and modify together
+      time || this.$refs.process.offsetWidth;
+
+      if (this.isRange) {
+        var sliderLen = this.slider.length;
+
+        for (var i = 0; i < sliderLen; i++) {
+          this.slider[i].style[transitionDuration] = "".concat(time, "s");
+        }
+
+        this.$refs.process.style[transitionDuration] = "".concat(time, "s");
+      } else {
+        this.slider.style[transitionDuration] = "".concat(time, "s");
+        this.$refs.process.style[transitionDuration] = "".concat(time, "s");
+      }
+    },
+    computedFixedValue: function computedFixedValue() {
+      if (!this.isFixed) {
+        this.fixedValue = 0;
+        return false;
+      }
+
+      this.fixedValue = this.currentIndex[1] - this.currentIndex[0];
+      this.fixedValue = Math.max(this.fixed ? this.currentIndex[1] - this.currentIndex[0] : 0, this.minRange || 0);
+    },
+    limitValue: function limitValue(val) {
+      var _this3 = this;
+
+      if (this.data) {
+        return val;
+      }
+
+      var inRange = function inRange(v) {
+        if (v < _this3.min) {
+          _this3.printError("The value of the slider is ".concat(val, ", the minimum value is ").concat(_this3.min, ", the value of this slider can not be less than the minimum value"));
+
+          return _this3.min;
+        } else if (v > _this3.max) {
+          _this3.printError("The value of the slider is ".concat(val, ", the maximum value is ").concat(_this3.max, ", the value of this slider can not be greater than the maximum value"));
+
+          return _this3.max;
+        }
+
+        return v;
+      };
+
+      if (this.isRange) {
+        return val.map(function (v) {
+          return inRange(v);
+        });
+      } else {
+        return inRange(val);
+      }
+    },
+    getStaticData: function getStaticData() {
+      if (this.$refs.elem) {
+        this.size = this.direction === 'vertical' ? this.$refs.elem.offsetHeight : this.$refs.elem.offsetWidth;
+        this.offset = this.direction === 'vertical' ? this.$refs.elem.getBoundingClientRect().top + window.pageYOffset || document.documentElement.scrollTop : this.$refs.elem.getBoundingClientRect().left;
+      }
+    },
+    handleOverlapTooltip: function handleOverlapTooltip() {
+      var isDirectionSame = this.tooltipDirection[0] === this.tooltipDirection[1];
+
+      if (this.isRange && isDirectionSame) {
+        var tooltip0 = this.reverse ? this.$refs.tooltip1 : this.$refs.tooltip0;
+        var tooltip1 = this.reverse ? this.$refs.tooltip0 : this.$refs.tooltip1;
+        var tooltip0Rect = tooltip0.getBoundingClientRect();
+        var tooltip1Rect = tooltip1.getBoundingClientRect();
+        var tooltip0Right = tooltip0Rect.right;
+        var tooltip1Left = tooltip1Rect.left;
+        var tooltip0Y = tooltip0Rect.top;
+        var tooltip1Y = tooltip1Rect.top + tooltip1Rect.height;
+        var horizontalOverlap = this.direction === 'horizontal' && tooltip0Right > tooltip1Left;
+        var verticalOverlap = this.direction === 'vertical' && tooltip1Y > tooltip0Y;
+
+        if (horizontalOverlap || verticalOverlap) {
+          this.handleDisplayMergedTooltip(true);
+        } else {
+          this.handleDisplayMergedTooltip(false);
+        }
+      }
+    },
+    handleDisplayMergedTooltip: function handleDisplayMergedTooltip(show) {
+      var tooltip0 = this.$refs.tooltip0;
+      var tooltip1 = this.$refs.tooltip1;
+      var mergedTooltip = this.$refs.process.getElementsByClassName('merged-tooltip')[0];
+
+      if (show) {
+        tooltip0.style.visibility = 'hidden';
+        tooltip1.style.visibility = 'hidden';
+        mergedTooltip.style.visibility = 'visible';
+      } else {
+        tooltip0.style.visibility = 'visible';
+        tooltip1.style.visibility = 'visible';
+        mergedTooltip.style.visibility = 'hidden';
+      }
+    },
+    isLessRange: function isLessRange(pos, index) {
+      if (!this.isRange || !this.minRange && !this.maxRange) {
+        return false;
+      }
+
+      var diff = this.currentSlider === 0 ? this.currentIndex[1] - index : index - this.currentIndex[0];
+
+      if (this.minRange && diff <= this.minRange) {
+        this.fixedValue = this.minRange;
+        return true;
+      }
+
+      if (this.maxRange && diff >= this.maxRange) {
+        this.fixedValue = this.maxRange;
+        return true;
+      }
+
+      this.computedFixedValue();
+      return false;
+    },
+    getValueByIndex: function getValueByIndex(index) {
+      return (this.spacing * this.multiple * index + this.minimum * this.multiple) / this.multiple;
+    },
+    getIndexByValue: function getIndexByValue(value) {
+      return Math.round((value - this.minimum) * this.multiple) / (this.spacing * this.multiple);
+    },
+    formatting: function formatting(value) {
+      return typeof this.formatter === 'string' ? this.formatter.replace(/{value}/, value) : this.formatter(value);
+    },
+    mergeFormatting: function mergeFormatting(value1, value2) {
+      return typeof this.mergeFormatter === 'string' ? this.mergeFormatter.replace(/{(value1|value2)}/g, function (_, key) {
+        return key === 'value1' ? value1 : value2;
+      }) : this.mergeFormatter(value1, value2);
+    },
+    _start: function _start(e) {
+      var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      var isProcess = arguments.length > 2 ? arguments[2] : undefined;
+
+      if (this.disabledArray[index]) {
+        return false;
+      }
+
+      if (this.stopPropagation) {
+        e.stopPropagation();
+      }
+
+      if (this.isRange) {
+        this.currentSlider = index;
+
+        if (isProcess) {
+          if (!this.processDraggable) {
+            return false;
+          }
+
+          this.processFlag = true;
+          this.processSign = {
+            pos: this.position,
+            start: this.getPos(e.targetTouches && e.targetTouches[0] ? e.targetTouches[0] : e)
+          };
+        }
+
+        if (!this.enableCross && this.val[0] === this.val[1]) {
+          this.crossFlag = true;
+        }
+      }
+
+      if (!isProcess && this.useKeyboard) {
+        this.focusFlag = true;
+        this.focusSlider = index;
+      }
+
+      this.flag = true;
+      this.$emit('drag-start', this);
+    },
+    _move: function _move(e) {
+      e.preventDefault();
+
+      if (this.stopPropagation) {
+        e.stopPropagation();
+      }
+
+      if (!this.flag) return false;
+      if (e.targetTouches && e.targetTouches[0]) e = e.targetTouches[0];
+
+      if (this.processFlag) {
+        this.currentSlider = 0;
+        this.setValueOnPos(this.processSign.pos[0] + this.getPos(e) - this.processSign.start, true);
+        this.currentSlider = 1;
+        this.setValueOnPos(this.processSign.pos[1] + this.getPos(e) - this.processSign.start, true);
+      } else {
+        this.dragFlag = true;
+        this.setValueOnPos(this.getPos(e), true);
+      }
+
+      if (this.isRange && this.tooltipMerge) {
+        this.handleOverlapTooltip();
+      }
+    },
+    _end: function _end(e) {
+      var _this4 = this;
+
+      if (this.stopPropagation) {
+        e.stopPropagation();
+      }
+
+      if (this.flag) {
+        this.$emit('drag-end', this);
+
+        if (this.lazy && isDiff(this.val, this.value)) {
+          this.syncValue();
+        }
+      } else {
+        return false;
+      }
+
+      this.flag = false;
+      this.$nextTick(function () {
+        _this4.crossFlag = false;
+        _this4.dragFlag = false;
+        _this4.processFlag = false;
+      });
+      this.setPosition();
+    },
+    blurSlider: function blurSlider(e) {
+      var dot = this.isRange ? this.$refs["dot".concat(this.focusSlider)] : this.$refs.dot;
+
+      if (!dot || dot === e.target) {
+        return false;
+      }
+
+      this.focusFlag = false;
+    },
+    handleKeydown: function handleKeydown(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!this.useKeyboard) {
+        return false;
+      }
+
+      var keyCode = e.which || e.keyCode;
+
+      switch (keyCode) {
+        case 37:
+        case 40:
+          this.keydownFlag = true;
+          this.flag = true;
+          this.changeFocusSlider(this.actionsKeyboard[0]);
+          break;
+
+        case 38:
+        case 39:
+          this.keydownFlag = true;
+          this.flag = true;
+          this.changeFocusSlider(this.actionsKeyboard[1]);
+          break;
+
+        default:
+          break;
+      }
+    },
+    handleKeyup: function handleKeyup() {
+      if (this.keydownFlag) {
+        this.keydownFlag = false;
+        this.flag = false;
+      }
+    },
+    changeFocusSlider: function changeFocusSlider(fn) {
+      var _this5 = this;
+
+      if (this.isRange) {
+        var arr = this.currentIndex.map(function (index, i) {
+          if (i === _this5.focusSlider || _this5.fixed) {
+            var val = fn(index);
+            var range = _this5.fixed ? _this5.valueLimit[i] : [0, _this5.total];
+
+            if (val <= range[1] && val >= range[0]) {
+              return val;
+            }
+          }
+
+          return index;
+        });
+
+        if (arr[0] > arr[1]) {
+          this.focusSlider = this.focusSlider === 0 ? 1 : 0;
+          arr = arr.reverse();
+        }
+
+        this.setIndex(arr);
+      } else {
+        this.setIndex(fn(this.currentIndex));
+      }
+    },
+    bindEvents: function bindEvents() {
+      var me = this;
+
+      this.processStartFn = function (e) {
+        me._start(e, 0, true);
+      };
+
+      this.dot0StartFn = function (e) {
+        me._start(e, 0);
+      };
+
+      this.dot1StartFn = function (e) {
+        me._start(e, 1);
+      };
+
+      if (isMobile) {
+        addEvent(this.$refs.process, EVENT_TOUCH_START, this.processStartFn);
+        addEvent(document, EVENT_TOUCH_MOVE, this._move);
+        addEvent(document, EVENT_TOUCH_END, this._end);
+        addEvent(document, EVENT_TOUCH_CANCEL, this._end);
+
+        if (this.isRange) {
+          addEvent(this.$refs.dot0, EVENT_TOUCH_START, this.dot0StartFn);
+          addEvent(this.$refs.dot1, EVENT_TOUCH_START, this.dot1StartFn);
+        } else {
+          addEvent(this.$refs.dot, EVENT_TOUCH_START, this._start);
+        }
+      } else {
+        addEvent(this.$refs.process, EVENT_MOUSE_DOWN, this.processStartFn);
+        addEvent(document, EVENT_MOUSE_DOWN, this.blurSlider);
+        addEvent(document, EVENT_MOUSE_MOVE, this._move);
+        addEvent(document, EVENT_MOUSE_UP, this._end);
+        addEvent(document, EVENT_MOUSE_LEAVE, this._end);
+
+        if (this.isRange) {
+          addEvent(this.$refs.dot0, EVENT_MOUSE_DOWN, this.dot0StartFn);
+          addEvent(this.$refs.dot1, EVENT_MOUSE_DOWN, this.dot1StartFn);
+        } else {
+          addEvent(this.$refs.dot, EVENT_MOUSE_DOWN, this._start);
+        }
+      }
+
+      addEvent(document, EVENT_KEY_DOWN, this.handleKeydown);
+      addEvent(document, EVENT_KEY_UP, this.handleKeyup);
+      addEvent(window, EVENT_RESIZE, this.refresh);
+
+      if (this.isRange && this.tooltipMerge) {
+        addEvent(this.$refs.dot0, transitionEnd, this.handleOverlapTooltip);
+        addEvent(this.$refs.dot1, transitionEnd, this.handleOverlapTooltip);
+      }
+    },
+    unbindEvents: function unbindEvents() {
+      if (isMobile) {
+        removeEvent(this.$refs.process, EVENT_TOUCH_START, this.processStartFn);
+        removeEvent(document, EVENT_TOUCH_MOVE, this._move);
+        removeEvent(document, EVENT_TOUCH_END, this._end);
+        removeEvent(document, EVENT_TOUCH_CANCEL, this._end);
+
+        if (this.isRange) {
+          removeEvent(this.$refs.dot0, EVENT_TOUCH_START, this.dot0StartFn);
+          removeEvent(this.$refs.dot1, EVENT_TOUCH_START, this.dot1StartFn);
+        } else {
+          removeEvent(this.$refs.dot, EVENT_TOUCH_START, this._start);
+        }
+      } else {
+        removeEvent(this.$refs.process, EVENT_MOUSE_DOWN, this.processStartFn);
+        removeEvent(document, EVENT_MOUSE_DOWN, this.blurSlider);
+        removeEvent(document, EVENT_MOUSE_MOVE, this._move);
+        removeEvent(document, EVENT_MOUSE_UP, this._end);
+        removeEvent(document, EVENT_MOUSE_LEAVE, this._end);
+
+        if (this.isRange) {
+          removeEvent(this.$refs.dot0, EVENT_MOUSE_DOWN, this.dot0StartFn);
+          removeEvent(this.$refs.dot1, EVENT_MOUSE_DOWN, this.dot1StartFn);
+        } else {
+          removeEvent(this.$refs.dot, EVENT_MOUSE_DOWN, this._start);
+        }
+      }
+
+      removeEvent(document, EVENT_KEY_DOWN, this.handleKeydown);
+      removeEvent(document, EVENT_KEY_UP, this.handleKeyup);
+      removeEvent(window, EVENT_RESIZE, this.refresh);
+
+      if (this.isRange && this.tooltipMerge) {
+        removeEvent(this.$refs.dot0, transitionEnd, this.handleOverlapTooltip);
+        removeEvent(this.$refs.dot1, transitionEnd, this.handleOverlapTooltip);
+      }
+    },
+    refresh: function refresh() {
+      if (this.$refs.elem) {
+        this.getStaticData();
+        this.computedFixedValue();
+        this.setPosition();
+        this.unbindEvents();
+        this.bindEvents();
+      }
+    },
+    printError: function printError(msg) {
+      if (this.debug) {
+        console.error("[VueSlider error]: ".concat(msg));
+      }
+    }
+  },
+  mounted: function mounted() {
+    var _this6 = this;
+
+    this.isComponentExists = true;
+
+    if (typeof window === 'undefined' || typeof document === 'undefined') {
+      return this.printError('window or document is undefined, can not be initialization.');
+    }
+
+    this.$nextTick(function () {
+      _this6.getStaticData();
+
+      _this6.setValue(_this6.limitValue(_this6.value), true, _this6.startAnimation ? _this6.speed : 0);
+
+      _this6.bindEvents();
+
+      if (_this6.isRange && _this6.tooltipMerge && !_this6.startAnimation) {
+        _this6.handleOverlapTooltip();
+      }
+    });
+    this.isMounted = true;
+  },
+  watch: {
+    value: function value(val) {
+      this.flag || this.setValue(val, true);
+    },
+    show: function show(bool) {
+      if (bool && !this.size) {
+        this.$nextTick(this.refresh);
+      }
+    },
+    max: function max(val) {
+      if (val < this.min) {
+        return this.printError('The maximum value can not be less than the minimum value.');
+      }
+
+      var resetVal = this.limitValue(this.val);
+      this.setValue(resetVal);
+      this.refresh();
+    },
+    min: function min(val) {
+      if (val > this.max) {
+        return this.printError('The minimum value can not be greater than the maximum value.');
+      }
+
+      var resetVal = this.limitValue(this.val);
+      this.setValue(resetVal);
+      this.refresh();
+    },
+    fixed: function fixed() {
+      this.computedFixedValue();
+    },
+    minRange: function minRange() {
+      this.computedFixedValue();
+    }
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.isComponentExists = false;
+    this.unbindEvents();
+    this.refresh();
+  },
+  deactivated: function deactivated() {
+    this.isComponentExists = false;
+    this.unbindEvents();
+    this.refresh();
+  }
+};
+
+var version = "1.0.3";
+
+Slider.version = version;
+
+Slider.install = function (Vue) {
+  Vue.component(Slider.name, Slider);
+};
+
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(Slider);
+}
+
+/* harmony default export */ var vue_range_slider_esm = (Slider);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RangeComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ var RangeComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"],
+  components: {
+    VueRangeSlider: vue_range_slider_esm
+  }
+});
+// CONCATENATED MODULE: ./src/components/form/RangeComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_RangeComponentvue_type_script_lang_js_ = (RangeComponentvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/form/RangeComponent.vue?vue&type=style&index=0&lang=css&
+var RangeComponentvue_type_style_index_0_lang_css_ = __webpack_require__("beae");
+
+// CONCATENATED MODULE: ./src/components/form/RangeComponent.vue
+
+
+
+
+
+
+/* normalize component */
+
+var RangeComponent_component = normalizeComponent(
+  form_RangeComponentvue_type_script_lang_js_,
+  RangeComponentvue_type_template_id_f330b46e_render,
+  RangeComponentvue_type_template_id_f330b46e_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var RangeComponent = (RangeComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RadioComponent.vue?vue&type=template&id=83b3dd00&
+var RadioComponentvue_type_template_id_83b3dd00_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_vm._l((_vm.field.values),function(item,index){return _c('div',{key:index,staticClass:"control"},[_c('label',{staticClass:"radio"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],attrs:{"type":"radio","name":_vm.field.name},domProps:{"value":item,"checked":_vm._q(_vm.data[_vm.field.name],item)},on:{"change":function($event){return _vm.$set(_vm.data, _vm.field.name, item)}}}),_vm._v("\n      "+_vm._s(item)+"\n    ")])])}),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()],2)}
+var RadioComponentvue_type_template_id_83b3dd00_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/RadioComponent.vue?vue&type=template&id=83b3dd00&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RadioComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var RadioComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"]
+});
+// CONCATENATED MODULE: ./src/components/form/RadioComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_RadioComponentvue_type_script_lang_js_ = (RadioComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/RadioComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var RadioComponent_component = normalizeComponent(
+  form_RadioComponentvue_type_script_lang_js_,
+  RadioComponentvue_type_template_id_83b3dd00_render,
+  RadioComponentvue_type_template_id_83b3dd00_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var RadioComponent = (RadioComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=script&lang=js&
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var FormComponentvue_type_script_lang_js_ = ({
+  props: ["api-url", "meta", "create"],
+  data: function data() {
+    return {
+      active: false,
+      saveDisable: false,
+      data: []
+    };
+  },
+  components: {
+    TextComponent: TextComponent,
+    DateComponent: DateComponent,
+    FileComponent: FileComponent,
+    TextareaComponent: TextareaComponent,
+    SelectComponent: SelectComponent,
+    CheckboxComponent: CheckboxComponent,
+    ToggleComponent: ToggleComponent,
+    ColorPickerComponent: ColorPickerComponent,
+    RangeComponent: RangeComponent,
+    RadioComponent: RadioComponent
+  },
+  mounted: function mounted() {
+    if (this.create) {
+      this.setCreateData();
+    } else {
+      this.fetchData();
+    }
+  },
+  methods: {
+    setCreateData: function setCreateData() {
+      var _this = this;
+
+      this.meta.fields.forEach(function (field) {
+        _this.data = {
+          data: _defineProperty({}, field.name, field.name == "id" ? 0 : null)
+        };
+      });
+      this.openModal();
+    },
+    fetchData: function fetchData() {
+      var _this2 = this;
+
+      axios_default.a.get(this.apiUrl).then(function (response) {
+        return _this2.setData(response.data);
+      });
+    },
+    setData: function setData(data) {
+      this.data = data;
+      this.openModal();
+    },
+    openModal: function openModal() {
+      this.active = true;
+    },
+    closeModal: function closeModal() {
+      this.active = false;
+    },
+    save: function save() {
+      var _this3 = this;
+
+      this.saveDisable = true;
+      var url = this.apiUrl;
+      var formData = new FormData(document.querySelector("#form-save"));
+
+      if (this.create) {
+        url += "/save";
+      }
+
+      axios_default.a.post(url, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }).then(function (response) {
+        if (response.data.status == "success") {
+          new noty_default.a({
+            layout: "topCenter",
+            theme: "sunset",
+            timeout: 3000,
+            type: "success",
+            text: "İşlem başarılı bir şekilde tamamlanmıştır."
+          }).show();
+
+          _this3.$emit('close');
+        }
+
+        if (!_this3.create) {
+          _this3.saveDisable = false;
+        }
+      }).catch(function (error) {
+        if (error.response) {
+          var data = error.response.data;
+          var message = data.message;
+
+          for (error in data.errors) {
+            message += "<br>" + data.errors[error][0];
+          }
+
+          new noty_default.a({
+            layout: "topCenter",
+            theme: "sunset",
+            timeout: 3000,
+            type: "error",
+            text: message
+          }).show();
+        }
+
+        _this3.saveDisable = false;
+      });
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_FormComponentvue_type_script_lang_js_ = (FormComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/FormComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var FormComponent_component = normalizeComponent(
+  components_FormComponentvue_type_script_lang_js_,
+  FormComponentvue_type_template_id_19ec2d70_render,
+  FormComponentvue_type_template_id_19ec2d70_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var FormComponent = (FormComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ShowComponent.vue?vue&type=template&id=810ca85a&scoped=true&
+var ShowComponentvue_type_template_id_810ca85a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{'is-active': _vm.active},attrs:{"id":"show-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Detaylar")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),_c('section',{staticClass:"modal-card-body is-paddingless"},[(_vm.data.meta)?_c('table',{staticClass:"table"},[_c('tbody',_vm._l((_vm.data.meta.fields),function(field){return _c('tr',{key:field.name},[_c('th',[_vm._v(_vm._s(field.title))]),(field.type == 'text' || field.type == 'textarea' || field.type == 'date')?_c('td',[(field.editor || field.render == 'html')?_c('div',{domProps:{"innerHTML":_vm._s(_vm.data.data[field.name])}}):_c('div',[_vm._v(_vm._s(_vm.data.data[field.name]))])]):_vm._e(),(field.type == 'image')?_c('td',{staticClass:"gallery"},[(Array.isArray(_vm.data.data[field.name]))?_c('div',{staticClass:"columns"},_vm._l((_vm.data.data[field.name]),function(image){return _c('img',{key:image,staticClass:"column",attrs:{"src":image}})}),0):_c('div',[_c('img',{attrs:{"src":_vm.data.data[field.name]}})])]):_vm._e(),(field.type == 'select')?_c('td',[(field.multiple || Array.isArray(_vm.data.data[field.name]))?_c('div',_vm._l((_vm.data.data[field.name]),function(option){return _c('div',{key:option.value},_vm._l((field.options.filter(function(opt) { return opt.value == option.value || opt.value == option; })),function(subOption){return _c('div',{key:subOption},[_vm._v(_vm._s(subOption.label))])}),0)}),0):_vm._l((field.options.filter(function(opt) { return opt.value == _vm.data.data[field.name] })),function(option){return _c('div',{key:option.value},[_vm._v(_vm._s(option.label))])})],2):_vm._e(),(field.type == 'checkbox')?_c('td',[_vm._v(_vm._s(_vm.data.data[field.name]))]):_vm._e()])}),0)]):_vm._e()]),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
+var ShowComponentvue_type_template_id_810ca85a_scoped_true_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/ShowComponent.vue?vue&type=template&id=810ca85a&scoped=true&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ShowComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var ShowComponentvue_type_script_lang_js_ = ({
+  props: ["api-url"],
+  data: function data() {
+    return {
+      active: false,
+      data: []
+    };
+  },
+  mounted: function mounted() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function fetchData() {
+      var _this = this;
+
+      axios_default.a.get(this.apiUrl).then(function (response) {
+        return _this.setData(response.data);
+      });
+    },
+    setData: function setData(data) {
+      this.data = data;
+      this.openModal();
+    },
+    openModal: function openModal() {
+      this.active = true;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/ShowComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_ShowComponentvue_type_script_lang_js_ = (ShowComponentvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/ShowComponent.vue?vue&type=style&index=0&id=810ca85a&lang=scss&scoped=true&
+var ShowComponentvue_type_style_index_0_id_810ca85a_lang_scss_scoped_true_ = __webpack_require__("af80");
+
+// CONCATENATED MODULE: ./src/components/ShowComponent.vue
+
+
+
+
+
+
+/* normalize component */
+
+var ShowComponent_component = normalizeComponent(
+  components_ShowComponentvue_type_script_lang_js_,
+  ShowComponentvue_type_template_id_810ca85a_scoped_true_render,
+  ShowComponentvue_type_template_id_810ca85a_scoped_true_staticRenderFns,
+  false,
+  null,
+  "810ca85a",
+  null
+  
+)
+
+/* harmony default export */ var ShowComponent = (ShowComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableComponent.vue?vue&type=script&lang=js&
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ var TableComponentvue_type_script_lang_js_ = ({
+  props: ["api-url", "api-token"],
+  components: {
+    PaginationComponent: PaginationComponent,
+    FormComponent: FormComponent,
+    ShowComponent: ShowComponent
+  },
+  data: function data() {
+    return {
+      term: null,
+      paginate: 10,
+      page: 1,
+      show: {
+        modal: false,
+        apiUrl: null
+      },
+      form: {
+        modal: false,
+        create: false,
+        apiUrl: null
+      },
+      data: []
+    };
+  },
+  computed: {
+    fields: function fields() {
+      return this.data.meta.fields.filter(function (field) {
+        return field.listing;
+      });
+    }
+  },
+  mounted: function mounted() {
+    if (this.apiToken) {
+      axios_default.a.defaults.headers.common["Authorization"] = "Bearer " + this.apiToken;
+    }
+
+    this.fetchData();
+  },
+  methods: {
+    fetchData: function fetchData() {
+      var _this = this;
+
+      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.apiUrl;
+      axios_default.a.get(url, {
+        params: {
+          paginate: this.paginate,
+          page: this.page
+        }
+      }).then(function (response) {
+        return _this.setData(response.data);
+      });
+    },
+    setData: function setData(data) {
+      this.data = data;
+    },
+    action: function action(name) {
+      var item = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+      this[name] = {
+        modal: type == "close" ? false : true,
+        apiUrl: item == null ? this.apiUrl : this.apiUrl + "/" + item.id,
+        create: type == "create" ? true : false
+      };
+
+      if (type == "close") {
+        this.fetchData();
+      }
+    },
+    deleteItem: function deleteItem(item) {
+      var parent = this;
+      var n = new noty_default.a({
+        layout: "topCenter",
+        theme: "sunset",
+        text: "Silmek istediğine emin misin?",
+        timeout: false,
+        buttons: [noty_default.a.button("Sil", "button pr-2", function () {
+          parent.destroyItem(item);
+          n.close();
+        }), noty_default.a.button("Kapat", "button", function () {
+          return n.close();
+        })]
+      });
+      n.show();
+    },
+    destroyItem: function destroyItem(item) {
+      var _this2 = this;
+
+      axios_default.a.post(this.apiUrl + "/" + item.id + "/destroy").then(function (response) {
+        if (response.data.status == "success") {
+          new noty_default.a({
+            layout: "topCenter",
+            theme: "sunset",
+            timeout: 3000,
+            type: "success",
+            text: "Silme işlemi başarılı bir şekilde tamamlanmıştır."
+          }).show();
+
+          _this2.fetchData();
+        }
+      });
+    },
+    search: function search() {
+      var _this3 = this;
+
+      if (this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+      }
+
+      this.timer = setTimeout(function () {
+        if (_this3.term.length == 0) {
+          _this3.fetchData();
+
+          return;
+        }
+
+        axios_default.a.post(_this3.apiUrl, {
+          term: _this3.term,
+          paginate: _this3.paginate
+        }).then(function (response) {
+          return _this3.setData(response.data);
+        });
+      }, 500);
+    },
+    setPage: function setPage(page) {
+      this.page = page;
+      this.fetchData();
+    },
+    options: function options(item, field) {
+      var selected = item[field.name];
+
+      if (Array.isArray(selected) && typeof_typeof(selected[0]) != "object") {
+        selected = field.options.filter(function (option) {
+          return selected.includes(option.value);
+        });
+      } else if (!Array.isArray(selected)) {
+        selected = field.options.filter(function (option) {
+          return option.value == selected;
+        });
+      }
+
+      return selected;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/TableComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_TableComponentvue_type_script_lang_js_ = (TableComponentvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/TableComponent.vue?vue&type=style&index=0&lang=scss&
+var TableComponentvue_type_style_index_0_lang_scss_ = __webpack_require__("77f2");
+
+// CONCATENATED MODULE: ./src/components/TableComponent.vue
+
+
+
+
+
+
+/* normalize component */
+
+var TableComponent_component = normalizeComponent(
+  components_TableComponentvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var TableComponent = __webpack_exports__["default"] = (TableComponent_component.exports);
+
+/***/ }),
+
 /***/ "2aba":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5025,21 +8513,6 @@ module.exports = function (it) {
   return Object(defined(it));
 };
 
-
-/***/ }),
-
-/***/ "4fe4":
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "4fe4";
 
 /***/ }),
 
@@ -18371,3484 +21844,16 @@ if (typeof window !== 'undefined') {
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableComponent.vue?vue&type=template&id=4734a262&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app-crud"},[_c('div',{staticClass:"box is-paddingless"},[_c('div',{staticClass:"columns is-marginless"},[_c('div',{staticClass:"column"},[_c('div',{staticClass:"select",attrs:{"id":"page-limit"}},[_c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.paginate),expression:"paginate"}],on:{"change":[function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.paginate=$event.target.multiple ? $$selectedVal : $$selectedVal[0]},function($event){return _vm.fetchData()}]}},_vm._l(([5, 10, 15, 30, 60, 100]),function(i){return _c('option',{key:i,domProps:{"value":i}},[_vm._v(_vm._s(i))])}),0)])]),_c('div',{staticClass:"column"},[_c('div',{staticClass:"field"},[_c('p',{staticClass:"control has-icons-left has-icons-right"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.term),expression:"term"}],staticClass:"input",attrs:{"type":"text","placeholder":"Arama"},domProps:{"value":(_vm.term)},on:{"keyup":_vm.search,"input":function($event){if($event.target.composing){ return; }_vm.term=$event.target.value}}}),_vm._m(0)])])]),_c('div',{staticClass:"column"},[_c('button',{staticClass:"button is-small is-white is-pulled-right",on:{"click":function($event){return _vm.action('form', null, 'create')}}},[_c('i',{staticClass:"material-icons"},[_vm._v("add_box")])])])]),_c('div',{staticClass:"table-container"},[(_vm.data.data)?_c('table',{staticClass:"table"},[_c('thead',[_c('tr',[_vm._l((_vm.fields),function(field){return _c('th',{key:field.name},[_vm._v(_vm._s(field.title))])}),_c('th')],2)]),_c('tbody',[(_vm.data.data.length == 0)?_c('tr',[_c('td',[_vm._v("İçerik bulunamadı!")])]):_vm._e(),_vm._l((_vm.data.data),function(item){return _c('tr',{key:item.id},[_vm._l((_vm.fields),function(field){return _c('td',{key:field.name},[(field.type == 'select')?_c('div',_vm._l((_vm.options(item, field)),function(option){return _c('div',{key:option.value},[_vm._v(_vm._s(option.label))])}),0):_c('div',[_vm._v(_vm._s(item[field.name]))])])}),_c('td',[_c('div',{staticClass:"field has-addons is-pulled-right"},[_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.action('show', item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("open_in_new")])])]),_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.action('form', item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("edit")])])]),_c('p',{staticClass:"control"},[_c('button',{staticClass:"button is-white",on:{"click":function($event){return _vm.deleteItem(item)}}},[_c('i',{staticClass:"material-icons"},[_vm._v("delete")])])])])])],2)})],2)]):_vm._e()]),(_vm.data)?_c('pagination-component',{attrs:{"data":_vm.data},on:{"page":_vm.setPage}}):_vm._e(),(_vm.form.modal)?_c('form-component',{attrs:{"api-url":_vm.form.apiUrl,"create":_vm.form.create,"meta":_vm.data.meta},on:{"close":function($event){return _vm.action('form', null, 'close')}}}):_vm._e(),(_vm.show.modal)?_c('show-component',{attrs:{"api-url":_vm.show.apiUrl},on:{"close":function($event){return _vm.action('show', null, 'close')}}}):_vm._e()],1)])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"icon is-small is-left"},[_c('i',{staticClass:"material-icons"},[_vm._v("search")])])}]
+// EXTERNAL MODULE: ./src/components/TableComponent.vue + 74 modules
+var TableComponent = __webpack_require__("2953");
 
-
-// CONCATENATED MODULE: ./src/components/TableComponent.vue?vue&type=template&id=4734a262&
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
-var es7_array_includes = __webpack_require__("6762");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.includes.js
-var es6_string_includes = __webpack_require__("2fdb");
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js
-var iterator = __webpack_require__("5d58");
-var iterator_default = /*#__PURE__*/__webpack_require__.n(iterator);
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/symbol.js
-var symbol = __webpack_require__("67bb");
-var symbol_default = /*#__PURE__*/__webpack_require__.n(symbol);
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/typeof.js
-
-
-function typeof_typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof symbol_default.a === "function" && typeof iterator_default.a === "symbol") {
-    typeof_typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    typeof_typeof = function _typeof(obj) {
-      return obj && typeof symbol_default.a === "function" && obj.constructor === symbol_default.a && obj !== symbol_default.a.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return typeof_typeof(obj);
-}
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
-var es6_function_name = __webpack_require__("7f7f");
-
-// EXTERNAL MODULE: ./node_modules/axios/index.js
-var axios = __webpack_require__("bc3a");
-var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
-
-// EXTERNAL MODULE: ./node_modules/noty/lib/noty.js
-var noty = __webpack_require__("7329");
-var noty_default = /*#__PURE__*/__webpack_require__.n(noty);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PaginationComponent.vue?vue&type=template&id=4febc598&scoped=true&
-var PaginationComponentvue_type_template_id_4febc598_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('nav',{staticClass:"pagination is-small is-centered is-rounded pl-10 pr-10 pb-10",attrs:{"role":"navigation","aria-label":"pagination"}},[_c('a',{staticClass:"pagination-previous",on:{"click":function($event){return _vm.$emit('page', 1)}}},[_vm._v("←")]),_c('a',{staticClass:"pagination-next",on:{"click":function($event){return _vm.$emit('page', _vm.data.last_page)}}},[_vm._v("→")]),_c('ul',{staticClass:"pagination-list"},_vm._l((_vm.pagesNumber),function(page){return _c('li',{key:page},[_c('a',{staticClass:"pagination-link",class:{'is-current': page == _vm.data.current_page},on:{"click":function($event){return _vm.$emit('page', page)}}},[_vm._v(_vm._s(page))])])}),0)])}
-var PaginationComponentvue_type_template_id_4febc598_scoped_true_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/PaginationComponent.vue?vue&type=template&id=4febc598&scoped=true&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/PaginationComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var PaginationComponentvue_type_script_lang_js_ = ({
-  props: ["data"],
-  data: function data() {
-    return {};
-  },
-  computed: {
-    pagesNumber: function pagesNumber() {
-      var offset = 2;
-
-      if (!this.data.to) {
-        return [];
-      }
-
-      var from = this.data.current_page - offset;
-
-      if (from < 1) {
-        from = 1;
-      }
-
-      var to = from + offset * 2;
-
-      if (to >= this.data.last_page) {
-        to = this.data.last_page;
-      }
-
-      var pagesArray = [];
-
-      for (var page = from; page <= to; page++) {
-        pagesArray.push(page);
-      }
-
-      return pagesArray;
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/PaginationComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_PaginationComponentvue_type_script_lang_js_ = (PaginationComponentvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/PaginationComponent.vue?vue&type=style&index=0&id=4febc598&scoped=true&lang=css&
-var PaginationComponentvue_type_style_index_0_id_4febc598_scoped_true_lang_css_ = __webpack_require__("1448");
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () {
-        injectStyles.call(
-          this,
-          (options.functional ? this.parent : this).$root.$options.shadowRoot
-        )
-      }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functional component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-// CONCATENATED MODULE: ./src/components/PaginationComponent.vue
-
-
-
-
-
-
-/* normalize component */
-
-var component = normalizeComponent(
-  components_PaginationComponentvue_type_script_lang_js_,
-  PaginationComponentvue_type_template_id_4febc598_scoped_true_render,
-  PaginationComponentvue_type_template_id_4febc598_scoped_true_staticRenderFns,
-  false,
-  null,
-  "4febc598",
-  null
-  
-)
-
-/* harmony default export */ var PaginationComponent = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=template&id=19ec2d70&
-var FormComponentvue_type_template_id_19ec2d70_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{'is-active': _vm.active},attrs:{"id":"form-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Form")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),(_vm.data.data && _vm.meta)?_c('section',{staticClass:"modal-card-body"},[_c('form',{attrs:{"id":"form-save"}},_vm._l((_vm.meta.fields),function(field){return _c('div',{key:field.name,staticClass:"field"},[(field.type == 'text')?_c('text-component',{attrs:{"field":field,"data":_vm.data.data}}):_vm._e(),(field.type == 'date')?_c('date-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'image')?_c('file-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'textarea')?_c('textarea-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'select')?_c('select-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'checkbox')?_c('checkbox-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'toggle')?_c('toggle-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'colorpicker')?_c('color-picker-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'range')?_c('range-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'radio')?_c('radio-component',{attrs:{"field":field,"data":_vm.data.data}}):_vm._e()],1)}),0)]):_vm._e(),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button is-success",attrs:{"disabled":_vm.saveDisable},on:{"click":function($event){return _vm.save()}}},[_vm._v("Kaydet")]),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
-var FormComponentvue_type_template_id_19ec2d70_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=template&id=19ec2d70&
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
-var define_property = __webpack_require__("85f2");
-var define_property_default = /*#__PURE__*/__webpack_require__.n(define_property);
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    define_property_default()(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
-var web_dom_iterable = __webpack_require__("ac6a");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextComponent.vue?vue&type=template&id=35ba64c9&
-var TextComponentvue_type_template_id_35ba64c9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"input",attrs:{"type":"text","name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled,"readonly":_vm.field.readonly},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var TextComponentvue_type_template_id_35ba64c9_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/TextComponent.vue?vue&type=template&id=35ba64c9&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var TextComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"]
-});
-// CONCATENATED MODULE: ./src/components/form/TextComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_TextComponentvue_type_script_lang_js_ = (TextComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/form/TextComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var TextComponent_component = normalizeComponent(
-  form_TextComponentvue_type_script_lang_js_,
-  TextComponentvue_type_template_id_35ba64c9_render,
-  TextComponentvue_type_template_id_35ba64c9_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var TextComponent = (TextComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/DateComponent.vue?vue&type=template&id=3261187e&
-var DateComponentvue_type_template_id_3261187e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('flat-pickr',{staticClass:"input",attrs:{"name":_vm.field.name,"config":_vm.config,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}})],1),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var DateComponentvue_type_template_id_3261187e_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/DateComponent.vue?vue&type=template&id=3261187e&
-
-// EXTERNAL MODULE: ./node_modules/vue-flatpickr-component/dist/vue-flatpickr.min.js
-var vue_flatpickr_min = __webpack_require__("c38f");
-var vue_flatpickr_min_default = /*#__PURE__*/__webpack_require__.n(vue_flatpickr_min);
-
-// EXTERNAL MODULE: ./node_modules/flatpickr/dist/flatpickr.css
-var flatpickr = __webpack_require__("0952");
-
-// EXTERNAL MODULE: ./node_modules/flatpickr/dist/themes/material_blue.css
-var material_blue = __webpack_require__("8e1f");
-
-// EXTERNAL MODULE: ./node_modules/flatpickr/dist/l10n/tr.js
-var tr = __webpack_require__("f80c");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/DateComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-/* harmony default export */ var DateComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"],
-  components: {
-    flatPickr: vue_flatpickr_min_default.a
-  },
-  data: function data() {
-    var that = this;
-    return {
-      config: {
-        dateFormat: that.field.dateFormat ? that.field.dateFormat : "Y-m-d H:i",
-        enableTime: that.field.enableTime ? that.field.enableTime : true,
-        locale: tr["Turkish"]
-      }
-    };
-  }
-});
-// CONCATENATED MODULE: ./src/components/form/DateComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_DateComponentvue_type_script_lang_js_ = (DateComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/form/DateComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var DateComponent_component = normalizeComponent(
-  form_DateComponentvue_type_script_lang_js_,
-  DateComponentvue_type_template_id_3261187e_render,
-  DateComponentvue_type_template_id_3261187e_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var DateComponent = (DateComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/FileComponent.vue?vue&type=template&id=71b0da51&scoped=true&
-var FileComponentvue_type_template_id_71b0da51_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.data[_vm.field.name] != null)?_c('div',{},[(Array.isArray(_vm.data[_vm.field.name]))?_c('draggable',{staticClass:"columns",model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}},_vm._l((_vm.data[_vm.field.name]),function(image,index){return _c('div',{key:index + '-' + image,staticClass:"gallery",on:{"start":function($event){_vm.drag=true},"end":function($event){_vm.drag=false}}},[_c('input',{attrs:{"type":"hidden","name":'images[' + _vm.field.name + '][]'},domProps:{"value":image}}),_c('img',{staticClass:"column",attrs:{"src":image}}),_c('div',{staticClass:"remove",on:{"click":function($event){return _vm.removeItem(index)}}},[_vm._v("x")])])}),0):_c('div',{staticClass:"gallery"},[_c('input',{attrs:{"type":"hidden","name":'images[' + _vm.field.name + '][]'},domProps:{"value":_vm.data[_vm.field.name]}}),_c('a',{attrs:{"href":_vm.data[_vm.field.name],"target":"_blank"}},[_c('img',{attrs:{"src":_vm.data[_vm.field.name]},on:{"error":_vm.imgError}})]),_c('div',{staticClass:"remove",on:{"click":function($event){return _vm.removeItem()}}},[_vm._v("x")])]),_c('div',{staticClass:"clearfix"})],1):_vm._e(),_c('div',{staticClass:"file has-name"},[_c('label',{staticClass:"file-label"},[_c('input',{staticClass:"file-input",attrs:{"type":"file","name":_vm.field.multiple ? _vm.field.name + '[]' : _vm.field.name,"accept":"*","multiple":_vm.field.multiple == true},on:{"change":_vm.fileChange}}),_vm._m(0),_c('span',{staticClass:"file-name"},[_vm._v("Dosya Seçilmedi")])])])]),_c('p',{directives:[{name:"show",rawName:"v-show",value:(_vm.field.multiple),expression:"field.multiple"}],staticClass:"help"},[_vm._v("Birden fazla görsel ekleyebilirsiniz.")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var FileComponentvue_type_template_id_71b0da51_scoped_true_staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span',{staticClass:"file-cta"},[_c('span',{staticClass:"file-icon"},[_c('i',{staticClass:"material-icons"},[_vm._v("cloud_upload")])]),_c('span',{staticClass:"file-label"},[_vm._v("Dosya Seç")])])}]
-
-
-// CONCATENATED MODULE: ./src/components/form/FileComponent.vue?vue&type=template&id=71b0da51&scoped=true&
-
-// EXTERNAL MODULE: ./node_modules/vuedraggable/dist/vuedraggable.common.js
-var vuedraggable_common = __webpack_require__("310e");
-var vuedraggable_common_default = /*#__PURE__*/__webpack_require__.n(vuedraggable_common);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/FileComponent.vue?vue&type=script&lang=js&
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var FileComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"],
-  components: {
-    draggable: vuedraggable_common_default.a
-  },
-  methods: {
-    removeItem: function removeItem() {
-      var index = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-
-      if (Array.isArray(this.data[this.field.name])) {
-        this.data[this.field.name].splice(index, 1);
-      } else {
-        this.data[this.field.name] = null;
-      }
-    },
-    fileChange: function fileChange() {
-      var input = document.querySelector('input[name="' + (this.field.multiple ? this.field.name + "[]" : this.field.name) + '"]');
-      input.parentNode.querySelector(".file-name").textContent = input.files.length + " Dosya Seçildi";
-    },
-    imgError: function imgError(event) {
-      event.target.src = "./assets/file.png";
-      event.target.style = "width: 50px;height:50px;";
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/form/FileComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_FileComponentvue_type_script_lang_js_ = (FileComponentvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/form/FileComponent.vue?vue&type=style&index=0&id=71b0da51&lang=scss&scoped=true&
-var FileComponentvue_type_style_index_0_id_71b0da51_lang_scss_scoped_true_ = __webpack_require__("a8a1");
-
-// CONCATENATED MODULE: ./src/components/form/FileComponent.vue
-
-
-
-
-
-
-/* normalize component */
-
-var FileComponent_component = normalizeComponent(
-  form_FileComponentvue_type_script_lang_js_,
-  FileComponentvue_type_template_id_71b0da51_scoped_true_render,
-  FileComponentvue_type_template_id_71b0da51_scoped_true_staticRenderFns,
-  false,
-  null,
-  "71b0da51",
-  null
-  
-)
-
-/* harmony default export */ var FileComponent = (FileComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=template&id=0e7015a0&
-var TextareaComponentvue_type_template_id_0e7015a0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.field.editor)?_c('div',[_c('VueTrix',{attrs:{"inputId":'editor-' + _vm.field.name,"inputName":_vm.field.name,"placeholder":_vm.field.title + ' giriniz'},on:{"trix-attachment-add":_vm.handleAttachmentAdd},model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}})],1):_c('div',[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"textarea",attrs:{"name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})])]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var TextareaComponentvue_type_template_id_0e7015a0_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=template&id=0e7015a0&
-
-// EXTERNAL MODULE: ./node_modules/trix/dist/trix.js
-var trix = __webpack_require__("ad7e");
-
-// EXTERNAL MODULE: ./node_modules/trix/dist/trix.css
-var dist_trix = __webpack_require__("1208");
-
-// CONCATENATED MODULE: ./node_modules/vue-trix/dist/vue-trix.esm.js
-
-
-
-
-/**
- *
- * @param {*} component
- */
-function EmitFileAccept (component) {
-  return {
-    methods: {
-      emitFileAccept: function emitFileAccept (file) {
-        this.$emit('trix-file-accept', file);
-      }
-    }
-  }
-}
-
-/**
- *
- * @param {*} component
- */
-function EmitInitialize (component) {
-  return {
-    methods: {
-      emitInitialize: function emitInitialize (editor) {
-        this.$emit('trix-initialize', this.$refs.trix.editor, event);
-      }
-    }
-  }
-}
-
-/**
- *
- * @param {*} component
- */
-function EmitAttachmentAdd (component) {
-  return {
-    methods: {
-      emitAttachmentAdd: function emitAttachmentAdd (file) {
-        this.$emit('trix-attachment-add', file);
-      }
-    }
-  }
-}
-
-/**
- *
- * @param {*} component
- */
-function EmitSelectionChange (component) {
-  return {
-    methods: {
-      emitSelectionChange: function emitSelectionChange (event) {
-        this.$emit('trix-selection-change', this.$refs.trix.editor, event);
-      }
-    }
-  }
-}
-
-/**
- *
- * @param {*} component
- */
-function EmitAttachmentRemove (component) {
-  return {
-    methods: {
-      emitAttachmentRemove: function emitAttachmentRemove (file) {
-        this.$emit('trix-attachment-remove', file);
-      }
-    }
-  }
-}
-
-/**
- *
- * @param {*} component
- */
-function EmitBeforeInitialize (component) {
-  return {
-    methods: {
-      emitBeforeInitialize: function emitBeforeInitialize (event) {
-        this.$emit('trix-before-initialize', this.$refs.trix.editor, event);
-      }
-    }
-  }
-}
-
-//
-
-var script = {
-  name: 'VueTrix',
-  mixins: [
-    EmitFileAccept(),
-    EmitInitialize(),
-    EmitAttachmentAdd(),
-    EmitSelectionChange(),
-    EmitAttachmentRemove(),
-    EmitBeforeInitialize()
-  ],
-  model: {
-    prop: 'srcContent',
-    event: 'update'
-  },
-  props: {
-    /**
-     * This is referenced `id` of the hidden input field defined.
-     * It is optional and will be a random string by default.
-     */
-    inputId: {
-      type: String,
-      required: false,
-      default: function default$1 () {
-        return ''
-      }
-    },
-    /**
-     * This is referenced `name` of the hidden input field defined,
-     * default value is `content`.
-     */
-    inputName: {
-      type: String,
-      required: false,
-      default: function default$2 () {
-        return 'content'
-      }
-    },
-    /**
-     * The placeholder attribute specifies a short hint
-     * that describes the expected value of a editor.
-     */
-    placeholder: {
-      type: String,
-      required: false,
-      default: function default$3 () {
-        return ''
-      }
-    },
-    /**
-     * The source content is associcated to v-model directive.
-     */
-    srcContent: {
-      type: String,
-      required: false,
-      default: function default$4 () {
-        return ''
-      }
-    },
-    /**
-     * The boolean attribute allows saving editor state into browser's localStorage
-     * (optional, default is `false`).
-     */
-    localStorage: {
-      type: Boolean,
-      required: false,
-      default: function default$5 () {
-        return false
-      }
-    },
-    /**
-     * The function to call when editor is focused (optional).
-     */
-    trixFocus: {
-      type: Function,
-      required: false,
-      default: function () {
-      }
-    },
-    /**
-     * The function to call when editor goes out of focus (optional).
-     */
-    trixBlur: {
-      type: Function,
-      required: false,
-      default: function () {
-      }
-    }
-  },
-  created: function created () {
-    /**
-     *  If localStorage is enabled,
-     *  then load editor's content from the beginning.
-     */
-    if (this.localStorage) {
-      var savedValue = localStorage.getItem(this.storageId('VueTrix'));
-      if (savedValue && !this.srcContent) {
-        this.$refs.trix.editor.loadJSON(JSON.parse(savedValue));
-      }
-    }
-  },
-  data: function data () {
-    return {
-      editorContent: this.srcContent
-    }
-  },
-  methods: {
-    handleContentChange: function handleContentChange (event) {
-      this.editorContent = event.srcElement ? event.srcElement.innerHTML : event.target.innerHTML;
-      this.$emit('input', this.editorContent);
-    },
-    handleInitialContentChange: function handleInitialContentChange (newContent, oldContent) {
-      newContent = newContent === undefined ? '' : newContent;
-
-      if (this.$refs.trix.editor.innerHTML !== newContent) {
-        // Update editor's content when initial content changed
-        this.editorContent = newContent;
-      }
-    },
-    emitEditorState: function emitEditorState (value) {
-      /**
-       * If localStorage is enabled,
-       * then save editor's content into storage
-       */
-      if (this.localStorage) {
-        localStorage.setItem(
-          this.storageId('VueTrix'),
-          JSON.stringify(this.$refs.trix.editor)
-        );
-      }
-      this.$emit('update', this.editorContent);
-    },
-    storageId: function storageId (component) {
-      if (this.inputId) {
-        return (component + "." + (this.inputId) + ".content")
-      } else {
-        return (component + ".content")
-      }
-    },
-    reloadEditorContent: function reloadEditorContent (newContent) {
-      // Reload HTML content
-      this.$refs.trix.editor.loadHTML(newContent);
-
-      // Move cursor to end of new content updated
-      this.$refs.trix.editor.setSelectedRange(this.getContentEndPosition());
-    },
-    getContentEndPosition: function getContentEndPosition () {
-      return this.$refs.trix.editor.getDocument().toString().length - 1
-    }
-  },
-  computed: {
-    /**
-     * Compute a random id of hidden input
-     * when it haven't been specified.
-     */
-    generateId: function generateId () {
-      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = Math.random() * 16 | 0;
-        var v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16)
-      })
-    },
-    initialContent: function initialContent () {
-      return this.srcContent
-    }
-  },
-  watch: {
-    editorContent: {
-      handler: 'emitEditorState'
-    },
-    initialContent: {
-      handler: 'handleInitialContentChange'
-    }
-  }
-};
-
-function vue_trix_esm_normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
-/* server only */
-, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
-  if (typeof shadowMode !== 'boolean') {
-    createInjectorSSR = createInjector;
-    createInjector = shadowMode;
-    shadowMode = false;
-  } // Vue.extend constructor export interop.
-
-
-  var options = typeof script === 'function' ? script.options : script; // render functions
-
-  if (template && template.render) {
-    options.render = template.render;
-    options.staticRenderFns = template.staticRenderFns;
-    options._compiled = true; // functional template
-
-    if (isFunctionalTemplate) {
-      options.functional = true;
-    }
-  } // scopedId
-
-
-  if (scopeId) {
-    options._scopeId = scopeId;
-  }
-
-  var hook;
-
-  if (moduleIdentifier) {
-    // server build
-    hook = function hook(context) {
-      // 2.3 injection
-      context = context || // cached call
-      this.$vnode && this.$vnode.ssrContext || // stateful
-      this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext; // functional
-      // 2.2 with runInNewContext: true
-
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__;
-      } // inject component styles
-
-
-      if (style) {
-        style.call(this, createInjectorSSR(context));
-      } // register component module identifier for async chunk inference
-
-
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier);
-      }
-    }; // used by ssr in case component is cached and beforeCreate
-    // never gets called
-
-
-    options._ssrRegister = hook;
-  } else if (style) {
-    hook = shadowMode ? function () {
-      style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
-    } : function (context) {
-      style.call(this, createInjector(context));
-    };
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // register for functional component in vue file
-      var originalRender = options.render;
-
-      options.render = function renderWithStyleInjection(h, context) {
-        hook.call(context);
-        return originalRender(h, context);
-      };
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate;
-      options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
-    }
-  }
-
-  return script;
-}
-
-var normalizeComponent_1 = vue_trix_esm_normalizeComponent;
-
-var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
-function createInjector(context) {
-  return function (id, style) {
-    return addStyle(id, style);
-  };
-}
-var HEAD;
-var styles = {};
-
-function addStyle(id, css) {
-  var group = isOldIE ? css.media || 'default' : id;
-  var style = styles[group] || (styles[group] = {
-    ids: new Set(),
-    styles: []
-  });
-
-  if (!style.ids.has(id)) {
-    style.ids.add(id);
-    var code = css.source;
-
-    if (css.map) {
-      // https://developer.chrome.com/devtools/docs/javascript-debugging
-      // this makes source maps inside style tags work properly in Chrome
-      code += '\n/*# sourceURL=' + css.map.sources[0] + ' */'; // http://stackoverflow.com/a/26603875
-
-      code += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) + ' */';
-    }
-
-    if (!style.element) {
-      style.element = document.createElement('style');
-      style.element.type = 'text/css';
-      if (css.media) { style.element.setAttribute('media', css.media); }
-
-      if (HEAD === undefined) {
-        HEAD = document.head || document.getElementsByTagName('head')[0];
-      }
-
-      HEAD.appendChild(style.element);
-    }
-
-    if ('styleSheet' in style.element) {
-      style.styles.push(code);
-      style.element.styleSheet.cssText = style.styles.filter(Boolean).join('\n');
-    } else {
-      var index = style.ids.size - 1;
-      var textNode = document.createTextNode(code);
-      var nodes = style.element.childNodes;
-      if (nodes[index]) { style.element.removeChild(nodes[index]); }
-      if (nodes.length) { style.element.insertBefore(textNode, nodes[index]); }else { style.element.appendChild(textNode); }
-    }
-  }
-}
-
-var browser = createInjector;
-
-/* script */
-var __vue_script__ = script;
-
-/* template */
-var __vue_render__ = function() {
-  var _vm = this;
-  var _h = _vm.$createElement;
-  var _c = _vm._self._c || _h;
-  return _c(
-    "div",
-    { class: _vm.$style.trix_container },
-    [
-      _c("trix-editor", {
-        ref: "trix",
-        staticClass: "trix-content",
-        attrs: {
-          contenteditable: "true",
-          input: _vm.inputId || _vm.generateId,
-          placeholder: _vm.placeholder
-        },
-        on: {
-          "trix-change": _vm.handleContentChange,
-          "trix-file-accept": _vm.emitFileAccept,
-          "trix-attachment-add": _vm.emitAttachmentAdd,
-          "trix-attachment-remove": _vm.emitAttachmentRemove,
-          "trix-selection-change": _vm.emitSelectionChange,
-          "trix-initialize": _vm.emitInitialize,
-          "trix-before-initialize": _vm.emitBeforeInitialize,
-          "trix-focus": _vm.trixFocus,
-          "trix-blur": _vm.trixBlur
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: {
-          type: "hidden",
-          name: _vm.inputName,
-          id: _vm.inputId || _vm.generateId
-        },
-        domProps: { value: _vm.editorContent }
-      })
-    ],
-    1
-  )
-};
-var __vue_staticRenderFns__ = [];
-__vue_render__._withStripped = true;
-
-  /* style */
-  var __vue_inject_styles__ = function (inject) {
-    if (!inject) { return }
-    inject("data-v-66fdea98_0", { source: "\n.src-components-trix_container-5Bcy {\n  max-width: 100%;\n  height: auto;\n}\n.src-components-trix_container-5Bcy .src-components-trix-button-group-2D-J {\n  background-color: white;\n}\n.src-components-trix_container-5Bcy .src-components-trix-content-1TD_ {\n  background-color: white;\n}\n", map: {"version":3,"sources":["/home/hanh/side-projects/vue-trix/src/components/VueTrix.vue"],"names":[],"mappings":";AAwNA;EACA,eAAA;EACA,YAAA;AACA;AACA;EACA,uBAAA;AACA;AACA;EACA,uBAAA;AACA","file":"VueTrix.vue","sourcesContent":["<template>\n  <div\n    :class=\"$style.trix_container\"\n  >\n    <trix-editor\n      contenteditable=\"true\"\n      class=\"trix-content\"\n      ref=\"trix\"\n      :input=\"inputId || generateId\"\n      :placeholder=\"placeholder\"\n      @trix-change=\"handleContentChange\"\n      @trix-file-accept=\"emitFileAccept\"\n      @trix-attachment-add=\"emitAttachmentAdd\"\n      @trix-attachment-remove=\"emitAttachmentRemove\"\n      @trix-selection-change=\"emitSelectionChange\"\n      @trix-initialize=\"emitInitialize\"\n      @trix-before-initialize=\"emitBeforeInitialize\"\n      @trix-focus=\"trixFocus\"\n      @trix-blur=\"trixBlur\"\n    ></trix-editor>\n    <input\n      type=\"hidden\"\n      :name=\"inputName\"\n      :id=\"inputId || generateId\"\n      :value=\"editorContent\"\n    >\n  </div>\n</template>\n\n<script>\nimport 'trix'\nimport 'trix/dist/trix.css'\nimport EmitFileAccept from '../mixins/EmitFileAccept.js'\nimport EmitInitialize from '../mixins/EmitInitialize.js'\nimport EmitAttachmentAdd from '../mixins/EmitAttachmentAdd.js'\nimport EmitSelectionChange from '../mixins/EmitSelectionChange.js'\nimport EmitAttachmentRemove from '../mixins/EmitAttachmentRemove.js'\nimport EmitBeforeInitialize from '../mixins/EmitBeforeInitialize.js'\n\nexport default {\n  name: 'VueTrix',\n  mixins: [\n    EmitFileAccept('VueTrix'),\n    EmitInitialize('VueTrix'),\n    EmitAttachmentAdd('VueTrix'),\n    EmitSelectionChange('VueTrix'),\n    EmitAttachmentRemove('VueTrix'),\n    EmitBeforeInitialize('VueTrix')\n  ],\n  model: {\n    prop: 'srcContent',\n    event: 'update'\n  },\n  props: {\n    /**\n     * This is referenced `id` of the hidden input field defined.\n     * It is optional and will be a random string by default.\n     */\n    inputId: {\n      type: String,\n      required: false,\n      default () {\n        return ''\n      }\n    },\n    /**\n     * This is referenced `name` of the hidden input field defined,\n     * default value is `content`.\n     */\n    inputName: {\n      type: String,\n      required: false,\n      default () {\n        return 'content'\n      }\n    },\n    /**\n     * The placeholder attribute specifies a short hint\n     * that describes the expected value of a editor.\n     */\n    placeholder: {\n      type: String,\n      required: false,\n      default () {\n        return ''\n      }\n    },\n    /**\n     * The source content is associcated to v-model directive.\n     */\n    srcContent: {\n      type: String,\n      required: false,\n      default () {\n        return ''\n      }\n    },\n    /**\n     * The boolean attribute allows saving editor state into browser's localStorage\n     * (optional, default is `false`).\n     */\n    localStorage: {\n      type: Boolean,\n      required: false,\n      default () {\n        return false\n      }\n    },\n    /**\n     * The function to call when editor is focused (optional).\n     */\n    trixFocus: {\n      type: Function,\n      required: false,\n      default: () => {\n      }\n    },\n    /**\n     * The function to call when editor goes out of focus (optional).\n     */\n    trixBlur: {\n      type: Function,\n      required: false,\n      default: () => {\n      }\n    }\n  },\n  created () {\n    /**\n     *  If localStorage is enabled,\n     *  then load editor's content from the beginning.\n     */\n    if (this.localStorage) {\n      const savedValue = localStorage.getItem(this.storageId('VueTrix'))\n      if (savedValue && !this.srcContent) {\n        this.$refs.trix.editor.loadJSON(JSON.parse(savedValue))\n      }\n    }\n  },\n  data () {\n    return {\n      editorContent: this.srcContent\n    }\n  },\n  methods: {\n    handleContentChange (event) {\n      this.editorContent = event.srcElement ? event.srcElement.innerHTML : event.target.innerHTML\n      this.$emit('input', this.editorContent)\n    },\n    handleInitialContentChange (newContent, oldContent) {\n      newContent = newContent === undefined ? '' : newContent\n\n      if (this.$refs.trix.editor.innerHTML !== newContent) {\n        // Update editor's content when initial content changed\n        this.editorContent = newContent\n      }\n    },\n    emitEditorState (value) {\n      /**\n       * If localStorage is enabled,\n       * then save editor's content into storage\n       */\n      if (this.localStorage) {\n        localStorage.setItem(\n          this.storageId('VueTrix'),\n          JSON.stringify(this.$refs.trix.editor)\n        )\n      }\n      this.$emit('update', this.editorContent)\n    },\n    storageId (component) {\n      if (this.inputId) {\n        return `${component}.${this.inputId}.content`\n      } else {\n        return `${component}.content`\n      }\n    },\n    reloadEditorContent (newContent) {\n      // Reload HTML content\n      this.$refs.trix.editor.loadHTML(newContent)\n\n      // Move cursor to end of new content updated\n      this.$refs.trix.editor.setSelectedRange(this.getContentEndPosition())\n    },\n    getContentEndPosition () {\n      return this.$refs.trix.editor.getDocument().toString().length - 1\n    }\n  },\n  computed: {\n    /**\n     * Compute a random id of hidden input\n     * when it haven't been specified.\n     */\n    generateId () {\n      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {\n        var r = Math.random() * 16 | 0\n        var v = c === 'x' ? r : (r & 0x3 | 0x8)\n        return v.toString(16)\n      })\n    },\n    initialContent () {\n      return this.srcContent\n    }\n  },\n  watch: {\n    editorContent: {\n      handler: 'emitEditorState'\n    },\n    initialContent: {\n      handler: 'handleInitialContentChange'\n    }\n  }\n}\n</script>\n\n<style lang=\"css\" module>\n.trix_container {\n  max-width: 100%;\n  height: auto;\n}\n.trix_container .trix-button-group {\n  background-color: white;\n}\n.trix_container .trix-content {\n  background-color: white;\n}\n</style>\n"]}, media: undefined });
-Object.defineProperty(this, "$style", { value: {"trix_container":"src-components-trix_container-5Bcy","trix-button-group":"src-components-trix-button-group-2D-J","trix-content":"src-components-trix-content-1TD_"} });
-
-  };
-  /* scoped */
-  var __vue_scope_id__ = undefined;
-  /* module identifier */
-  var __vue_module_identifier__ = undefined;
-  /* functional template */
-  var __vue_is_functional_template__ = false;
-  /* style inject SSR */
-  
-
-  
-  var VueTrix = normalizeComponent_1(
-    { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
-    __vue_inject_styles__,
-    __vue_script__,
-    __vue_scope_id__,
-    __vue_is_functional_template__,
-    __vue_module_identifier__,
-    browser,
-    undefined
-  );
-
-/*
- * Vue-Trix index.js
- * Author: tranduchanh.ms@gmail.com
- * Github: https://github.com/hanhdt/vue-trix
- */
-external_commonjs_vue_commonjs2_vue_root_Vue_default.a.config.ignoredElements = ['trix-editor'];
-
-external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component(VueTrix.name, VueTrix);
-
-/* harmony default export */ var vue_trix_esm = (VueTrix);
-//# sourceMappingURL=vue-trix.esm.js.map
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ var TextareaComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"],
-  components: {
-    VueTrix: vue_trix_esm
-  },
-  methods: {
-    handleAttachmentAdd: function handleAttachmentAdd(event) {
-      var file = event.attachment.file;
-      var formData = new FormData();
-      formData.append("file", file);
-      axios_default.a.post(window.location.origin + "/api/uploadFile", formData).then(function (response) {
-        var attributes = {
-          url: response.data,
-          href: response.data
-        };
-        event.attachment.setAttributes(attributes);
-      });
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_TextareaComponentvue_type_script_lang_js_ = (TextareaComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var TextareaComponent_component = normalizeComponent(
-  form_TextareaComponentvue_type_script_lang_js_,
-  TextareaComponentvue_type_template_id_0e7015a0_render,
-  TextareaComponentvue_type_template_id_0e7015a0_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var TextareaComponent = (TextareaComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/SelectComponent.vue?vue&type=template&id=27e960be&
-var SelectComponentvue_type_template_id_27e960be_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('v-select',{attrs:{"options":_vm.field.options,"multiple":_vm.field.multiple == true,"disabled":_vm.field.disabled,"getOptionLabel":_vm.getOptionLabel},model:{value:(_vm.selected),callback:function ($$v) {_vm.selected=$$v},expression:"selected"}}),(Array.isArray(_vm.selected))?_c('div',_vm._l((_vm.selected),function(select){return _c('input',{key:select.value,attrs:{"type":"hidden","name":_vm.field.multiple ? _vm.field.name + '[]' : _vm.field.name},domProps:{"value":select.value}})}),0):_c('div',[_c('input',{attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":_vm.selected.value}})])],1),_c('p',{directives:[{name:"show",rawName:"v-show",value:(_vm.field.multiple),expression:"field.multiple"}],staticClass:"help"},[_vm._v("Birden fazla seçenek seçebilirsiniz.")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var SelectComponentvue_type_template_id_27e960be_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/SelectComponent.vue?vue&type=template&id=27e960be&
-
-// EXTERNAL MODULE: ./node_modules/vue-select/dist/vue-select.js
-var vue_select = __webpack_require__("4a7a");
-var vue_select_default = /*#__PURE__*/__webpack_require__.n(vue_select);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/SelectComponent.vue?vue&type=script&lang=js&
-
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var SelectComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"],
-  components: {
-    vSelect: vue_select_default.a
-  },
-  data: function data() {
-    return {
-      selected: []
-    };
-  },
-  mounted: function mounted() {
-    // TODO: burası biraz daha optimize edilmesi lazım
-    var selected = this.data[this.field.name];
-
-    if (Array.isArray(selected) && typeof_typeof(selected[0]) != "object") {
-      selected = this.field.options.filter(function (option) {
-        return selected.includes(option.value);
-      });
-    } else if (!Array.isArray(selected)) {
-      selected = this.field.options.filter(function (option) {
-        return option.value == selected;
-      });
-    }
-
-    this.selected = selected;
-  },
-  methods: {
-    getOptionLabel: function getOptionLabel(option) {
-      var label = option.label;
-
-      if (option.parent != null) {
-        label = "+\t" + label;
-      }
-
-      return label;
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/form/SelectComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_SelectComponentvue_type_script_lang_js_ = (SelectComponentvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/form/SelectComponent.vue?vue&type=style&index=0&lang=scss&
-var SelectComponentvue_type_style_index_0_lang_scss_ = __webpack_require__("c83e");
-
-// CONCATENATED MODULE: ./src/components/form/SelectComponent.vue
-
-
-
-
-
-
-/* normalize component */
-
-var SelectComponent_component = normalizeComponent(
-  form_SelectComponentvue_type_script_lang_js_,
-  SelectComponentvue_type_template_id_27e960be_render,
-  SelectComponentvue_type_template_id_27e960be_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var SelectComponent = (SelectComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/CheckboxComponent.vue?vue&type=template&id=712ffa67&
-var CheckboxComponentvue_type_template_id_712ffa67_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"checkbox"},[_c('input',{attrs:{"type":"checkbox","name":_vm.field.multiple ? _vm.field.name + '[]' : _vm.field.name,"multiple":_vm.field.multiple == true,"disabled":_vm.field.disabled},domProps:{"checked":_vm.data[_vm.field.name]}}),_vm._v("\n    "+_vm._s(_vm.field.title)+"\n  ")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var CheckboxComponentvue_type_template_id_712ffa67_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/CheckboxComponent.vue?vue&type=template&id=712ffa67&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/CheckboxComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var CheckboxComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"]
-});
-// CONCATENATED MODULE: ./src/components/form/CheckboxComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_CheckboxComponentvue_type_script_lang_js_ = (CheckboxComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/form/CheckboxComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var CheckboxComponent_component = normalizeComponent(
-  form_CheckboxComponentvue_type_script_lang_js_,
-  CheckboxComponentvue_type_template_id_712ffa67_render,
-  CheckboxComponentvue_type_template_id_712ffa67_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var CheckboxComponent = (CheckboxComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ToggleComponent.vue?vue&type=template&id=32ae0928&
-var ToggleComponentvue_type_template_id_32ae0928_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"}],staticClass:"input",attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":(_vm.value)},on:{"input":function($event){if($event.target.composing){ return; }_vm.value=$event.target.value}}}),_c('toggle-button',{attrs:{"labels":{checked: this.field.titleOn, unchecked: this.field.titleOff},"width":"100","height":"30"},model:{value:(_vm.value),callback:function ($$v) {_vm.value=$$v},expression:"value"}})],1),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var ToggleComponentvue_type_template_id_32ae0928_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/ToggleComponent.vue?vue&type=template&id=32ae0928&
-
-// EXTERNAL MODULE: ./node_modules/vue-js-toggle-button/dist/index.js
-var dist = __webpack_require__("f206");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ToggleComponent.vue?vue&type=script&lang=js&
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var ToggleComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"],
-  data: function data() {
-    var that = this;
-    return {
-      value: that.data[that.field.name] == "true" || that.data[that.field.name] == "1" ? true : false
-    };
-  },
-  components: {
-    ToggleButton: dist["ToggleButton"]
-  }
-});
-// CONCATENATED MODULE: ./src/components/form/ToggleComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_ToggleComponentvue_type_script_lang_js_ = (ToggleComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/form/ToggleComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var ToggleComponent_component = normalizeComponent(
-  form_ToggleComponentvue_type_script_lang_js_,
-  ToggleComponentvue_type_template_id_32ae0928_render,
-  ToggleComponentvue_type_template_id_32ae0928_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var ToggleComponent = (ToggleComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ColorPickerComponent.vue?vue&type=template&id=79bce888&
-var ColorPickerComponentvue_type_template_id_79bce888_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"input",staticStyle:{"width":"100%"},attrs:{"type":"color","name":_vm.field.name},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}}),_vm._v("\n      "+_vm._s(_vm.data[_vm.field.name])+"\n    ")]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var ColorPickerComponentvue_type_template_id_79bce888_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/ColorPickerComponent.vue?vue&type=template&id=79bce888&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/ColorPickerComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var ColorPickerComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"]
-});
-// CONCATENATED MODULE: ./src/components/form/ColorPickerComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_ColorPickerComponentvue_type_script_lang_js_ = (ColorPickerComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/form/ColorPickerComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var ColorPickerComponent_component = normalizeComponent(
-  form_ColorPickerComponentvue_type_script_lang_js_,
-  ColorPickerComponentvue_type_template_id_79bce888_render,
-  ColorPickerComponentvue_type_template_id_79bce888_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var ColorPickerComponent = (ColorPickerComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RangeComponent.vue?vue&type=template&id=f330b46e&
-var RangeComponentvue_type_template_id_f330b46e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"input",staticStyle:{"width":"100%"},attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}}),_c('vue-range-slider',{ref:"slider",staticClass:"sliderVue",model:{value:(_vm.data[_vm.field.name]),callback:function ($$v) {_vm.$set(_vm.data, _vm.field.name, $$v)},expression:"data[field.name]"}})],1),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var RangeComponentvue_type_template_id_f330b46e_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/RangeComponent.vue?vue&type=template&id=f330b46e&
-
-// EXTERNAL MODULE: ./node_modules/vue-range-component/dist/vue-range-slider.css
-var vue_range_slider = __webpack_require__("e1b1");
-
-// CONCATENATED MODULE: ./node_modules/vue-range-component/dist/vue-range-slider.esm.js
-/*!
- * vue-range-slider v1.0.3
- * (c) 2016-2018 xwpongithub
- * Released under the MIT License.
- */
-// Unsharp text [#166](https://github.com/NightCatSama/vue-slider-component/issues/166)
-var roundToDPR = function () {
-  var r = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
-  return function (value) {
-    return Math.round(value * r) / r;
-  };
-}();
-var isMobile = function () {
-  var userAgentInfo = navigator.userAgent.toLowerCase();
-  var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
-  var flag = false;
-
-  for (var v = 0; v < agents.length; v++) {
-    if (userAgentInfo.indexOf(agents[v].toLowerCase()) > 0) {
-      flag = true;
-      break;
-    }
-  }
-
-  return flag;
-}();
-function isArray(input) {
-  if (Array.prototype.isArray) {
-    return Array.isArray(input);
-  }
-
-  return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
-}
-function isDiff(a, b) {
-  if (Object.prototype.toString.call(a) !== Object.prototype.toString.call(b)) {
-    return true;
-  } else if (isArray(a) && a.length === b.length) {
-    return a.some(function (v, i) {
-      return v !== b[i];
-    });
-  }
-
-  return a !== b;
-}
-var elementStyle = document.createElement('div').style;
-
-var vendor = function () {
-  var transformNames = {
-    webkit: 'webkitTransform',
-    Moz: 'MozTransform',
-    O: 'OTransform',
-    ms: 'msTransform',
-    standard: 'transform'
-  };
-
-  for (var key in transformNames) {
-    if (elementStyle[transformNames[key]] !== undefined) {
-      return key;
-    }
-  }
-
-  return false;
-}();
-
-function prefixStyle(style) {
-  if (vendor === false) {
-    return false;
-  }
-
-  if (vendor === 'standard') {
-    if (style === 'transitionEnd') {
-      return 'transitionend';
-    }
-
-    return style;
-  }
-
-  return vendor + style.charAt(0).toUpperCase() + style.substr(1);
-}
-function addEvent(el, type, fn, capture) {
-  el.addEventListener(type, fn, {
-    passive: false,
-    capture: !!capture
-  });
-}
-function removeEvent(el, type, fn, capture) {
-  el.removeEventListener(type, fn, {
-    passive: false,
-    capture: !!capture
-  });
-}
-
-var transform = prefixStyle('transform');
-var transitionDuration = prefixStyle('transitionDuration');
-var transitionEnd = prefixStyle('transitionEnd');
-var EVENT_TOUCH_START = 'touchstart';
-var EVENT_TOUCH_MOVE = 'touchmove';
-var EVENT_TOUCH_END = 'touchend';
-var EVENT_TOUCH_CANCEL = 'touchcancel';
-var EVENT_MOUSE_DOWN = 'mousedown';
-var EVENT_MOUSE_MOVE = 'mousemove';
-var EVENT_MOUSE_UP = 'mouseup';
-var EVENT_MOUSE_LEAVE = 'mouseleave';
-var EVENT_KEY_DOWN = 'keydown';
-var EVENT_KEY_UP = 'keyup';
-var EVENT_RESIZE = 'resize';
-var Slider = {
-  name: 'vue-range-slider',
-  props: {
-    // 是否显示组件
-    show: {
-      type: Boolean,
-      default: true
-    },
-    // 值
-    value: {
-      type: [String, Number, Array, Object],
-      default: 0
-    },
-    // 最小值
-    min: {
-      type: Number,
-      default: 0
-    },
-    // 最大值
-    max: {
-      type: Number,
-      default: 100
-    },
-    // 分段间隔
-    step: {
-      type: Number,
-      default: 1
-    },
-    // 组件宽度
-    width: {
-      type: [Number, String],
-      default: 'auto'
-    },
-    // 组件高度
-    height: {
-      type: [Number, String],
-      default: 6
-    },
-    // 滑块大小
-    dotSize: {
-      type: Number,
-      default: 16
-    },
-    dotWidth: {
-      type: Number,
-      required: false
-    },
-    dotHeight: {
-      type: Number,
-      required: false
-    },
-    stopPropagation: {
-      type: Boolean,
-      default: false
-    },
-    // 事件类型
-    eventType: {
-      type: String,
-      default: 'auto'
-    },
-    // 是否实时计算组件布局
-    realTime: {
-      type: Boolean,
-      default: false
-    },
-    // 是否显示工具提示
-    tooltip: {
-      type: [String, Boolean],
-      default: 'always',
-      validator: function validator(val) {
-        return ['hover', 'always'].indexOf(val) > -1;
-      }
-    },
-    // 组件方向
-    direction: {
-      type: String,
-      default: 'horizontal',
-      validator: function validator(val) {
-        return ['horizontal', 'vertical'].indexOf(val) > -1;
-      }
-    },
-    // 是否反向组件
-    reverse: {
-      type: Boolean,
-      default: false
-    },
-    // 是否不可用
-    disabled: {
-      type: [Boolean, Array],
-      default: false
-    },
-    piecewiseLabel: {
-      type: Boolean,
-      default: false
-    },
-    piecewise: {
-      type: Boolean,
-      default: false
-    },
-    // 进度条是否可拖拽（只限范围模式）
-    processDraggable: {
-      type: Boolean,
-      default: false
-    },
-    // 是否可点击的
-    clickable: {
-      type: Boolean,
-      default: true
-    },
-    // 是否固定距离
-    fixed: {
-      type: Boolean,
-      default: false
-    },
-    // 是否为开发环境（打印错误）
-    debug: {
-      type: Boolean,
-      default: true
-    },
-    // 最小范围
-    minRange: {
-      type: Number
-    },
-    // 最大范围
-    maxRange: {
-      type: Number
-    },
-    tooltipMerge: {
-      type: Boolean,
-      default: true
-    },
-    // 是否开启初始动画
-    startAnimation: {
-      type: Boolean,
-      default: false
-    },
-    // 是否在拖拽结束后同步值
-    lazy: {
-      type: Boolean,
-      default: false
-    },
-    // 在范围模式中，是否允许交叉
-    enableCross: {
-      type: Boolean,
-      default: true
-    },
-    // 动画速度比
-    speed: {
-      type: Number,
-      default: 0.5
-    },
-    useKeyboard: {
-      type: Boolean,
-      default: false
-    },
-    actionsKeyboard: {
-      type: Array,
-      default: function _default() {
-        return [function (i) {
-          return i - 1;
-        }, function (i) {
-          return i + 1;
-        }];
-      }
-    },
-    data: Array,
-    formatter: [String, Function],
-    mergeFormatter: [String, Function],
-    // 工具提示方向
-    tooltipDir: [Array, String],
-    // 工具提示样式
-    tooltipStyle: [Array, Object, Function],
-    // 滑块样式
-    sliderStyle: [Array, Object, Function],
-    // 键盘控制时，算滑块获得焦点时样式
-    focusStyle: [Array, Object, Function],
-    // 组件禁用状态下样式
-    disabledStyle: Object,
-    // 进度条样式
-    processStyle: Object,
-    // 组件背景样式
-    bgStyle: Object,
-    piecewiseStyle: Object,
-    piecewiseActiveStyle: Object,
-    disabledDotStyle: [Array, Object, Function],
-    labelStyle: Object,
-    labelActiveStyle: Object
-  },
-  data: function data() {
-    return {
-      currentValue: 0,
-      size: 0,
-      fixedValue: 0,
-      focusSlider: 0,
-      currentSlider: 0,
-      flag: false,
-      processFlag: false,
-      processSign: false,
-      keydownFlag: false,
-      focusFlag: false,
-      dragFlag: false,
-      crossFlag: false,
-      isComponentExists: true,
-      isMounted: false
-    };
-  },
-  render: function render(h) {
-    var _this = this;
-
-    var sliderConBlocks = []; // dot
-
-    if (this.isRange) {
-      var dot0 = h('div', {
-        ref: 'dot0',
-        staticClass: 'slider-dot',
-        class: [this.tooltipStatus, {
-          'slider-dot-focus': this.focusFlag && this.focusSlider === 0,
-          'slider-dot-dragging': this.flag && this.currentSlider === 0,
-          'slider-dot-disabled': !this.boolDisabled && this.disabledArray[0]
-        }],
-        style: [this.dotStyles, !this.boolDisabled && this.disabledArray[0] ? this.disabledDotStyles[0] : null, this.sliderStyles[0], this.focusFlag && this.focusSlider === 0 ? this.focusStyles[0] : null]
-      }, [h('div', {
-        ref: 'tooltip0',
-        staticClass: 'slider-tooltip-wrap',
-        class: "slider-tooltip-".concat(this.tooltipDirection[0])
-      }, [this._t('tooltip', [h('span', {
-        staticClass: 'slider-tooltip',
-        style: this.tooltipStyles[0]
-      }, this.formatter ? this.formatting(this.val[0]) : this.val[0])], {
-        value: this.val[0],
-        index: 0,
-        disabled: !this.boolDisabled && this.disabledArray[0]
-      })])]);
-      sliderConBlocks.push(dot0);
-      var dot1 = h('div', {
-        ref: 'dot1',
-        staticClass: 'slider-dot',
-        class: [this.tooltipStatus, {
-          'slider-dot-focus': this.focusFlag && this.focusSlider === 1,
-          'slider-dot-dragging': this.flag && this.currentSlider === 1,
-          'slider-dot-disabled': !this.boolDisabled && this.disabledArray[1]
-        }],
-        style: [this.dotStyles, !this.boolDisabled && this.disabledArray[1] ? this.disabledDotStyles[1] : null, this.sliderStyles[1], this.focusFlag && this.focusSlider === 1 ? this.focusStyles[1] : null]
-      }, [h('div', {
-        ref: 'tooltip1',
-        staticClass: 'slider-tooltip-wrap',
-        class: "slider-tooltip-".concat(this.tooltipDirection[1])
-      }, [this._t('tooltip', [h('span', {
-        staticClass: 'slider-tooltip',
-        style: this.tooltipStyles[1]
-      }, this.formatter ? this.formatting(this.val[1]) : this.val[1])], {
-        value: this.val[1],
-        index: 1,
-        disabled: !this.boolDisabled && this.disabledArray[1]
-      })])]);
-      sliderConBlocks.push(dot1);
-    } else {
-      var dot = h('div', {
-        ref: 'dot',
-        staticClass: 'slider-dot',
-        class: [this.tooltipStatus, {
-          'slider-dot-focus': this.focusFlag && this.focusSlider === 0,
-          'slider-dot-dragging': this.flag && this.currentSlider === 0
-        }],
-        style: [this.dotStyles, this.sliderStyles, this.focusFlag && this.focusSlider === 0 ? this.focusStyles : null]
-      }, [h('div', {
-        staticClass: 'slider-tooltip-wrap',
-        class: "slider-tooltip-".concat(this.tooltipDirection)
-      }, [this._t('tooltip', [h('span', {
-        staticClass: 'slider-tooltip',
-        style: this.tooltipStyles
-      }, this.formatter ? this.formatting(this.val) : this.val)], {
-        value: this.val
-      })])]);
-      sliderConBlocks.push(dot);
-    } // piecewise
-
-
-    var dotWrapLen = this.piecewiseDotWrap.length;
-    var ulBlock = h('ul', {
-      staticClass: 'slider-piecewise'
-    }, this._l(this.piecewiseDotWrap, function (item, i) {
-      var piecewiseDot = [];
-
-      if (_this.piecewise) {
-        piecewiseDot.push(h('span', {
-          staticClass: 'piecewise-dot',
-          style: [_this.piecewiseStyle, item.inRange ? _this.piecewiseActiveStyle : null]
-        }));
-      }
-
-      var piecewiseLabel = [];
-
-      if (_this.piecewiseLabel) {
-        piecewiseLabel.push(h('span', {
-          staticClass: 'piecewise-label',
-          style: [_this.labelStyle, item.inRange ? _this.labelActiveStyle : null]
-        }, item.label));
-      }
-
-      return h('li', {
-        key: i,
-        staticClass: 'piecewise-item',
-        style: [_this.piecewiseDotStyle, item.style]
-      }, [_this._t('piecewise', piecewiseDot, {
-        label: item.label,
-        index: i,
-        first: i === 0,
-        last: i === dotWrapLen - 1,
-        active: item.inRange
-      }), _this._t('label', piecewiseLabel, {
-        label: item.label,
-        index: i,
-        first: i === 0,
-        last: i === dotWrapLen - 1,
-        active: item.inRange
-      })]);
-    }));
-    sliderConBlocks.push(ulBlock); // process
-
-    var processBlock = h('div', {
-      ref: 'process',
-      staticClass: 'slider-process',
-      class: {
-        'slider-process-draggable': this.isRange && this.processDraggable
-      },
-      style: this.processStyle,
-      on: {
-        click: function click(e) {
-          return _this.processClick(e);
-        }
-      }
-    }, [h('div', {
-      ref: 'mergedTooltip',
-      staticClass: 'merged-tooltip slider-tooltip-wrap',
-      class: "slider-tooltip-".concat(this.isRange ? this.tooltipDirection[0] : this.tooltipDirection),
-      style: this.tooltipMergedPosition
-    }, [this._t('tooltip', [h('span', {
-      staticClass: 'slider-tooltip',
-      style: this.tooltipStyles
-    }, this.mergeFormatter ? this.mergeFormatting(this.val[0], this.val[1]) : this.formatter ? this.val[0] === this.val[1] ? this.formatting(this.val[0]) : "".concat(this.formatting(this.val[0]), " - ").concat(this.formatting(this.val[1])) : this.val[0] === this.val[1] ? this.val[0] : "".concat(this.val[0], " - ").concat(this.val[1]))], {
-      value: this.val,
-      merge: true
-    })])]);
-    sliderConBlocks.push(processBlock); // <input type="range">
-
-    if (!this.isRange && !this.data) {
-      sliderConBlocks.push(h('input', {
-        staticClass: 'slider-input',
-        attrs: {
-          type: 'range',
-          min: this.min,
-          max: this.max
-        },
-        domProps: {
-          value: this.val
-        },
-        on: {
-          input: function input(e) {
-            return _this.val = e.target.value;
-          }
-        }
-      }));
-    }
-
-    return h('div', {
-      ref: 'wrap',
-      staticClass: 'vue-range-slider slider-component',
-      class: [this.flowDirection, this.disabledClass, this.stateClass, {
-        'slider-has-label': this.piecewiseLabel
-      }],
-      style: [this.wrapStyles, this.boolDisabled ? this.disabledStyle : null],
-      directives: [{
-        name: 'show',
-        value: this.show
-      }],
-      on: {
-        click: function click(e) {
-          return _this.wrapClick(e);
-        }
-      }
-    }, [h('div', {
-      ref: 'elem',
-      staticClass: 'slider',
-      style: [this.elemStyles, this.bgStyle],
-      attrs: {
-        'aria-hidden': true
-      }
-    }, sliderConBlocks)]);
-  },
-  computed: {
-    val: {
-      get: function get() {
-        return this.data ? this.isRange ? [this.data[this.currentValue[0]], this.data[this.currentValue[1]]] : this.data[this.currentValue] : this.currentValue;
-      },
-      set: function set(val) {
-        if (this.data) {
-          if (this.isRange) {
-            var index0 = this.data.indexOf(val[0]);
-            var index1 = this.data.indexOf(val[1]);
-
-            if (index0 > -1 && index1 > -1) {
-              this.currentValue = [index0, index1];
-            }
-          } else {
-            var index = this.data.indexOf(val);
-
-            if (index > -1) {
-              this.currentValue = index;
-            }
-          }
-        } else {
-          this.currentValue = val;
-        }
-      }
-    },
-    currentIndex: function currentIndex() {
-      if (this.isRange) {
-        return this.data ? this.currentValue : [this.getIndexByValue(this.currentValue[0]), this.getIndexByValue(this.currentValue[1])];
-      } else {
-        return this.getIndexByValue(this.currentValue);
-      }
-    },
-    tooltipMergedPosition: function tooltipMergedPosition() {
-      if (!this.isMounted) return {};
-      var tooltipDirection = this.tooltipDirection[0];
-      var dot0 = this.$refs.dot0;
-
-      if (dot0) {
-        var style = {};
-
-        if (this.direction === 'vertical') {
-          style[tooltipDirection] = "-".concat(this.dotHeightVal / 2 - this.width / 2 + 9, "px");
-        } else {
-          style[tooltipDirection] = "-".concat(this.dotWidthVal / 2 - this.height / 2 + 9, "px");
-          style['left'] = "50%";
-        }
-
-        return style;
-      }
-    },
-    tooltipDirection: function tooltipDirection() {
-      var dir = this.tooltipDir || (this.direction === 'vertical' ? 'left' : 'top');
-
-      if (isArray(dir)) {
-        return this.isRange ? dir : dir[1];
-      } else {
-        return this.isRange ? [dir, dir] : dir;
-      }
-    },
-    piecewiseDotWrap: function piecewiseDotWrap() {
-      if (!this.piecewise && !this.piecewiseLabel) {
-        return false;
-      }
-
-      var arr = [];
-
-      for (var i = 0; i <= this.total; i++) {
-        var style = this.direction === 'vertical' ? {
-          bottom: "".concat(this.gap * i - this.width / 2, "px"),
-          left: 0
-        } : {
-          left: "".concat(this.gap * i - this.height / 2, "px"),
-          top: 0
-        };
-        var index = this.reverse ? this.total - i : i;
-        var label = this.data ? this.data[index] : this.spacing * index + this.min;
-        arr.push({
-          style: style,
-          label: this.formatter ? this.formatting(label) : label,
-          inRange: index >= this.indexRange[0] && index <= this.indexRange[1]
-        });
-      }
-
-      return arr;
-    },
-    total: function total() {
-      if (this.data) {
-        return this.data.length - 1;
-      } else if (Math.floor((this.maximum - this.minimum) * this.multiple) % (this.step * this.multiple) !== 0) {
-        this.printError('Prop[step] is illegal, Please make sure that the step can be divisible');
-      }
-
-      return (this.maximum - this.minimum) / this.step;
-    },
-    piecewiseDotStyle: function piecewiseDotStyle() {
-      return this.direction === 'vertical' ? {
-        width: "".concat(this.width, "px"),
-        height: "".concat(this.width, "px")
-      } : {
-        width: "".concat(this.height, "px"),
-        height: "".concat(this.height, "px")
-      };
-    },
-    dotStyles: function dotStyles() {
-      return this.direction === 'vertical' ? {
-        width: "".concat(this.dotWidthVal, "px"),
-        height: "".concat(this.dotHeightVal, "px"),
-        left: "".concat(-(this.dotWidthVal - this.width) / 2, "px")
-      } : {
-        width: "".concat(this.dotWidthVal, "px"),
-        height: "".concat(this.dotHeightVal, "px"),
-        top: "".concat(-(this.dotHeightVal - this.height) / 2, "px")
-      };
-    },
-    sliderStyles: function sliderStyles() {
-      if (isArray(this.sliderStyle)) {
-        return this.isRange ? this.sliderStyle : this.sliderStyle[1];
-      } else if (typeof this.sliderStyle === 'function') {
-        return this.sliderStyle(this.val, this.currentIndex);
-      } else {
-        return this.isRange ? [this.sliderStyle, this.sliderStyle] : this.sliderStyle;
-      }
-    },
-    tooltipStyles: function tooltipStyles() {
-      if (isArray(this.tooltipStyle)) {
-        return this.isRange ? this.tooltipStyle : this.tooltipStyle[1];
-      } else if (typeof this.tooltipStyle === 'function') {
-        return this.tooltipStyle(this.val, this.currentIndex);
-      } else {
-        return this.isRange ? [this.tooltipStyle, this.tooltipStyle] : this.tooltipStyle;
-      }
-    },
-    focusStyles: function focusStyles() {
-      if (isArray(this.focusStyle)) {
-        return this.isRange ? this.focusStyle : this.focusStyle[1];
-      } else if (typeof this.focusStyle === 'function') {
-        return this.focusStyle(this.val, this.currentIndex);
-      } else {
-        return this.isRange ? [this.focusStyle, this.focusStyle] : this.focusStyle;
-      }
-    },
-    elemStyles: function elemStyles() {
-      return this.direction === 'vertical' ? {
-        width: "".concat(this.width, "px"),
-        height: '100%'
-      } : {
-        height: "".concat(this.height, "px")
-      };
-    },
-    wrapStyles: function wrapStyles() {
-      return this.direction === 'vertical' ? {
-        height: typeof this.height === 'number' ? "".concat(this.height, "px") : this.height,
-        padding: "".concat(this.dotHeightVal / 2, "px ").concat(this.dotWidthVal / 2, "px")
-      } : {
-        width: typeof this.width === 'number' ? "".concat(this.width, "px") : this.width,
-        padding: "".concat(this.dotHeightVal / 2, "px ").concat(this.dotWidthVal / 2, "px")
-      };
-    },
-    stateClass: function stateClass() {
-      return {
-        'slider-state-process-drag': this.processFlag,
-        'slider-state-drag': this.flag && !this.processFlag && !this.keydownFlag,
-        'slider-state-focus': this.focusFlag
-      };
-    },
-    tooltipStatus: function tooltipStatus() {
-      return this.tooltip === 'hover' && this.flag ? 'slider-always' : this.tooltip ? "slider-".concat(this.tooltip) : '';
-    },
-    tooltipClass: function tooltipClass() {
-      return ["slider-tooltip-".concat(this.tooltipDirection), 'slider-tooltip'];
-    },
-    minimum: function minimum() {
-      return this.data ? 0 : this.min;
-    },
-    maximum: function maximum() {
-      return this.data ? this.data.length - 1 : this.max;
-    },
-    multiple: function multiple() {
-      var decimals = "".concat(this.step).split('.')[1];
-      return decimals ? Math.pow(10, decimals.length) : 1;
-    },
-    indexRange: function indexRange() {
-      return this.isRange ? this.currentIndex : [0, this.currentIndex];
-    },
-    spacing: function spacing() {
-      return this.data ? 1 : this.step;
-    },
-    gap: function gap() {
-      return this.size / this.total;
-    },
-    dotWidthVal: function dotWidthVal() {
-      return typeof this.dotWidth === 'number' ? this.dotWidth : this.dotSize;
-    },
-    dotHeightVal: function dotHeightVal() {
-      return typeof this.dotHeight === 'number' ? this.dotHeight : this.dotSize;
-    },
-    disabledArray: function disabledArray() {
-      return isArray(this.disabled) ? this.disabled : [this.disabled, this.disabled];
-    },
-    boolDisabled: function boolDisabled() {
-      return this.disabledArray.every(function (b) {
-        return b === true;
-      });
-    },
-    disabledClass: function disabledClass() {
-      return this.boolDisabled ? 'slider-disabled' : '';
-    },
-    flowDirection: function flowDirection() {
-      return "slider-".concat(this.direction + (this.reverse ? '-reverse' : ''));
-    },
-    isRange: function isRange() {
-      return isArray(this.value);
-    },
-    isDisabled: function isDisabled() {
-      return this.eventType === 'none' ? true : this.boolDisabled;
-    },
-    isFixed: function isFixed() {
-      return this.fixed || this.minRange;
-    },
-    position: function position() {
-      return this.isRange ? [(this.currentValue[0] - this.minimum) / this.spacing * this.gap, (this.currentValue[1] - this.minimum) / this.spacing * this.gap] : (this.currentValue - this.minimum) / this.spacing * this.gap;
-    },
-    limit: function limit() {
-      return this.isRange ? this.isFixed ? [[0, (this.total - this.fixedValue) * this.gap], [this.fixedValue * this.gap, this.size]] : [[0, this.position[1]], [this.position[0], this.size]] : [0, this.size];
-    },
-    valueLimit: function valueLimit() {
-      return this.isRange ? this.isFixed ? [[this.minimum, this.maximum - this.fixedValue * (this.spacing * this.multiple) / this.multiple], [this.minimum + this.fixedValue * (this.spacing * this.multiple) / this.multiple, this.maximum]] : [[this.minimum, this.currentValue[1]], [this.currentValue[0], this.maximum]] : [this.minimum, this.maximum];
-    },
-    idleSlider: function idleSlider() {
-      return this.currentSlider === 0 ? 1 : 0;
-    },
-    slider: function slider() {
-      return this.isRange ? [this.$refs.dot0, this.$refs.dot1] : this.$refs.dot;
-    }
-  },
-  methods: {
-    setValue: function setValue(val, noCb, speed) {
-      var _this2 = this;
-
-      if (isDiff(this.val, val)) {
-        var resetVal = this.limitValue(val);
-        this.val = this.isRange ? resetVal.concat() : resetVal;
-        this.computedFixedValue();
-        this.syncValue(noCb);
-      }
-
-      this.$nextTick(function () {
-        return _this2.setPosition(speed);
-      });
-    },
-    setIndex: function setIndex(val) {
-      if (isArray(val) && this.isRange) {
-        var value;
-
-        if (this.data) {
-          value = [this.data[val[0]], this.data[val[1]]];
-        } else {
-          value = [this.getValueByIndex(val[0]), this.getValueByIndex(val[1])];
-        }
-
-        this.setValue(value);
-      } else {
-        val = this.getValueByIndex(val);
-
-        if (this.isRange) {
-          this.currentSlider = val > (this.currentValue[1] - this.currentValue[0]) / 2 + this.currentValue[0] ? 1 : 0;
-        }
-
-        this.setCurrentValue(val);
-      }
-    },
-    wrapClick: function wrapClick(e) {
-      if (this.isDisabled || !this.clickable || this.processFlag || this.dragFlag) return false;
-      var pos = this.getPos(e);
-
-      if (this.isRange) {
-        if (this.disabledArray.every(function (b) {
-          return b === false;
-        })) {
-          this.currentSlider = pos > (this.position[1] - this.position[0]) / 2 + this.position[0] ? 1 : 0;
-        } else if (this.disabledArray[0]) {
-          if (pos < this.position[0]) return false;
-          this.currentSlider = 1;
-        } else if (this.disabledArray[1]) {
-          if (pos > this.position[1]) return false;
-          this.currentSlider = 0;
-        }
-      }
-
-      if (this.disabledArray[this.currentSlider]) {
-        return false;
-      }
-
-      this.setValueOnPos(pos);
-
-      if (this.isRange && this.tooltipMerge) {
-        var timer = setInterval(this.handleOverlapTooltip, 16.7);
-        setTimeout(function () {
-          return window.clearInterval(timer);
-        }, this.speed * 1000);
-      }
-    },
-    processClick: function processClick(e) {
-      if (this.fixed) e.stopPropagation();
-    },
-    syncValue: function syncValue(noCb) {
-      var val = this.isRange ? this.val.concat() : this.val;
-      this.$emit('input', val);
-      this.keydownFlag && this.$emit('on-keypress', val);
-      noCb || this.$emit('slide-end', val);
-    },
-    getPos: function getPos(e) {
-      this.realTime && this.getStaticData();
-      return this.direction === 'vertical' ? this.reverse ? e.pageY - this.offset : this.size - (e.pageY - this.offset) : this.reverse ? this.size - (e.pageX - this.offset) : e.pageX - this.offset;
-    },
-    setValueOnPos: function setValueOnPos(pos, isDrag) {
-      var range = this.isRange ? this.limit[this.currentSlider] : this.limit;
-      var valueRange = this.isRange ? this.valueLimit[this.currentSlider] : this.valueLimit;
-      var index = Math.round(pos / this.gap);
-
-      if (pos >= range[0] && pos <= range[1]) {
-        var v = this.getValueByIndex(index);
-        this.setTransform(pos);
-        this.setCurrentValue(v, isDrag);
-
-        if (this.isRange && (this.fixed || this.isLessRange(pos, index))) {
-          this.setTransform(pos + this.fixedValue * this.gap * (this.currentSlider === 0 ? 1 : -1), true);
-          this.setCurrentValue((v * this.multiple + this.fixedValue * this.spacing * this.multiple * (this.currentSlider === 0 ? 1 : -1)) / this.multiple, isDrag, true);
-        }
-      } else {
-        var anotherSlider = pos < range[0] ? 0 : 1;
-        var currentSlider = anotherSlider === 0 ? 1 : 0;
-        this.setTransform(range[anotherSlider]);
-        this.setCurrentValue(valueRange[anotherSlider]);
-
-        if (this.isRange && (this.fixed || this.isLessRange(pos, index))) {
-          this.setTransform(this.limit[this.idleSlider][anotherSlider], true);
-          this.setCurrentValue(this.valueLimit[this.idleSlider][anotherSlider], isDrag, true);
-        } else if (this.isRange && (this.enableCross || this.crossFlag) && !this.isFixed && !this.disabledArray[anotherSlider] && this.currentSlider === currentSlider) {
-          this.focusSlider = anotherSlider;
-          this.currentSlider = anotherSlider;
-        }
-      }
-
-      this.crossFlag = false;
-    },
-    setCurrentValue: function setCurrentValue(val, isDrag, isIdleSlider) {
-      var slider = isIdleSlider ? this.idleSlider : this.currentSlider;
-      if (val < this.minimum || val > this.maximum) return false;
-
-      if (this.isRange) {
-        if (isDiff(this.currentValue[slider], val)) {
-          this.currentValue.splice(slider, 1, val);
-
-          if (!this.lazy || !this.flag) {
-            this.syncValue();
-          }
-        }
-      } else if (isDiff(this.currentValue, val)) {
-        this.currentValue = val;
-
-        if (!this.lazy || !this.flag) {
-          this.syncValue();
-        }
-      }
-
-      isDrag || this.setPosition();
-    },
-    setPosition: function setPosition(speed) {
-      this.flag || this.setTransitionTime(speed === undefined ? this.speed : speed);
-
-      if (this.isRange) {
-        this.setTransform(this.position[0], this.currentSlider === 1);
-        this.setTransform(this.position[1], this.currentSlider === 0);
-      } else {
-        this.setTransform(this.position);
-      }
-
-      this.flag || this.setTransitionTime(0);
-    },
-    setTransform: function setTransform(val, isIdleSlider) {
-      var slider = isIdleSlider ? this.idleSlider : this.currentSlider;
-      var value = roundToDPR((this.direction === 'vertical' ? this.dotHeightVal / 2 - val : val - this.dotWidthVal / 2) * (this.reverse ? -1 : 1));
-      var translateValue = this.direction === 'vertical' ? "translateY(".concat(value, "px)") : "translateX(".concat(value, "px)");
-      var processSize = this.fixed ? "".concat(this.fixedValue * this.gap, "px") : "".concat(slider === 0 ? this.position[1] - val : val - this.position[0], "px");
-      var processPos = this.fixed ? "".concat(slider === 0 ? val : val - this.fixedValue * this.gap, "px") : "".concat(slider === 0 ? val : this.position[0], "px");
-
-      if (this.isRange) {
-        this.slider[slider].style[transform] = translateValue;
-
-        if (this.direction === 'vertical') {
-          this.$refs.process.style.height = processSize;
-          this.$refs.process.style[this.reverse ? 'top' : 'bottom'] = processPos;
-        } else {
-          this.$refs.process.style.width = processSize;
-          this.$refs.process.style[this.reverse ? 'right' : 'left'] = processPos;
-        }
-      } else {
-        this.slider.style[transform] = translateValue;
-
-        if (this.direction === 'vertical') {
-          this.$refs.process.style.height = "".concat(val, "px");
-          this.$refs.process.style[this.reverse ? 'top' : 'bottom'] = 0;
-        } else {
-          this.$refs.process.style.width = "".concat(val, "px");
-          this.$refs.process.style[this.reverse ? 'right' : 'left'] = 0;
-        }
-      }
-    },
-    setTransitionTime: function setTransitionTime(time) {
-      // In order to avoid browser merge style and modify together
-      time || this.$refs.process.offsetWidth;
-
-      if (this.isRange) {
-        var sliderLen = this.slider.length;
-
-        for (var i = 0; i < sliderLen; i++) {
-          this.slider[i].style[transitionDuration] = "".concat(time, "s");
-        }
-
-        this.$refs.process.style[transitionDuration] = "".concat(time, "s");
-      } else {
-        this.slider.style[transitionDuration] = "".concat(time, "s");
-        this.$refs.process.style[transitionDuration] = "".concat(time, "s");
-      }
-    },
-    computedFixedValue: function computedFixedValue() {
-      if (!this.isFixed) {
-        this.fixedValue = 0;
-        return false;
-      }
-
-      this.fixedValue = this.currentIndex[1] - this.currentIndex[0];
-      this.fixedValue = Math.max(this.fixed ? this.currentIndex[1] - this.currentIndex[0] : 0, this.minRange || 0);
-    },
-    limitValue: function limitValue(val) {
-      var _this3 = this;
-
-      if (this.data) {
-        return val;
-      }
-
-      var inRange = function inRange(v) {
-        if (v < _this3.min) {
-          _this3.printError("The value of the slider is ".concat(val, ", the minimum value is ").concat(_this3.min, ", the value of this slider can not be less than the minimum value"));
-
-          return _this3.min;
-        } else if (v > _this3.max) {
-          _this3.printError("The value of the slider is ".concat(val, ", the maximum value is ").concat(_this3.max, ", the value of this slider can not be greater than the maximum value"));
-
-          return _this3.max;
-        }
-
-        return v;
-      };
-
-      if (this.isRange) {
-        return val.map(function (v) {
-          return inRange(v);
-        });
-      } else {
-        return inRange(val);
-      }
-    },
-    getStaticData: function getStaticData() {
-      if (this.$refs.elem) {
-        this.size = this.direction === 'vertical' ? this.$refs.elem.offsetHeight : this.$refs.elem.offsetWidth;
-        this.offset = this.direction === 'vertical' ? this.$refs.elem.getBoundingClientRect().top + window.pageYOffset || document.documentElement.scrollTop : this.$refs.elem.getBoundingClientRect().left;
-      }
-    },
-    handleOverlapTooltip: function handleOverlapTooltip() {
-      var isDirectionSame = this.tooltipDirection[0] === this.tooltipDirection[1];
-
-      if (this.isRange && isDirectionSame) {
-        var tooltip0 = this.reverse ? this.$refs.tooltip1 : this.$refs.tooltip0;
-        var tooltip1 = this.reverse ? this.$refs.tooltip0 : this.$refs.tooltip1;
-        var tooltip0Rect = tooltip0.getBoundingClientRect();
-        var tooltip1Rect = tooltip1.getBoundingClientRect();
-        var tooltip0Right = tooltip0Rect.right;
-        var tooltip1Left = tooltip1Rect.left;
-        var tooltip0Y = tooltip0Rect.top;
-        var tooltip1Y = tooltip1Rect.top + tooltip1Rect.height;
-        var horizontalOverlap = this.direction === 'horizontal' && tooltip0Right > tooltip1Left;
-        var verticalOverlap = this.direction === 'vertical' && tooltip1Y > tooltip0Y;
-
-        if (horizontalOverlap || verticalOverlap) {
-          this.handleDisplayMergedTooltip(true);
-        } else {
-          this.handleDisplayMergedTooltip(false);
-        }
-      }
-    },
-    handleDisplayMergedTooltip: function handleDisplayMergedTooltip(show) {
-      var tooltip0 = this.$refs.tooltip0;
-      var tooltip1 = this.$refs.tooltip1;
-      var mergedTooltip = this.$refs.process.getElementsByClassName('merged-tooltip')[0];
-
-      if (show) {
-        tooltip0.style.visibility = 'hidden';
-        tooltip1.style.visibility = 'hidden';
-        mergedTooltip.style.visibility = 'visible';
-      } else {
-        tooltip0.style.visibility = 'visible';
-        tooltip1.style.visibility = 'visible';
-        mergedTooltip.style.visibility = 'hidden';
-      }
-    },
-    isLessRange: function isLessRange(pos, index) {
-      if (!this.isRange || !this.minRange && !this.maxRange) {
-        return false;
-      }
-
-      var diff = this.currentSlider === 0 ? this.currentIndex[1] - index : index - this.currentIndex[0];
-
-      if (this.minRange && diff <= this.minRange) {
-        this.fixedValue = this.minRange;
-        return true;
-      }
-
-      if (this.maxRange && diff >= this.maxRange) {
-        this.fixedValue = this.maxRange;
-        return true;
-      }
-
-      this.computedFixedValue();
-      return false;
-    },
-    getValueByIndex: function getValueByIndex(index) {
-      return (this.spacing * this.multiple * index + this.minimum * this.multiple) / this.multiple;
-    },
-    getIndexByValue: function getIndexByValue(value) {
-      return Math.round((value - this.minimum) * this.multiple) / (this.spacing * this.multiple);
-    },
-    formatting: function formatting(value) {
-      return typeof this.formatter === 'string' ? this.formatter.replace(/{value}/, value) : this.formatter(value);
-    },
-    mergeFormatting: function mergeFormatting(value1, value2) {
-      return typeof this.mergeFormatter === 'string' ? this.mergeFormatter.replace(/{(value1|value2)}/g, function (_, key) {
-        return key === 'value1' ? value1 : value2;
-      }) : this.mergeFormatter(value1, value2);
-    },
-    _start: function _start(e) {
-      var index = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-      var isProcess = arguments.length > 2 ? arguments[2] : undefined;
-
-      if (this.disabledArray[index]) {
-        return false;
-      }
-
-      if (this.stopPropagation) {
-        e.stopPropagation();
-      }
-
-      if (this.isRange) {
-        this.currentSlider = index;
-
-        if (isProcess) {
-          if (!this.processDraggable) {
-            return false;
-          }
-
-          this.processFlag = true;
-          this.processSign = {
-            pos: this.position,
-            start: this.getPos(e.targetTouches && e.targetTouches[0] ? e.targetTouches[0] : e)
-          };
-        }
-
-        if (!this.enableCross && this.val[0] === this.val[1]) {
-          this.crossFlag = true;
-        }
-      }
-
-      if (!isProcess && this.useKeyboard) {
-        this.focusFlag = true;
-        this.focusSlider = index;
-      }
-
-      this.flag = true;
-      this.$emit('drag-start', this);
-    },
-    _move: function _move(e) {
-      e.preventDefault();
-
-      if (this.stopPropagation) {
-        e.stopPropagation();
-      }
-
-      if (!this.flag) return false;
-      if (e.targetTouches && e.targetTouches[0]) e = e.targetTouches[0];
-
-      if (this.processFlag) {
-        this.currentSlider = 0;
-        this.setValueOnPos(this.processSign.pos[0] + this.getPos(e) - this.processSign.start, true);
-        this.currentSlider = 1;
-        this.setValueOnPos(this.processSign.pos[1] + this.getPos(e) - this.processSign.start, true);
-      } else {
-        this.dragFlag = true;
-        this.setValueOnPos(this.getPos(e), true);
-      }
-
-      if (this.isRange && this.tooltipMerge) {
-        this.handleOverlapTooltip();
-      }
-    },
-    _end: function _end(e) {
-      var _this4 = this;
-
-      if (this.stopPropagation) {
-        e.stopPropagation();
-      }
-
-      if (this.flag) {
-        this.$emit('drag-end', this);
-
-        if (this.lazy && isDiff(this.val, this.value)) {
-          this.syncValue();
-        }
-      } else {
-        return false;
-      }
-
-      this.flag = false;
-      this.$nextTick(function () {
-        _this4.crossFlag = false;
-        _this4.dragFlag = false;
-        _this4.processFlag = false;
-      });
-      this.setPosition();
-    },
-    blurSlider: function blurSlider(e) {
-      var dot = this.isRange ? this.$refs["dot".concat(this.focusSlider)] : this.$refs.dot;
-
-      if (!dot || dot === e.target) {
-        return false;
-      }
-
-      this.focusFlag = false;
-    },
-    handleKeydown: function handleKeydown(e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (!this.useKeyboard) {
-        return false;
-      }
-
-      var keyCode = e.which || e.keyCode;
-
-      switch (keyCode) {
-        case 37:
-        case 40:
-          this.keydownFlag = true;
-          this.flag = true;
-          this.changeFocusSlider(this.actionsKeyboard[0]);
-          break;
-
-        case 38:
-        case 39:
-          this.keydownFlag = true;
-          this.flag = true;
-          this.changeFocusSlider(this.actionsKeyboard[1]);
-          break;
-
-        default:
-          break;
-      }
-    },
-    handleKeyup: function handleKeyup() {
-      if (this.keydownFlag) {
-        this.keydownFlag = false;
-        this.flag = false;
-      }
-    },
-    changeFocusSlider: function changeFocusSlider(fn) {
-      var _this5 = this;
-
-      if (this.isRange) {
-        var arr = this.currentIndex.map(function (index, i) {
-          if (i === _this5.focusSlider || _this5.fixed) {
-            var val = fn(index);
-            var range = _this5.fixed ? _this5.valueLimit[i] : [0, _this5.total];
-
-            if (val <= range[1] && val >= range[0]) {
-              return val;
-            }
-          }
-
-          return index;
-        });
-
-        if (arr[0] > arr[1]) {
-          this.focusSlider = this.focusSlider === 0 ? 1 : 0;
-          arr = arr.reverse();
-        }
-
-        this.setIndex(arr);
-      } else {
-        this.setIndex(fn(this.currentIndex));
-      }
-    },
-    bindEvents: function bindEvents() {
-      var me = this;
-
-      this.processStartFn = function (e) {
-        me._start(e, 0, true);
-      };
-
-      this.dot0StartFn = function (e) {
-        me._start(e, 0);
-      };
-
-      this.dot1StartFn = function (e) {
-        me._start(e, 1);
-      };
-
-      if (isMobile) {
-        addEvent(this.$refs.process, EVENT_TOUCH_START, this.processStartFn);
-        addEvent(document, EVENT_TOUCH_MOVE, this._move);
-        addEvent(document, EVENT_TOUCH_END, this._end);
-        addEvent(document, EVENT_TOUCH_CANCEL, this._end);
-
-        if (this.isRange) {
-          addEvent(this.$refs.dot0, EVENT_TOUCH_START, this.dot0StartFn);
-          addEvent(this.$refs.dot1, EVENT_TOUCH_START, this.dot1StartFn);
-        } else {
-          addEvent(this.$refs.dot, EVENT_TOUCH_START, this._start);
-        }
-      } else {
-        addEvent(this.$refs.process, EVENT_MOUSE_DOWN, this.processStartFn);
-        addEvent(document, EVENT_MOUSE_DOWN, this.blurSlider);
-        addEvent(document, EVENT_MOUSE_MOVE, this._move);
-        addEvent(document, EVENT_MOUSE_UP, this._end);
-        addEvent(document, EVENT_MOUSE_LEAVE, this._end);
-
-        if (this.isRange) {
-          addEvent(this.$refs.dot0, EVENT_MOUSE_DOWN, this.dot0StartFn);
-          addEvent(this.$refs.dot1, EVENT_MOUSE_DOWN, this.dot1StartFn);
-        } else {
-          addEvent(this.$refs.dot, EVENT_MOUSE_DOWN, this._start);
-        }
-      }
-
-      addEvent(document, EVENT_KEY_DOWN, this.handleKeydown);
-      addEvent(document, EVENT_KEY_UP, this.handleKeyup);
-      addEvent(window, EVENT_RESIZE, this.refresh);
-
-      if (this.isRange && this.tooltipMerge) {
-        addEvent(this.$refs.dot0, transitionEnd, this.handleOverlapTooltip);
-        addEvent(this.$refs.dot1, transitionEnd, this.handleOverlapTooltip);
-      }
-    },
-    unbindEvents: function unbindEvents() {
-      if (isMobile) {
-        removeEvent(this.$refs.process, EVENT_TOUCH_START, this.processStartFn);
-        removeEvent(document, EVENT_TOUCH_MOVE, this._move);
-        removeEvent(document, EVENT_TOUCH_END, this._end);
-        removeEvent(document, EVENT_TOUCH_CANCEL, this._end);
-
-        if (this.isRange) {
-          removeEvent(this.$refs.dot0, EVENT_TOUCH_START, this.dot0StartFn);
-          removeEvent(this.$refs.dot1, EVENT_TOUCH_START, this.dot1StartFn);
-        } else {
-          removeEvent(this.$refs.dot, EVENT_TOUCH_START, this._start);
-        }
-      } else {
-        removeEvent(this.$refs.process, EVENT_MOUSE_DOWN, this.processStartFn);
-        removeEvent(document, EVENT_MOUSE_DOWN, this.blurSlider);
-        removeEvent(document, EVENT_MOUSE_MOVE, this._move);
-        removeEvent(document, EVENT_MOUSE_UP, this._end);
-        removeEvent(document, EVENT_MOUSE_LEAVE, this._end);
-
-        if (this.isRange) {
-          removeEvent(this.$refs.dot0, EVENT_MOUSE_DOWN, this.dot0StartFn);
-          removeEvent(this.$refs.dot1, EVENT_MOUSE_DOWN, this.dot1StartFn);
-        } else {
-          removeEvent(this.$refs.dot, EVENT_MOUSE_DOWN, this._start);
-        }
-      }
-
-      removeEvent(document, EVENT_KEY_DOWN, this.handleKeydown);
-      removeEvent(document, EVENT_KEY_UP, this.handleKeyup);
-      removeEvent(window, EVENT_RESIZE, this.refresh);
-
-      if (this.isRange && this.tooltipMerge) {
-        removeEvent(this.$refs.dot0, transitionEnd, this.handleOverlapTooltip);
-        removeEvent(this.$refs.dot1, transitionEnd, this.handleOverlapTooltip);
-      }
-    },
-    refresh: function refresh() {
-      if (this.$refs.elem) {
-        this.getStaticData();
-        this.computedFixedValue();
-        this.setPosition();
-        this.unbindEvents();
-        this.bindEvents();
-      }
-    },
-    printError: function printError(msg) {
-      if (this.debug) {
-        console.error("[VueSlider error]: ".concat(msg));
-      }
-    }
-  },
-  mounted: function mounted() {
-    var _this6 = this;
-
-    this.isComponentExists = true;
-
-    if (typeof window === 'undefined' || typeof document === 'undefined') {
-      return this.printError('window or document is undefined, can not be initialization.');
-    }
-
-    this.$nextTick(function () {
-      _this6.getStaticData();
-
-      _this6.setValue(_this6.limitValue(_this6.value), true, _this6.startAnimation ? _this6.speed : 0);
-
-      _this6.bindEvents();
-
-      if (_this6.isRange && _this6.tooltipMerge && !_this6.startAnimation) {
-        _this6.handleOverlapTooltip();
-      }
-    });
-    this.isMounted = true;
-  },
-  watch: {
-    value: function value(val) {
-      this.flag || this.setValue(val, true);
-    },
-    show: function show(bool) {
-      if (bool && !this.size) {
-        this.$nextTick(this.refresh);
-      }
-    },
-    max: function max(val) {
-      if (val < this.min) {
-        return this.printError('The maximum value can not be less than the minimum value.');
-      }
-
-      var resetVal = this.limitValue(this.val);
-      this.setValue(resetVal);
-      this.refresh();
-    },
-    min: function min(val) {
-      if (val > this.max) {
-        return this.printError('The minimum value can not be greater than the maximum value.');
-      }
-
-      var resetVal = this.limitValue(this.val);
-      this.setValue(resetVal);
-      this.refresh();
-    },
-    fixed: function fixed() {
-      this.computedFixedValue();
-    },
-    minRange: function minRange() {
-      this.computedFixedValue();
-    }
-  },
-  beforeDestroy: function beforeDestroy() {
-    this.isComponentExists = false;
-    this.unbindEvents();
-    this.refresh();
-  },
-  deactivated: function deactivated() {
-    this.isComponentExists = false;
-    this.unbindEvents();
-    this.refresh();
-  }
-};
-
-var version = "1.0.3";
-
-Slider.version = version;
-
-Slider.install = function (Vue) {
-  Vue.component(Slider.name, Slider);
-};
-
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(Slider);
-}
-
-/* harmony default export */ var vue_range_slider_esm = (Slider);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RangeComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ var RangeComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"],
-  components: {
-    VueRangeSlider: vue_range_slider_esm
-  }
-});
-// CONCATENATED MODULE: ./src/components/form/RangeComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_RangeComponentvue_type_script_lang_js_ = (RangeComponentvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/form/RangeComponent.vue?vue&type=style&index=0&lang=css&
-var RangeComponentvue_type_style_index_0_lang_css_ = __webpack_require__("beae");
-
-// CONCATENATED MODULE: ./src/components/form/RangeComponent.vue
-
-
-
-
-
-
-/* normalize component */
-
-var RangeComponent_component = normalizeComponent(
-  form_RangeComponentvue_type_script_lang_js_,
-  RangeComponentvue_type_template_id_f330b46e_render,
-  RangeComponentvue_type_template_id_f330b46e_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var RangeComponent = (RangeComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RadioComponent.vue?vue&type=template&id=83b3dd00&
-var RadioComponentvue_type_template_id_83b3dd00_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_vm._l((_vm.field.values),function(item,index){return _c('div',{key:index,staticClass:"control"},[_c('label',{staticClass:"radio"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],attrs:{"type":"radio","name":_vm.field.name},domProps:{"value":item,"checked":_vm._q(_vm.data[_vm.field.name],item)},on:{"change":function($event){return _vm.$set(_vm.data, _vm.field.name, item)}}}),_vm._v("\n      "+_vm._s(item)+"\n    ")])])}),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()],2)}
-var RadioComponentvue_type_template_id_83b3dd00_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/form/RadioComponent.vue?vue&type=template&id=83b3dd00&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/RadioComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ var RadioComponentvue_type_script_lang_js_ = ({
-  props: ["field", "data"]
-});
-// CONCATENATED MODULE: ./src/components/form/RadioComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var form_RadioComponentvue_type_script_lang_js_ = (RadioComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/form/RadioComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var RadioComponent_component = normalizeComponent(
-  form_RadioComponentvue_type_script_lang_js_,
-  RadioComponentvue_type_template_id_83b3dd00_render,
-  RadioComponentvue_type_template_id_83b3dd00_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var RadioComponent = (RadioComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=script&lang=js&
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-
-
-
-
-
-
-
-/* harmony default export */ var FormComponentvue_type_script_lang_js_ = ({
-  props: ["api-url", "meta", "create"],
-  data: function data() {
-    return {
-      active: false,
-      saveDisable: false,
-      data: []
-    };
-  },
-  components: {
-    TextComponent: TextComponent,
-    DateComponent: DateComponent,
-    FileComponent: FileComponent,
-    TextareaComponent: TextareaComponent,
-    SelectComponent: SelectComponent,
-    CheckboxComponent: CheckboxComponent,
-    ToggleComponent: ToggleComponent,
-    ColorPickerComponent: ColorPickerComponent,
-    RangeComponent: RangeComponent,
-    RadioComponent: RadioComponent
-  },
-  mounted: function mounted() {
-    if (this.create) {
-      this.setCreateData();
-    } else {
-      this.fetchData();
-    }
-  },
-  methods: {
-    setCreateData: function setCreateData() {
-      var _this = this;
-
-      this.meta.fields.forEach(function (field) {
-        _this.data = {
-          data: _defineProperty({}, field.name, field.name == "id" ? 0 : null)
-        };
-      });
-      this.openModal();
-    },
-    fetchData: function fetchData() {
-      var _this2 = this;
-
-      axios_default.a.get(this.apiUrl).then(function (response) {
-        return _this2.setData(response.data);
-      });
-    },
-    setData: function setData(data) {
-      this.data = data;
-      this.openModal();
-    },
-    openModal: function openModal() {
-      this.active = true;
-    },
-    closeModal: function closeModal() {
-      this.active = false;
-    },
-    save: function save() {
-      var _this3 = this;
-
-      this.saveDisable = true;
-      var url = this.apiUrl;
-      var formData = new FormData(document.querySelector("#form-save"));
-
-      if (this.create) {
-        url += "/save";
-      }
-
-      axios_default.a.post(url, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      }).then(function (response) {
-        if (response.data.status == "success") {
-          new noty_default.a({
-            layout: "topCenter",
-            theme: "sunset",
-            timeout: 3000,
-            type: "success",
-            text: "İşlem başarılı bir şekilde tamamlanmıştır."
-          }).show();
-
-          _this3.$emit('close');
-        }
-
-        if (!_this3.create) {
-          _this3.saveDisable = false;
-        }
-      }).catch(function (error) {
-        if (error.response) {
-          var data = error.response.data;
-          var message = data.message;
-
-          for (error in data.errors) {
-            message += "<br>" + data.errors[error][0];
-          }
-
-          new noty_default.a({
-            layout: "topCenter",
-            theme: "sunset",
-            timeout: 3000,
-            type: "error",
-            text: message
-          }).show();
-        }
-
-        _this3.saveDisable = false;
-      });
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_FormComponentvue_type_script_lang_js_ = (FormComponentvue_type_script_lang_js_); 
-// CONCATENATED MODULE: ./src/components/FormComponent.vue
-
-
-
-
-
-/* normalize component */
-
-var FormComponent_component = normalizeComponent(
-  components_FormComponentvue_type_script_lang_js_,
-  FormComponentvue_type_template_id_19ec2d70_render,
-  FormComponentvue_type_template_id_19ec2d70_staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var FormComponent = (FormComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0a9df853-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ShowComponent.vue?vue&type=template&id=810ca85a&scoped=true&
-var ShowComponentvue_type_template_id_810ca85a_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{'is-active': _vm.active},attrs:{"id":"show-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Detaylar")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),_c('section',{staticClass:"modal-card-body is-paddingless"},[(_vm.data.meta)?_c('table',{staticClass:"table"},[_c('tbody',_vm._l((_vm.data.meta.fields),function(field){return _c('tr',{key:field.name},[_c('th',[_vm._v(_vm._s(field.title))]),(field.type == 'text' || field.type == 'textarea' || field.type == 'date')?_c('td',[(field.editor || field.render == 'html')?_c('div',{domProps:{"innerHTML":_vm._s(_vm.data.data[field.name])}}):_c('div',[_vm._v(_vm._s(_vm.data.data[field.name]))])]):_vm._e(),(field.type == 'image')?_c('td',{staticClass:"gallery"},[(Array.isArray(_vm.data.data[field.name]))?_c('div',{staticClass:"columns"},_vm._l((_vm.data.data[field.name]),function(image){return _c('img',{key:image,staticClass:"column",attrs:{"src":image}})}),0):_c('div',[_c('img',{attrs:{"src":_vm.data.data[field.name]}})])]):_vm._e(),(field.type == 'select')?_c('td',[(field.multiple || Array.isArray(_vm.data.data[field.name]))?_c('div',_vm._l((_vm.data.data[field.name]),function(option){return _c('div',{key:option.value},_vm._l((field.options.filter(function(opt) { return opt.value == option.value || opt.value == option; })),function(subOption){return _c('div',{key:subOption},[_vm._v(_vm._s(subOption.label))])}),0)}),0):_vm._l((field.options.filter(function(opt) { return opt.value == _vm.data.data[field.name] })),function(option){return _c('div',{key:option.value},[_vm._v(_vm._s(option.label))])})],2):_vm._e(),(field.type == 'checkbox')?_c('td',[_vm._v(_vm._s(_vm.data.data[field.name]))]):_vm._e()])}),0)]):_vm._e()]),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
-var ShowComponentvue_type_template_id_810ca85a_scoped_true_staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/components/ShowComponent.vue?vue&type=template&id=810ca85a&scoped=true&
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ShowComponent.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ var ShowComponentvue_type_script_lang_js_ = ({
-  props: ["api-url"],
-  data: function data() {
-    return {
-      active: false,
-      data: []
-    };
-  },
-  mounted: function mounted() {
-    this.fetchData();
-  },
-  methods: {
-    fetchData: function fetchData() {
-      var _this = this;
-
-      axios_default.a.get(this.apiUrl).then(function (response) {
-        return _this.setData(response.data);
-      });
-    },
-    setData: function setData(data) {
-      this.data = data;
-      this.openModal();
-    },
-    openModal: function openModal() {
-      this.active = true;
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/ShowComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_ShowComponentvue_type_script_lang_js_ = (ShowComponentvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/ShowComponent.vue?vue&type=style&index=0&id=810ca85a&lang=scss&scoped=true&
-var ShowComponentvue_type_style_index_0_id_810ca85a_lang_scss_scoped_true_ = __webpack_require__("af80");
-
-// CONCATENATED MODULE: ./src/components/ShowComponent.vue
-
-
-
-
-
-
-/* normalize component */
-
-var ShowComponent_component = normalizeComponent(
-  components_ShowComponentvue_type_script_lang_js_,
-  ShowComponentvue_type_template_id_810ca85a_scoped_true_render,
-  ShowComponentvue_type_template_id_810ca85a_scoped_true_staticRenderFns,
-  false,
-  null,
-  "810ca85a",
-  null
-  
-)
-
-/* harmony default export */ var ShowComponent = (ShowComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableComponent.vue?vue&type=script&lang=js&
-
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ var TableComponentvue_type_script_lang_js_ = ({
-  props: ["api-url", "api-token"],
-  components: {
-    PaginationComponent: PaginationComponent,
-    FormComponent: FormComponent,
-    ShowComponent: ShowComponent
-  },
-  data: function data() {
-    return {
-      term: null,
-      paginate: 10,
-      page: 1,
-      show: {
-        modal: false,
-        apiUrl: null
-      },
-      form: {
-        modal: false,
-        create: false,
-        apiUrl: null
-      },
-      data: []
-    };
-  },
-  computed: {
-    fields: function fields() {
-      return this.data.meta.fields.filter(function (field) {
-        return field.listing;
-      });
-    }
-  },
-  mounted: function mounted() {
-    if (this.apiToken) {
-      axios_default.a.defaults.headers.common["Authorization"] = "Bearer " + this.apiToken;
-    }
-
-    this.fetchData();
-  },
-  methods: {
-    fetchData: function fetchData() {
-      var _this = this;
-
-      var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.apiUrl;
-      axios_default.a.get(url, {
-        params: {
-          paginate: this.paginate,
-          page: this.page
-        }
-      }).then(function (response) {
-        return _this.setData(response.data);
-      });
-    },
-    setData: function setData(data) {
-      this.data = data;
-    },
-    action: function action(name) {
-      var item = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-      var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-      this[name] = {
-        modal: type == "close" ? false : true,
-        apiUrl: item == null ? this.apiUrl : this.apiUrl + "/" + item.id,
-        create: type == "create" ? true : false
-      };
-
-      if (type == "close") {
-        this.fetchData();
-      }
-    },
-    deleteItem: function deleteItem(item) {
-      var parent = this;
-      var n = new noty_default.a({
-        layout: "topCenter",
-        theme: "sunset",
-        text: "Silmek istediğine emin misin?",
-        timeout: false,
-        buttons: [noty_default.a.button("Sil", "button pr-2", function () {
-          parent.destroyItem(item);
-          n.close();
-        }), noty_default.a.button("Kapat", "button", function () {
-          return n.close();
-        })]
-      });
-      n.show();
-    },
-    destroyItem: function destroyItem(item) {
-      var _this2 = this;
-
-      axios_default.a.post(this.apiUrl + "/" + item.id + "/destroy").then(function (response) {
-        if (response.data.status == "success") {
-          new noty_default.a({
-            layout: "topCenter",
-            theme: "sunset",
-            timeout: 3000,
-            type: "success",
-            text: "Silme işlemi başarılı bir şekilde tamamlanmıştır."
-          }).show();
-
-          _this2.fetchData();
-        }
-      });
-    },
-    search: function search() {
-      var _this3 = this;
-
-      if (this.timer) {
-        clearTimeout(this.timer);
-        this.timer = null;
-      }
-
-      this.timer = setTimeout(function () {
-        if (_this3.term.length == 0) {
-          _this3.fetchData();
-
-          return;
-        }
-
-        axios_default.a.post(_this3.apiUrl, {
-          term: _this3.term,
-          paginate: _this3.paginate
-        }).then(function (response) {
-          return _this3.setData(response.data);
-        });
-      }, 500);
-    },
-    setPage: function setPage(page) {
-      this.page = page;
-      this.fetchData();
-    },
-    options: function options(item, field) {
-      var selected = item[field.name];
-
-      if (Array.isArray(selected) && typeof_typeof(selected[0]) != "object") {
-        selected = field.options.filter(function (option) {
-          return selected.includes(option.value);
-        });
-      } else if (!Array.isArray(selected)) {
-        selected = field.options.filter(function (option) {
-          return option.value == selected;
-        });
-      }
-
-      return selected;
-    }
-  }
-});
-// CONCATENATED MODULE: ./src/components/TableComponent.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_TableComponentvue_type_script_lang_js_ = (TableComponentvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/TableComponent.vue?vue&type=style&index=0&lang=scss&
-var TableComponentvue_type_style_index_0_lang_scss_ = __webpack_require__("77f2");
-
-// CONCATENATED MODULE: ./src/components/TableComponent.vue
-
-
-
-
-
-
-/* normalize component */
-
-var TableComponent_component = normalizeComponent(
-  components_TableComponentvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* harmony default export */ var TableComponent = (TableComponent_component.exports);
 // CONCATENATED MODULE: ./src/build.js
 
 
-external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component(TableComponent, __webpack_require__("4fe4")(TableComponent).default);
+var Components = {
+  VueCrudTable: TableComponent["default"]
+};
+external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component("VueCrudTable", __webpack_require__("2953").default);
 /* harmony default export */ var build = (Components);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
