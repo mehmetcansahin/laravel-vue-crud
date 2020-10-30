@@ -1,4 +1,4 @@
-# Vue Crud
+# Laravel Vue Crud
 
 ## Guide
 

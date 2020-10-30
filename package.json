@@ -1,10 +1,10 @@
 {
-  "name": "vue-crud",
+  "name": "laravel-vue-crud",
   "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib -name vue-crud ./src/build.js",
+    "build-bundle": "vue-cli-service build --target lib -name laravel-vue-crud ./src/build.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -63,13 +63,6 @@
     "*.json",
     "*.js"
   ],
-  "main": "./dist/vue-crud.common.js",
-  "repository": {
-    "type": "git",
-    "url": "git://https://github.com/mcansahin/vue-crud.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/mcansahin/"
-  },
+  "main": "./dist/laravel-vue-crud.common.js",
   "license": "GNU General Public License (GPL)"
 }
