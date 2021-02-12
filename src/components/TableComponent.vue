@@ -80,6 +80,7 @@
       <form-component
         v-if="form.modal"
         :api-url="form.apiUrl"
+        :upload-path="uploadPath"
         :create="form.create"
         :meta="data.meta"
         v-on:close="action('form', null, 'close')"
@@ -101,7 +102,7 @@ import FormComponent from "./FormComponent";
 import ShowComponent from "./ShowComponent";
 
 export default {
-  props: ["api-url", "api-token"],
+  props: ["api-url", "api-token", "upload-path"],
   components: {
     PaginationComponent,
     FormComponent,

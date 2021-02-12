@@ -17,6 +17,8 @@
               v-else-if="field.type == 'textarea'"
               :field="field"
               :data="data.data"
+              :api-url="apiUrl"
+              :upload-path="uploadPath"
             />
             <select-component v-else-if="field.type == 'select'" :field="field" :data="data.data" />
             <checkbox-component
@@ -70,7 +72,7 @@ import ColorPickerComponent from "./form/ColorPickerComponent";
 import RangeComponent from "./form/RangeComponent";
 import RadioComponent from "./form/RadioComponent";
 export default {
-  props: ["api-url", "meta", "create"],
+  props: ["api-url", "upload-path", "meta", "create"],
   data: function() {
     return {
       active: false,

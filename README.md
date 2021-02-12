@@ -144,24 +144,26 @@ class PostController extends Controller
 `api.php` in;
 
 ```php
-Route::get('/posts', 'API\Admin\PostController@index');
-Route::post('/posts', 'API\Admin\PostController@index');
-Route::get('/posts/{id}', 'API\Admin\PostController@show');
-Route::post('/posts/save', 'API\Admin\PostController@save');
-Route::post('/posts/{id}', 'API\Admin\PostController@save');
-Route::post('/posts/{id}/destroy', 'API\Admin\PostController@destroy');
+Route::middleware(['auth:api', 'admin'])->name('admin.')->prefix('admin')->group(function () {
+    Route::get('/posts', 'API\Admin\PostController@index');
+    Route::post('/posts', 'API\Admin\PostController@index');
+    Route::get('/posts/{id}', 'API\Admin\PostController@show');
+    Route::post('/posts/save', 'API\Admin\PostController@save');
+    Route::post('/posts/{id}', 'API\Admin\PostController@save');
+    Route::post('/posts/{id}/destroy', 'API\Admin\PostController@destroy');
+});
 
 // file upload for editor
-Route::post('uploadFile', function(Request $request){
-    $name = $request->file('file')->store('uploads/img');
-    return asset('storage/' . $name);
+Route::post('uploadImage', function (Request $request) {
+    $name = $request->file('image')->store('images');
+    return response()->json(asset('storage/' . $name));
 });
 ```
 
 Usage;
 
 ```html
-<vue-crud-table api-url="{{ url('/api/admin/posts') }}" api-token="api_token" />
+<vue-crud-table api-url="{{ url('/api/admin/posts') }}" api-token="api_token" upload-path="{{ url('api/uploadImage') }}" />
 ```
 
 ## Development
@@ -171,6 +173,7 @@ Usage;
 ```
 VUE_APP_TOKEN={token}
 VUE_APP_API_URL={api_url}
+VUE_APP_UPLOAD_PATH={upload_path}
 ```
 
 ```bash
