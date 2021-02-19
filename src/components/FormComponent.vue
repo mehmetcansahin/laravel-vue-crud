@@ -69,6 +69,7 @@ export default {
         text: "TextComponent",
         date: "DateComponent",
         file: "FileComponent",
+        image: "FileComponent",
         textarea: "TextareaComponent",
         select: "SelectComponent",
         checkbox: "CheckboxComponent",

@@ -1321,12 +1321,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var PaginationComponent = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=template&id=239260d3&
-var FormComponentvue_type_template_id_239260d3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{ 'is-active': _vm.active },attrs:{"id":"form-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Form")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),(_vm.data.data && _vm.meta)?_c('section',{staticClass:"modal-card-body"},[_c('form',{attrs:{"id":"form-save"}},_vm._l((_vm.meta.fields),function(field){return _c('div',{key:field.name,staticClass:"field"},[_c(_vm.componentsName[field.type],{tag:"component",attrs:{"field":field,"data":_vm.data.data,"api-url":_vm.apiUrl,"upload-path":_vm.uploadPath}})],1)}),0)]):_vm._e(),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button is-success",attrs:{"disabled":_vm.saveDisable},on:{"click":function($event){return _vm.save()}}},[_vm._v("\n        Kaydet\n      ")]),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
-var FormComponentvue_type_template_id_239260d3_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=template&id=22f54c9a&
+var FormComponentvue_type_template_id_22f54c9a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{ 'is-active': _vm.active },attrs:{"id":"form-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Form")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),(_vm.data.data && _vm.meta)?_c('section',{staticClass:"modal-card-body"},[_c('form',{attrs:{"id":"form-save"}},_vm._l((_vm.meta.fields),function(field){return _c('div',{key:field.name,staticClass:"field"},[_c(_vm.componentsName[field.type],{tag:"component",attrs:{"field":field,"data":_vm.data.data,"api-url":_vm.apiUrl,"upload-path":_vm.uploadPath}})],1)}),0)]):_vm._e(),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button is-success",attrs:{"disabled":_vm.saveDisable},on:{"click":function($event){return _vm.save()}}},[_vm._v("\n        Kaydet\n      ")]),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
+var FormComponentvue_type_template_id_22f54c9a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=template&id=239260d3&
+// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=template&id=22f54c9a&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
 var define_property = __webpack_require__("85f2");
@@ -3805,6 +3805,7 @@ var PasswordComponent_component = normalizeComponent(
         text: "TextComponent",
         date: "DateComponent",
         file: "FileComponent",
+        image: "FileComponent",
         textarea: "TextareaComponent",
         select: "SelectComponent",
         checkbox: "CheckboxComponent",
@@ -3933,8 +3934,8 @@ var PasswordComponent_component = normalizeComponent(
 
 var FormComponent_component = normalizeComponent(
   components_FormComponentvue_type_script_lang_js_,
-  FormComponentvue_type_template_id_239260d3_render,
-  FormComponentvue_type_template_id_239260d3_staticRenderFns,
+  FormComponentvue_type_template_id_22f54c9a_render,
+  FormComponentvue_type_template_id_22f54c9a_staticRenderFns,
   false,
   null,
   null,
