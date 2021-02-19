@@ -81,7 +81,9 @@ export default {
     if (this.field.editor) {
       this.content = this.data[this.field.name];
       this.quill = new Quill(this.$refs.editor, this.options);
-      this.quill.pasteHTML(this.content);
+      if (typeof this.content != "undefined" && this.content.length > 0) {
+        this.quill.pasteHTML(this.content);
+      }
       if (this.field.disabled) {
         this.quill.enable(false);
       }

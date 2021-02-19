@@ -1321,12 +1321,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var PaginationComponent = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=template&id=04f0989a&
-var FormComponentvue_type_template_id_04f0989a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{'is-active': _vm.active},attrs:{"id":"form-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Form")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),(_vm.data.data && _vm.meta)?_c('section',{staticClass:"modal-card-body"},[_c('form',{attrs:{"id":"form-save"}},_vm._l((_vm.meta.fields),function(field){return _c('div',{key:field.name,staticClass:"field"},[(field.type == 'text')?_c('text-component',{attrs:{"field":field,"data":_vm.data.data}}):_vm._e(),(field.type == 'date')?_c('date-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'image')?_c('file-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'textarea')?_c('textarea-component',{attrs:{"field":field,"data":_vm.data.data,"api-url":_vm.apiUrl,"upload-path":_vm.uploadPath}}):(field.type == 'select')?_c('select-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'checkbox')?_c('checkbox-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'toggle')?_c('toggle-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'colorpicker')?_c('color-picker-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'range')?_c('range-component',{attrs:{"field":field,"data":_vm.data.data}}):(field.type == 'radio')?_c('radio-component',{attrs:{"field":field,"data":_vm.data.data}}):_vm._e()],1)}),0)]):_vm._e(),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button is-success",attrs:{"disabled":_vm.saveDisable},on:{"click":function($event){return _vm.save()}}},[_vm._v("Kaydet")]),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
-var FormComponentvue_type_template_id_04f0989a_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=template&id=239260d3&
+var FormComponentvue_type_template_id_239260d3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.data.data),expression:"data.data"}],staticClass:"modal",class:{ 'is-active': _vm.active },attrs:{"id":"form-modal"}},[_c('div',{staticClass:"modal-background"}),_c('div',{staticClass:"modal-card"},[_c('header',{staticClass:"modal-card-head"},[_c('p',{staticClass:"modal-card-title"},[_vm._v("Form")]),_c('button',{staticClass:"delete",attrs:{"aria-label":"close"},on:{"click":function($event){return _vm.$emit('close')}}})]),(_vm.data.data && _vm.meta)?_c('section',{staticClass:"modal-card-body"},[_c('form',{attrs:{"id":"form-save"}},_vm._l((_vm.meta.fields),function(field){return _c('div',{key:field.name,staticClass:"field"},[_c(_vm.componentsName[field.type],{tag:"component",attrs:{"field":field,"data":_vm.data.data,"api-url":_vm.apiUrl,"upload-path":_vm.uploadPath}})],1)}),0)]):_vm._e(),_c('footer',{staticClass:"modal-card-foot"},[_c('button',{staticClass:"button is-success",attrs:{"disabled":_vm.saveDisable},on:{"click":function($event){return _vm.save()}}},[_vm._v("\n        Kaydet\n      ")]),_c('button',{staticClass:"button",on:{"click":function($event){return _vm.$emit('close')}}},[_vm._v("Kapat")])])])])}
+var FormComponentvue_type_template_id_239260d3_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=template&id=04f0989a&
+// CONCATENATED MODULE: ./src/components/FormComponent.vue?vue&type=template&id=239260d3&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js
 var define_property = __webpack_require__("85f2");
@@ -1603,12 +1603,12 @@ var FileComponent_component = normalizeComponent(
 )
 
 /* harmony default export */ var FileComponent = (FileComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=template&id=6423bcf0&
-var TextareaComponentvue_type_template_id_6423bcf0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.field.editor)?_c('div',[_c('div',{staticClass:"quill-editor"},[_vm._t("toolbar"),_c('div',{ref:"editor"})],2),_c('input',{attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":_vm.content}})]):_c('div',[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"textarea",attrs:{"name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})])]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var TextareaComponentvue_type_template_id_6423bcf0_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=template&id=153da4cf&
+var TextareaComponentvue_type_template_id_153da4cf_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.field.editor)?_c('div',[_c('div',{staticClass:"quill-editor"},[_vm._t("toolbar"),_c('div',{ref:"editor"})],2),_c('input',{attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":_vm.content}})]):_c('div',[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"textarea",attrs:{"name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})])]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var TextareaComponentvue_type_template_id_153da4cf_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=template&id=6423bcf0&
+// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=template&id=153da4cf&
 
 // EXTERNAL MODULE: ./node_modules/quill/dist/quill.js
 var quill = __webpack_require__("9339");
@@ -1864,7 +1864,10 @@ quill_default.a.register("modules/imageUpload", ImageUpload);
     if (this.field.editor) {
       this.content = this.data[this.field.name];
       this.quill = new quill_default.a(this.$refs.editor, this.options);
-      this.quill.pasteHTML(this.content);
+
+      if (typeof this.content != "undefined" && this.content.length > 0) {
+        this.quill.pasteHTML(this.content);
+      }
 
       if (this.field.disabled) {
         this.quill.enable(false);
@@ -1899,8 +1902,8 @@ var TextareaComponentvue_type_style_index_0_lang_css_ = __webpack_require__("8bd
 
 var TextareaComponent_component = normalizeComponent(
   form_TextareaComponentvue_type_script_lang_js_,
-  TextareaComponentvue_type_template_id_6423bcf0_render,
-  TextareaComponentvue_type_template_id_6423bcf0_staticRenderFns,
+  TextareaComponentvue_type_template_id_153da4cf_render,
+  TextareaComponentvue_type_template_id_153da4cf_staticRenderFns,
   false,
   null,
   null,
@@ -3678,6 +3681,56 @@ var RadioComponent_component = normalizeComponent(
 )
 
 /* harmony default export */ var RadioComponent = (RadioComponent_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/PasswordComponent.vue?vue&type=template&id=2a846099&
+var PasswordComponentvue_type_template_id_2a846099_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[_c('input',{staticClass:"input",attrs:{"type":"password","name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled,"readonly":_vm.field.readonly}})]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var PasswordComponentvue_type_template_id_2a846099_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/form/PasswordComponent.vue?vue&type=template&id=2a846099&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/PasswordComponent.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ var PasswordComponentvue_type_script_lang_js_ = ({
+  props: ["field", "data"]
+});
+// CONCATENATED MODULE: ./src/components/form/PasswordComponent.vue?vue&type=script&lang=js&
+ /* harmony default export */ var form_PasswordComponentvue_type_script_lang_js_ = (PasswordComponentvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/form/PasswordComponent.vue
+
+
+
+
+
+/* normalize component */
+
+var PasswordComponent_component = normalizeComponent(
+  form_PasswordComponentvue_type_script_lang_js_,
+  PasswordComponentvue_type_template_id_2a846099_render,
+  PasswordComponentvue_type_template_id_2a846099_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var PasswordComponent = (PasswordComponent_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/FormComponent.vue?vue&type=script&lang=js&
 
 
@@ -3731,17 +3784,7 @@ var RadioComponent_component = normalizeComponent(
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -3758,6 +3801,19 @@ var RadioComponent_component = normalizeComponent(
   props: ["api-url", "upload-path", "meta", "create"],
   data: function data() {
     return {
+      componentsName: {
+        text: "TextComponent",
+        date: "DateComponent",
+        file: "FileComponent",
+        textarea: "TextareaComponent",
+        select: "SelectComponent",
+        checkbox: "CheckboxComponent",
+        toggle: "ToggleComponent",
+        colorpicker: "ColorPickerComponent",
+        range: "RangeComponent",
+        radio: "RadioComponent",
+        password: "PasswordComponent"
+      },
       active: false,
       saveDisable: false,
       data: []
@@ -3773,7 +3829,8 @@ var RadioComponent_component = normalizeComponent(
     ToggleComponent: ToggleComponent,
     ColorPickerComponent: ColorPickerComponent,
     RangeComponent: RangeComponent,
-    RadioComponent: RadioComponent
+    RadioComponent: RadioComponent,
+    PasswordComponent: PasswordComponent
   },
   mounted: function mounted() {
     if (this.create) {
@@ -3835,7 +3892,7 @@ var RadioComponent_component = normalizeComponent(
             text: "İşlem başarılı bir şekilde tamamlanmıştır."
           }).show();
 
-          _this3.$emit('close');
+          _this3.$emit("close");
         }
 
         if (!_this3.create) {
@@ -3876,8 +3933,8 @@ var RadioComponent_component = normalizeComponent(
 
 var FormComponent_component = normalizeComponent(
   components_FormComponentvue_type_script_lang_js_,
-  FormComponentvue_type_template_id_04f0989a_render,
-  FormComponentvue_type_template_id_04f0989a_staticRenderFns,
+  FormComponentvue_type_template_id_239260d3_render,
+  FormComponentvue_type_template_id_239260d3_staticRenderFns,
   false,
   null,
   null,
@@ -35216,7 +35273,7 @@ if (typeof window !== 'undefined') {
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// EXTERNAL MODULE: ./src/components/TableComponent.vue + 74 modules
+// EXTERNAL MODULE: ./src/components/TableComponent.vue + 79 modules
 var TableComponent = __webpack_require__("2953");
 
 // CONCATENATED MODULE: ./src/build.js
