@@ -1603,12 +1603,12 @@ var FileComponent_component = normalizeComponent(
 )
 
 /* harmony default export */ var FileComponent = (FileComponent_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=template&id=153da4cf&
-var TextareaComponentvue_type_template_id_153da4cf_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.field.editor)?_c('div',[_c('div',{staticClass:"quill-editor"},[_vm._t("toolbar"),_c('div',{ref:"editor"})],2),_c('input',{attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":_vm.content}})]):_c('div',[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"textarea",attrs:{"name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})])]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
-var TextareaComponentvue_type_template_id_153da4cf_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"947a16ea-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/form/TextareaComponent.vue?vue&type=template&id=96dc4b62&
+var TextareaComponentvue_type_template_id_96dc4b62_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('label',{staticClass:"label"},[_vm._v(_vm._s(_vm.field.title))]),_c('div',{staticClass:"control"},[(_vm.field.editor)?_c('div',[_c('div',{staticClass:"quill-editor"},[_vm._t("toolbar"),_c('div',{ref:"editor"})],2),_c('input',{attrs:{"type":"hidden","name":_vm.field.name},domProps:{"value":_vm.content}})]):_c('div',[_c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.data[_vm.field.name]),expression:"data[field.name]"}],staticClass:"textarea",attrs:{"name":_vm.field.name,"placeholder":_vm.field.title + ' giriniz',"disabled":_vm.field.disabled},domProps:{"value":(_vm.data[_vm.field.name])},on:{"input":function($event){if($event.target.composing){ return; }_vm.$set(_vm.data, _vm.field.name, $event.target.value)}}})])]),(_vm.field.note)?_c('p',{staticClass:"help"},[_vm._v(_vm._s(_vm.field.note))]):_vm._e()])}
+var TextareaComponentvue_type_template_id_96dc4b62_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=template&id=153da4cf&
+// CONCATENATED MODULE: ./src/components/form/TextareaComponent.vue?vue&type=template&id=96dc4b62&
 
 // EXTERNAL MODULE: ./node_modules/quill/dist/quill.js
 var quill = __webpack_require__("9339");
@@ -1839,7 +1839,7 @@ quill_default.a.register("modules/imageUpload", ImageUpload);
             background: []
           }], [{
             align: []
-          }], ["image", "video"], ["clean"]],
+          }], ["link", "image", "video"], ["clean"]],
           imageUpload: {
             url: this.uploadPath,
             method: "POST",
@@ -1865,7 +1865,7 @@ quill_default.a.register("modules/imageUpload", ImageUpload);
       this.content = this.data[this.field.name];
       this.quill = new quill_default.a(this.$refs.editor, this.options);
 
-      if (typeof this.content != "undefined" && this.content.length > 0) {
+      if (this.content != null && typeof this.content != "undefined" && this.content.length > 0) {
         this.quill.pasteHTML(this.content);
       }
 
@@ -1902,8 +1902,8 @@ var TextareaComponentvue_type_style_index_0_lang_css_ = __webpack_require__("8bd
 
 var TextareaComponent_component = normalizeComponent(
   form_TextareaComponentvue_type_script_lang_js_,
-  TextareaComponentvue_type_template_id_153da4cf_render,
-  TextareaComponentvue_type_template_id_153da4cf_staticRenderFns,
+  TextareaComponentvue_type_template_id_96dc4b62_render,
+  TextareaComponentvue_type_template_id_96dc4b62_staticRenderFns,
   false,
   null,
   null,

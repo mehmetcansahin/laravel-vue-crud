@@ -55,7 +55,7 @@ export default {
             [{ color: [] }, { background: [] }],
             [{ align: [] }],
 
-            ["image", "video"],
+            ["link", "image", "video"],
             ["clean"],
           ],
           imageUpload: {
@@ -81,7 +81,11 @@ export default {
     if (this.field.editor) {
       this.content = this.data[this.field.name];
       this.quill = new Quill(this.$refs.editor, this.options);
-      if (typeof this.content != "undefined" && this.content.length > 0) {
+      if (
+        this.content != null &&
+        typeof this.content != "undefined" &&
+        this.content.length > 0
+      ) {
         this.quill.pasteHTML(this.content);
       }
       if (this.field.disabled) {
